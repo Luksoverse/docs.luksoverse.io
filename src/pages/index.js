@@ -11,8 +11,7 @@ function Index() {
         <div
           style={{
             padding: '4rem 1rem',
-          }}
-  )
+          }
 }
 
 export default Index;
