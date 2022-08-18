@@ -6,12 +6,20 @@ import styles from './index.module.scss';
 
 function Index() {
   return (
-    <Layout description="Set up your node and validators">
+    <Layout description="The Luksoverse - Community documentation">
       <div className={styles.container}>
         <div
           style={{
             padding: '4rem 1rem',
-          }
+          }}
+        >
+          <h1>The Luksoverse - docs</h1>
+        </div>
+        <div className={styles.ctaContainer}>
+        </div>
+      </div>
+    </Layout>
+  );
 }
 
 export default Index;
