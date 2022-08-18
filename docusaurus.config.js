@@ -60,7 +60,7 @@ const config = {
         title: 'The Luksoverse - docs',
         logo: {
           alt: 'My Site Logo',
-          src: 'img/logo.jpeg',
+          src: 'img/logo.png',
         },
         items: [
           {
@@ -94,7 +94,7 @@ const config = {
             items: [
               {
                 label: 'Discord',
-                href: 'https://discordapp.com/invite/docusaurus',
+                href: 'https://discord.gg/AE3KdFhpAQ',
               },
               {
                 label: 'Twitter',
