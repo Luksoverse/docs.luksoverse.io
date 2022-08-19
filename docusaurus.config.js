@@ -39,13 +39,6 @@ const config = {
           editUrl:
             'https://github.com/Luksoverse/community-docs/tree/main/packages/create-docusaurus/templates/shared/',
         },
-        blog: {
-          showReadingTime: true,
-          // Please change this to your repo.
-          // Remove this to remove the "edit this page" links.
-          editUrl:
-            'https://github.com/Luksoverse/community-docs/tree/main/packages/create-docusaurus/templates/shared/',
-        },
         theme: {
           customCss: require.resolve('./src/css/custom.css'),
         },
@@ -63,18 +56,6 @@ const config = {
           src: 'img/logo.png',
         },
         items: [
-          {
-            type: 'doc',
-            docId: 'the-guide/start-here',
-            position: 'left',
-            label: 'Start here',
-          },
-          {to: '/blog', label: 'Blog', position: 'left'},
-          {
-            href: 'https://github.com/Luksoverse/community-docs',
-            label: 'GitHub',
-            position: 'right',
-          },
         ],
       },
       footer: {
@@ -84,7 +65,7 @@ const config = {
             title: 'Docs',
             items: [
               {
-                label: 'Tutorial',
+                label: 'Set up your L16 node',
                 to: '/docs/the-guide/start-here',
               },
             ],
@@ -99,19 +80,6 @@ const config = {
               {
                 label: 'Twitter',
                 href: 'https://twitter.com/luksoverse_io',
-              },
-            ],
-          },
-          {
-            title: 'More',
-            items: [
-              {
-                label: 'Blog',
-                to: '/blog',
-              },
-              {
-                label: 'GitHub',
-                href: 'https://github.com/Luksoverse/community-docs',
               },
             ],
           },
