@@ -62,13 +62,6 @@ const config = {
             position: 'left',
             label: 'Start here',
           },
-          {
-            type: 'doc',
-            docId: 'Guides',
-            position: 'left',
-            label: 'Community Guides',
-          },
-        
         ],
       },
       footer: {
