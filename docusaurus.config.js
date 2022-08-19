@@ -56,6 +56,12 @@ const config = {
           src: 'img/logo.png',
         },
         items: [
+          {
+            type: 'doc',
+            docId: 'the-guide/start-here',
+            position: 'left',
+            label: 'Start here',
+          },
         ],
       },
       footer: {
