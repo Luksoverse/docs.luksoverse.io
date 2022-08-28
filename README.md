@@ -1,3 +1,9 @@
+# Community docs
+
+This is a website for community docs, guides and manuals. Feel free to add you newest docs as a PR to our repository.
+
+This is a extension of the Luksoverse Tech Cave (https://luksoverse.io/tech-cave/)
+
 # Website
 
 This website is built using [Docusaurus 2](https://docusaurus.io/), a modern static website generator.
