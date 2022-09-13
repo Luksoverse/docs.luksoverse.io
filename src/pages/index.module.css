@@ -8,6 +8,7 @@
   text-align: center;
   position: relative;
   overflow: hidden;
+  color: var(--ifm-color-primary-dark)
 }
 
 @media screen and (max-width: 996px) {
@@ -20,4 +21,30 @@
   display: flex;
   align-items: center;
   justify-content: center;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-height: 50vh;
+  margin: 1rem;
+}
+
+.cardContainer {
+  display: grid;
+  grid-template-columns: 1fr;
+  width: 100%;
+  margin: 0 32px 0;
+  grid-gap: 15px;
+  
+}
+
+@media (min-width: 996px) {
+  .cardContainer{
+    grid-template-columns: 1fr 1fr 1fr;
+    width: 900px;
+  }
+  
 }
