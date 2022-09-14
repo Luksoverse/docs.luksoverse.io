@@ -53,7 +53,7 @@ const config = {
         title: 'The Luksoverse - docs',
         logo: {
           alt: 'My Site Logo',
-          src: 'img/logo.png',
+          src: 'img/black-logo.png',
         },
         items: [
           {
