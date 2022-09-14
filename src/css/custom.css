@@ -21,7 +21,7 @@
 [data-theme='dark'] {
   --ifm-color-primary: #1b1b1b;
   --ifm-color-primary-dark: #fff;
-  --ifm-color-primary-darker: red;
+  --ifm-color-primary-darker: rgb(255, 255, 255);
   --ifm-color-primary-darkest: #333;
   --ifm-color-primary-light: #333;
   --ifm-color-primary-lighter: #333;
