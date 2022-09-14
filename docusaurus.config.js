@@ -80,11 +80,23 @@ const config = {
                 label: 'Set up your L16 node',
                 to: '/docs/the-guide/start-here',
               },
+              {
+                label: 'SSH Guide',
+                to: '/docs/Guides/ssh',
+              },
+              {
+                label: 'VPN Guide',
+                to: '/docs/Guides/vpn',
+              },
             ],
           },
           {
             title: 'Community',
             items: [
+              {
+                label: 'Telegram',
+                href: 'https://t.me/luksoverse',
+              },
               {
                 label: 'Discord',
                 href: 'https://discord.gg/AE3KdFhpAQ',
@@ -92,6 +104,19 @@ const config = {
               {
                 label: 'Twitter',
                 href: 'https://twitter.com/luksoverse_io',
+              },
+            ],
+          },
+          {
+            title: 'Contribute',
+            items: [
+              {
+                label: 'GitHub',
+                href: 'https://github.com/Luksoverse/docs.luksoverse.io',
+              },
+              {
+                label: 'Luksoverse.io website',
+                href: 'https://luksoverse.io/contributor/',
               },
             ],
           },
