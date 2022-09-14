@@ -4,6 +4,8 @@ This is a website for community docs, guides and manuals. Feel free to add you n
 
 This is a extension of the Luksoverse Tech Cave (https://luksoverse.io/tech-cave/)
 
+Live url: https://docs.luksoverse.io
+
 # Website
 
 This website is built using [Docusaurus 2](https://docusaurus.io/), a modern static website generator.
