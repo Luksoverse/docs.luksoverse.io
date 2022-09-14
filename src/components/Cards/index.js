@@ -5,12 +5,12 @@ const Cards = () => {
   const cardData = [
     {
       title: "SSH",
-      description: "how to setup SSH for your node",
+      description: "How to setup SSH for your node",
       path: "/docs/Guides/ssh",
     },
     {
-      title: "vpn",
-      description: "how to setup a vnp for your node",
+      title: "VPN",
+      description: "How to setup a VPN for your node",
       path: "/docs/Guides/vpn",
     },
     {
