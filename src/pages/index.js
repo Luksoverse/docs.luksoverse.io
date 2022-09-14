@@ -37,6 +37,7 @@ export default function Home() {
     <Layout
       title={`${siteConfig.title}`}
       description="The LUKSO Community place for docs"
+      image = "img/lv-logo"
     >
       <HomepageHeader />
       <main className={styles.container}>
