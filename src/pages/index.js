@@ -32,11 +32,11 @@ function HomepageHeader() {
 
 export default function Home() {
   const { siteConfig } = useDocusaurusContext();
+  console.log({ siteConfig });
   return (
     <Layout
       title={`${siteConfig.title}`}
       description="The LUKSO Community place for docs."
-      image= "/static/img/lv-logo.jpg"
     >
       <HomepageHeader />
       <main className={styles.container}>
