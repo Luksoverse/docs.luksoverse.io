@@ -54,6 +54,7 @@ const config = {
         logo: {
           alt: 'My Site Logo',
           src: 'img/black-logo.png',
+          srcDark: 'img/white-logo.png',
         },
         items: [
           {
