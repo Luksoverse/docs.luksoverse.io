@@ -5,7 +5,7 @@ import styles from "./styles.module.css";
 const FeatureList = [
   {
     title: "Easy to Use",
-    src: require("@site/static/img/logo.png").default,
+    src: require("@site/static/img/black-logo.png").default,
     description: (
       <>
         Docusaurus was designed from the ground up to be easily installed and
@@ -15,7 +15,7 @@ const FeatureList = [
   },
   {
     title: "Focus on What Matters",
-    src: require("@site/static/img/logo.png").default,
+    src: require("@site/static/img/black-logo.png").default,
     description: (
       <>
         Docusaurus lets you focus on your docs, and we&apos;ll do the chores. Go
@@ -25,7 +25,7 @@ const FeatureList = [
   },
   {
     title: "Powered by React",
-    src: require("@site/static/img/logo.png").default,
+    src: require("@site/static/img/black-logo.png").default,
     description: (
       <>
         Extend or customize your website layout by reusing React. Docusaurus can
