@@ -12,7 +12,7 @@ const config = {
   baseUrl: '/',
   onBrokenLinks: 'throw',
   onBrokenMarkdownLinks: 'warn',
-  favicon: 'img/favicon.ico',
+  favicon: 'img/lv-logo.jpg',
 
   // GitHub pages deployment config.
   // If you aren't using GitHub pages, you don't need these.
@@ -53,14 +53,20 @@ const config = {
         title: 'The Luksoverse - docs',
         logo: {
           alt: 'My Site Logo',
-          src: 'img/logo.png',
+          src: 'img/black-logo.png',
         },
         items: [
           {
             type: 'doc',
             docId: 'the-guide/start-here',
             position: 'left',
-            label: 'Start here',
+            label: 'Run your L16 node',
+          },
+          {
+            type: 'doc',
+            docId: 'Guides/ssh',
+            position: 'left',
+            label: 'Community Guides',
           },
         ],
       },
@@ -74,11 +80,23 @@ const config = {
                 label: 'Set up your L16 node',
                 to: '/docs/the-guide/start-here',
               },
+              {
+                label: 'SSH Guide',
+                to: '/docs/Guides/ssh',
+              },
+              {
+                label: 'VPN Guide',
+                to: '/docs/Guides/vpn',
+              },
             ],
           },
           {
             title: 'Community',
             items: [
+              {
+                label: 'Telegram',
+                href: 'https://t.me/luksoverse',
+              },
               {
                 label: 'Discord',
                 href: 'https://discord.gg/AE3KdFhpAQ',
@@ -86,6 +104,19 @@ const config = {
               {
                 label: 'Twitter',
                 href: 'https://twitter.com/luksoverse_io',
+              },
+            ],
+          },
+          {
+            title: 'Contribute',
+            items: [
+              {
+                label: 'GitHub',
+                href: 'https://github.com/Luksoverse/docs.luksoverse.io',
+              },
+              {
+                label: 'Luksoverse.io website',
+                href: 'https://luksoverse.io/contributor/',
               },
             ],
           },

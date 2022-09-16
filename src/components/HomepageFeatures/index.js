@@ -8,8 +8,7 @@ const FeatureList = [
     src: require("@site/static/img/black-logo.png").default,
     description: (
       <>
-        Docusaurus was designed from the ground up to be easily installed and
-        used to get your website up and running quickly.
+       Text how and why to use the docs website
       </>
     ),
   },
@@ -18,8 +17,7 @@ const FeatureList = [
     src: require("@site/static/img/black-logo.png").default,
     description: (
       <>
-        Docusaurus lets you focus on your docs, and we&apos;ll do the chores. Go
-        ahead and move your docs into the <code>docs</code> directory.
+       Text how to contribute to our GitHub
       </>
     ),
   },
@@ -28,8 +26,7 @@ const FeatureList = [
     src: require("@site/static/img/black-logo.png").default,
     description: (
       <>
-        Extend or customize your website layout by reusing React. Docusaurus can
-        be extended while reusing the same header and footer.
+       New images for all blocks
       </>
     ),
   },
