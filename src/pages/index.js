@@ -35,8 +35,8 @@ export default function Home() {
   console.log({ siteConfig });
   return (
     <Layout
-      title={`Hello from ${siteConfig.title}`}
-      description="Description will go into a meta tag in <head />"
+      title={`${siteConfig.title}`}
+      description="The LUKSO Community place for docs"
     >
       <HomepageHeader />
       <main className={styles.container}>
