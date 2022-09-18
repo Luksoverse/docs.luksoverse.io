@@ -645,7 +645,7 @@ Default credentials are username and password `admin`. Set a new secure (long) p
 ##### Install Dashboard
 
 1. Hover over the plus symbol icon in the left-hand menu, then click on Import
-2. Copy and paste [the dashboard](/grafana/dashboard.json) into the `Import via panel json` text box on the screen
+2. Copy and paste [the dashboard](https://github.com/Luksoverse/lukso-node-guide/blob/main/grafana/dashboard.json) into the `Import via panel json` text box on the screen
 3. Then click the Load button
 4. Then click the Import button
 
