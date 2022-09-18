@@ -7,12 +7,6 @@ import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 import Admonition from '@theme/Admonition';
 
-
-:::danger
-This guide is in beta and not ready for use 
-:::
-
-
 ## Before you begin
 Running a validator node is a highly technical task and a long term commitment. It's a responsibility to your investment and to the network. The network's **security and stability** depends on properly maintained nodes and validator software running 24/7. You will need to:
 - Monitor you node continuously
