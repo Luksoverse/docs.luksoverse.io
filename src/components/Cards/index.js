@@ -5,17 +5,22 @@ const Cards = () => {
   const cardData = [
     {
       title: "Run a Node",
-      description: "Learn how to setup a Lukso node from start to finish",
+      description: "Learn how to setup a Lukso node from start to finish.",
       path: "/docs/the-guide/start-here",
     },
     {
+      title: "System & monitoring",
+      description: "How to setup your system and Grafana/Prometheus dashboard.",
+      path: "/docs/Community Guides/System & monitoring setup",
+    },
+    {
       title: "SSH",
-      description: "How to setup SSH for your node",
+      description: "How to setup SSH for your node.",
       path: "/docs/Community Guides/ssh",
     },
     {
       title: "VPN",
-      description: "How to setup a VPN for your node",
+      description: "How to setup a VPN for your node.",
       path: "/docs/Community Guides/vpn",
     },
   ];
