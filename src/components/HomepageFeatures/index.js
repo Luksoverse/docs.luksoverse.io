@@ -8,7 +8,7 @@ const FeatureList = [
     src: require("@site/static/img/documents-logo.png").default,
     description: (
       <>
-       Manuals and Community Guides created by the community. For community members and projects.
+       Created by the community, for its members and projects.
       </>
     ),
   },
