@@ -11,12 +11,12 @@ const Cards = () => {
     {
       title: "SSH",
       description: "How to setup SSH for your node",
-      path: "/docs/Guides/ssh",
+      path: "/docs/Community Guides/ssh",
     },
     {
       title: "VPN",
       description: "How to setup a VPN for your node",
-      path: "/docs/Guides/vpn",
+      path: "/docs/Community Guides/vpn",
     },
   ];
   return (
