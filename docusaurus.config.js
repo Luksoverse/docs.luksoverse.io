@@ -67,7 +67,7 @@ const config = {
             type: 'doc',
             docId: 'Community Guides/ssh',
             position: 'left',
-            label: 'Community Community Guides',
+            label: 'Community Guides',
           },
         ],
       },
