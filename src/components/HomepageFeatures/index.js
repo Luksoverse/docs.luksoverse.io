@@ -18,8 +18,6 @@ const FeatureList = [
     description: (
       <>
        Create your own Community Guides, manuals or any other tech-doc for your LUKSO project and contribute them to our GitHub.
-
-       https://github.com/Luksoverse/docs.luksoverse.io
       </>
     ),
   },
