@@ -2,7 +2,7 @@
 
 This is a website for community docs, guides and manuals. Feel free to add you newest docs as a PR to our repository.
 
-This is a extension of the Luksoverse Tech Cave (https://luksoverse.io/tech-cave/)
+This is an extension of the Luksoverse Tech Cave (https://luksoverse.io/tech-cave/)
 
 Live url: https://docs.luksoverse.io
 
