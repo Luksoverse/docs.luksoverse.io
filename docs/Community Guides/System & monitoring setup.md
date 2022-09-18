@@ -1,4 +1,4 @@
-# Lukso Validator Node
+# System & Monitoring setup
 Guide by [Volodymyr Lykhonis](https://github.com/lykhonis)
 
 This is a guide to setup a Lukso validator node in home environment. The guide suggests a use of a dedicated machine to run a node with validators, separate from a personal working machine.

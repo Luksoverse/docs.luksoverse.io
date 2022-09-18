@@ -9,7 +9,7 @@ const Cards = () => {
       path: "/docs/the-guide/start-here",
     },
     {
-      title: "System & monitoring",
+      title: "System & Monitoring",
       description: "How to setup your system and Grafana/Prometheus dashboard.",
       path: "/docs/Community Guides/System & monitoring setup",
     },
