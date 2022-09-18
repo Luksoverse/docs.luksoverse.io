@@ -20,7 +20,7 @@ We will install 5 tools with this guide:
 
 - [JSON Exporter](https://github.com/prometheus-community/json_exporter) - scrapes LUKSO price information from CoinGecko.
 
-- [Blackbox Exporter](https://github.com/prometheus/blackbox_exporter) monitors ping time between the node machine and two DNS servers.
+- [Blackbox Exporter](https://github.com/prometheus/blackbox_exporter) - monitors ping time between the node machine and two DNS servers.
 
 - [Prometheus](https://prometheus.io/docs/introduction/overview/) - collects metrics from the node, JSON and Blackbox exporters.
 
