@@ -8,7 +8,7 @@ const FeatureList = [
     src: require("@site/static/img/documents-logo.png").default,
     description: (
       <>
-       Text how and why to use the docs website
+       Manuals and Guides created by the community. For community members and projects.
       </>
     ),
   },
@@ -17,16 +17,18 @@ const FeatureList = [
     src: require("@site/static/img/GitHub-logo.png").default,
     description: (
       <>
-       Text how to contribute to our GitHub
+      Create your own guides, manuals or any other tech-doc for your LUKSO project and contribute them to our GitHub.
+      
+      https://github.com/Luksoverse/docs.luksoverse.io
       </>
     ),
   },
   {
-    title: "By Luksoverse",
+    title: "By Luksoverse.io",
     src: require("@site/static/img/black-logo.png").default,
     description: (
       <>
-       New images for all blocks
+      Check out our website and channels.
       </>
     ),
   },
