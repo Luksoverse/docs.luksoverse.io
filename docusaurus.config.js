@@ -65,9 +65,9 @@ const config = {
           },
           {
             type: 'doc',
-            docId: 'Guides/ssh',
+            docId: 'Community Guides/ssh',
             position: 'left',
-            label: 'Community Guides',
+            label: 'Community Community Guides',
           },
         ],
       },
@@ -83,11 +83,11 @@ const config = {
               },
               {
                 label: 'SSH Guide',
-                to: '/docs/Guides/ssh',
+                to: '/docs/Community Guides/ssh',
               },
               {
                 label: 'VPN Guide',
-                to: '/docs/Guides/vpn',
+                to: '/docs/Community Guides/vpn',
               },
             ],
           },

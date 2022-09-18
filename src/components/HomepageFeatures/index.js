@@ -4,11 +4,11 @@ import styles from "./styles.module.css";
 
 const FeatureList = [
   {
-    title: "Docs & Guides",
+    title: "Docs & Community Guides",
     src: require("@site/static/img/documents-logo.png").default,
     description: (
       <>
-       Manuals and Guides created by the community. For community members and projects.
+       Manuals and Community Guides created by the community. For community members and projects.
       </>
     ),
   },
@@ -17,7 +17,7 @@ const FeatureList = [
     src: require("@site/static/img/GitHub-logo.png").default,
     description: (
       <>
-       Create your own guides, manuals or any other tech-doc for your LUKSO project and contribute them to our GitHub.
+       Create your own Community Guides, manuals or any other tech-doc for your LUKSO project and contribute them to our GitHub.
 
        https://github.com/Luksoverse/docs.luksoverse.io
       </>
