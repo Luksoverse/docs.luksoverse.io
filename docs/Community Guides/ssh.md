@@ -1,4 +1,6 @@
 # OpenSSH Server Setup
+Guide by [Johnny EBD](https://t.me/moonmclaren)
+
 ![](https://i.imgur.com/gVb9yHS.png)
 
 :warning: This guide is meant to be followed after a successful installation of a [WireGuard VPN tunnel](https://luksoverse.io/2022/07/secure-remote-login/), by which, **for SSH purposes, the only port exposed/forwarded in your router should be IPv4 51820/udp.** This way you'll also have access outside of your local network by activating WireGuard in your client's device before attempting to SSH into your remote server.
