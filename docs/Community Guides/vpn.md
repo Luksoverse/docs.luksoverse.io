@@ -1,4 +1,4 @@
-# Remote login through a WireGuard tunnel using PiVPN
+# WireGuard tunnel via PiVPN
 Guide by [Johnny EBD](https://t.me/moonmclaren)
 ![](https://i.imgur.com/w4MEqOr.png)
 
