@@ -25,13 +25,13 @@ Mini PCs are designed for 24/7 use and low power consumption, making them ideal 
 
 
 
-|           | Intel NUC 10 (Minimum)         | Intel NUC 10 |Intel NUC 10 Performance Kit|
-| --------  | --------                           | -------- |-----
-| Processor | i3 2-cores                         | i5 4-core| i7 6-core
-| RAM       | 16GB                               | 16GB     | 32GB
-| Storage   | 256GB                         | 512GB |1TB
-| Price     | $489                               | $629     |$949
-| Link      | [Amazon](https://a.co/d/3g1vg6G)   | [Amazon](https://a.co/d/1UdrolU)     |[Amazon](https://a.co/d/iE7niEu)
+|           | Intel NUC 10 |Intel NUC 10 Performance Kit|
+| --------  | -------- |-----
+| Processor | i5 4-core| i7 6-core
+| RAM       | 16GB     | 32GB
+| Storage   | 512GB |1TB
+| Price     | $629     |$949
+| Link      | [Amazon](https://a.co/d/1UdrolU)     |[Amazon](https://a.co/d/iE7niEu)
 
 A backup system (or parts) is also something to consider. If your node is offline, you will incur slashing penalties roughly equal to the rewards you would have gained while being online. For example, if you average 1 LYX per day in rewards, you will lose 1 LYX per day if offline.
 
@@ -41,26 +41,23 @@ This guide will follow the steps for Ubuntu 22.04 LTS **Server** as our node ope
 
 You have the option to install the desktop version of Ubuntu and operate the node like a desktop computer with a keyboard, mouse and monitor attached. However, there are a number of reason to choose a server installation for you node.
 
+Using Server + remote SSH access from a personal computer instead of directly attaching a keyboard/monitor to your node has security and performance benefits and also adds convenience.
+
 * **Security** - Most importantly, it is best security practice to run **only** the software needed to operate a node. To setup, troubleshoot, and maintain your node, you will rely on a web browser to follow guides and chat applications (like Discord) for community support. With remote access, you can use these application from your personal computer, and simply copy/paste commands into the SSH terminal.
+
+When you choose a server installation, the temptation to use the node for other purposes is removed.
 
 * **Performance** - Ubuntu Desktop uses more system resources. Ubuntu Server makes more resources available to your node software.
 
 * **Convenience** - Your node should be **wired** to your network, not connected through WiFi. Remote access removes the need to keep a keyboard and monitor connect to you node and allows you to place your node hidden away near your router. Only two connections are needed, one to your router and one to an electrical outlet.
 
-Also, with SSH enabled, you can easily setup access to your from remote locations, allowing you to perform maintenance and troubleshooting from anywhere with an internet connection.
+Also, with SSH already enabled, you can easily setup access to node your from remote locations by enabling a VPN server, allowing you to perform maintenance and troubleshooting from anywhere with an internet connection. 
 
+:::note
+The steps in this guide only enable remote access from a computer on the same network. Remote access from a location out side of your network will require additional steps that are not covered in this guide
+:::
 
-
-
-Using Server + remote SSH access from a personal computer instead of directly attaching a keyboard/monitor to your node has security and performance benefits and also adds convenience. 
-
-- Nodes should not run unnecessary software, like web browsers needed to follow guides, or messaging platforms used for community support.
-- The temptation to use the node for other purposes is removed
-- The Desktop GUI consumes system resources
-- You can place the node next to your router and avoid running wires.
-- You can easily configure access to your node from remote locations by enabling a VPN server.
  
-
 ### 1.1 - Create a bootable USB stick
 
 #### Requirments
@@ -71,11 +68,12 @@ Using Server + remote SSH access from a personal computer instead of directly at
 #### Follow these steps to download the ISO file and image the USB flash drive:
 
 1. Visit the [Ubuntu Server](https://ubuntu.com/download/server) download page.
-2. Choose "Option 2 - Manual Installation"
-3. Choose "Download Ubuntu Server 22.04 LTS"
-4. Follow the guide on Ubuntu's website. Choose the appropriate guide below for your personal computer's operating system. You still start with step 3
-* [Windows guide](https://ubuntu.com/tutorials/create-a-usb-stick-on-windows#3-usb-selection)
-* [macOS guide](https://ubuntu.com/tutorials/create-a-usb-stick-on-macos#3-prepare-the-usb-stick).
+2. Choose "Download Ubuntu Server [current version] LTS"
+3. Follow the guide on Ubuntu's website. Choose the appropriate guide below for your personal computer's operating system.
+
+[Windows guide](https://ubuntu.com/tutorials/create-a-usb-stick-on-windows#2-requirements) (In the Windows guide, ignore the "Ubuntu ISO" requirement. You only need to download Rufus in this step.)
+
+[macOS guide](https://ubuntu.com/tutorials/create-a-usb-stick-on-macos#3-prepare-the-usb-stick).
 
 
 
