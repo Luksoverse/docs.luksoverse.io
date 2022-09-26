@@ -1,4 +1,5 @@
-
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
 
 # Part 5 - Monitoring
 
@@ -30,13 +31,6 @@ Connect to your node machine and proceed to the next step.
 
 ## Step 1 - Node Exporter
 
-Node_exporter
-
-
-
-> add description
-
----
 
 ### 1.1 - Add a user
 
@@ -92,6 +86,10 @@ ExecStart=/usr/local/bin/node_exporter
 [Install]
 WantedBy=multi-user.target
 ```
+
+#### Save and quit
+`ctrl+x`, `y`, `enter`
+
 ### 1.4 - Enable the service
 
 #### Refresh systemd to reflect the changes
@@ -105,10 +103,7 @@ sudo systemctl start node_exporter
 sudo systemctl is-active node_exporter
 ```
 
-The output should be
-```
-active
-```
+The output should be `active`.
 
 #### Set Node Exporter to start on boot
 ```
@@ -119,13 +114,7 @@ sudo systemctl enable node_exporter
 
 ### 2.1 -  Prerequisites 
 
-#### Check `go` version and install if needed:
-
-```
-go version
-```
-
-If it is less than `1.17.7` install the following:
+#### Install Go:
 
 ```shell=
 wget https://dl.google.com/go/go1.17.7.linux-amd64.tar.gz
@@ -135,7 +124,10 @@ sudo mv go /usr/local/go-1.17.7
 sudo ln -sf /usr/local/go-1.17.7/bin/go /usr/bin/go
 go version
 ```
-
+#### Install Make:
+```
+sudo apt install make
+```
 
 
 ### 2.2 - Add user
@@ -174,13 +166,16 @@ sudo nano /etc/json_exporter/json_exporter.yml
 Copy/paste the content of configuration file.
 
 ```
-metrics:
-- name: lyxusd
-  path: "{.lukso-token.usd}"
-  help: Lukso (LYX) price in USD
+modules:
+  default:
+    metrics:
+    - name: lyxusd
+      path: "{.lukso-token.usd}"
+      help: Lukso (LYX) price in USD
 ```
 
-Save and exit
+Save and quit
+`ctrl+x`, `y`, `enter`
 
 #### Change ownership of configuration file:
 
@@ -210,6 +205,9 @@ ExecStart=/usr/local/bin/json_exporter --config.file /etc/json_exporter/json_exp
 [Install]
 WantedBy=multi-user.target
 ```
+
+Save and quit
+`ctrl+x`, `y`, `enter`
 
 ### 2.5 - Enable service:
 
@@ -271,6 +269,9 @@ modules:
                         preferred_ip_protocol: ipv4
 ```
 
+Save and quit
+`ctrl+x`, `y`, `enter`
+
 #### Change ownership of configuration file:
 
 ```shell=
@@ -302,6 +303,9 @@ ExecStart=/usr/local/bin/blackbox_exporter --config.file /etc/blackbox_exporter/
 WantedBy=multi-user.target
 ```
 
+Save and quit
+`ctrl+x`, `y`, `enter`
+
 ### 3.6 - Enable the service
 
 ```shell=
@@ -320,25 +324,27 @@ sudo adduser --system prometheus --group --no-create-home
 
 ### 4.2 - Install
 
-As of this writing, the current version of Prometheus is 2.37.0 LTS
+As of this writing, the current long term support (LTS) version of Prometheus is 2.37.1
 
-Confirm the current version for `linux-amd64` [here](https://prometheus.io/download/)
+Confirm the current **LTS** version for `linux-amd64` [here](https://prometheus.io/download/)
 
-If a newer version exists, replace all occurrences of `2.37.0` with the new version number in the code box below.
+**Only use the LTS version**
+
+If a newer version exists, replace all occurrences of `2.37.1` with the new version number in the code box below.
 
 
 ```
 cd
-wget https://github.com/prometheus/prometheus/releases/download/v2.37.0/prometheus-2.37.0.linux-amd64.tar.gz
-tar xzvf prometheus-2.37.0.linux-amd64.tar.gz
-cd prometheus-2.37.0.linux-amd64
+wget https://github.com/prometheus/prometheus/releases/download/v2.37.1/prometheus-2.37.1.linux-amd64.tar.gz
+tar xzvf prometheus-2.37.1.linux-amd64.tar.gz
+cd prometheus-2.37.1.linux-amd64
 sudo cp promtool /usr/local/bin/
 sudo cp prometheus /usr/local/bin/
 sudo chown root:root /usr/local/bin/promtool /usr/local/bin/prometheus
 sudo chmod 755 /usr/local/bin/promtool /usr/local/bin/prometheus
 cd
-rm prometheus-2.37.0.linux-amd64.tar.gz
-rm -rf prometheus-2.37.0.linux-amd64
+rm prometheus-2.37.1.linux-amd64.tar.gz
+rm -rf prometheus-2.37.1.linux-amd64
 ```
 
 ### 4.3 - Configure
@@ -423,6 +429,9 @@ scrape_configs:
       replacement: 127.0.0.1:7979
 ```
 
+Save and quit
+`ctrl+x`, `y`, `enter`
+
 #### Prepare data directory for prometheus:
 
 ```shell=
@@ -475,6 +484,9 @@ ExecReload=/bin/kill -HUP $MAINPID
 WantedBy=multi-user.target
 ```
 
+Save and quit
+`ctrl+x`, `y`, `enter`
+
 Enable service:
 
 ```shell=
@@ -482,9 +494,14 @@ sudo systemctl daemon-reload
 sudo systemctl start prometheus
 sudo systemctl enable prometheus
 ```
+
+
+
 ## Step 5 - Grafana
 
 ### 5.1 - Install
+
+You will have to answer a couple prompts during the installation.
 
 ```shell=
 cd
@@ -503,7 +520,17 @@ sudo apt-get install grafana-enterprise
 sudo nano /lib/systemd/system/grafana-server.service
 ```
 
-#### Copy/paste the contents below to the configuration file.
+#### Clear the existing contents of the file
+
+Ensure the cursor is at the top left of the file.
+
+Press `crtl` + `6` to set a mark
+
+Press `alt` + `shift` + `t` to clear
+
+#### Copy/paste the contents below to the empty configuration file.
+
+
 
 ```
 [Unit]
@@ -564,6 +591,9 @@ Alias=grafana.service
 WantedBy=multi-user.target
 ```
 
+Save and quit
+`ctrl+x`, `y`, `enter`
+
 ### 5.3 - Enable service
 
 ```shell=
@@ -571,8 +601,9 @@ sudo systemctl daemon-reload
 sudo systemctl start grafana-server
 sudo systemctl enable grafana-server
 ```
+
 ### 5.4 - Open port to access metrics.
-Opening this port allows access to grafana's dashboard in the web browser of you personal computer while connected to the local network. Opening a port in this way poses a slight security risk. For an alternative see **coming soon**
+Opening this port allows access to grafana's dashboard in the web browser of you personal computer while connected to the local network.
 
 ```shell=
 sudo ufw allow 3000/tcp
@@ -584,7 +615,7 @@ Login to grafana by opening a web browser `http://<node-ip>:3000`. Replace `<nod
 
 
 ```shell= title="Default credentials"
-username: username
+username: admin
 password: admin
 ```
  Set a new secure (long) password when prompted by grafana.
@@ -598,23 +629,104 @@ password: admin
 
 #### Install Dashboard
 
-1. Hover over the plus symbol icon in the left-hand menu, then click on Import
-2. Copy and paste the [dashboard](https://github.com/LYXstaker/docs/blob/main/grafana/dashboard.json) into the `Import via panel json` text box on the screen
-3. Then click the Load button
-4. Then click the Import button
+1. Follow [this link](https://github.com/Luksoverse/docs.luksoverse.io/blob/main/grafana/dashboard.json) to the JSON file we will use to configure the dashboard.
+2. Click the "copy raw contents" button (next to the trash can icon)
+
+![test](./img-p5/5.5-dashboard-s2.svg)
+
+3. Return to the Grafana windows in your web browser
+4. Hover over the plus symbol icon in the left-hand menu, then click on Import
+
+![test](./img-p5/5.5-dashboard-s4.png)
+
+5. Rigth click and select paste in the `Import via panel json` text box on the screen
+
+![test](./img-p5/5.5-dashboard-s5.png)
+
+6. Click the Load button
+7. Click the Import button
 
 ### 5.6 - Enable Alerts
 
-1. On the left-hand menu, hover over the alarm menu and click on `Notification channels`
-2. Click on `New channel`
-3. Select `Type` and [configure](https://grafana.com/docs/grafana/latest/alerting/old-alerting/notifications/)
+Grafana is configured to monitor the following:
 
-On lukso dashboard:
+![](./img-p5/5.6-00.png)
 
-1. Scroll down on a dashboard to `Alerts` section
-2. Select each alert and click `Edit`
-3. In `Alert` tab, select notifications `send to`
-4. Save and repeat for each alert
+When abnormal reading are detected Grafana can send alerts through various types of channels, such as Discord, Telegram, Email, etc.
+
+The following will guide will configure Grafana notification for Telegram. It is convenient to have a text editor open to temporarily store information needed for these steps.
+
+1. Create a [Telegram](https://telegram.org/) account if needed. You may use the web-based version of Telegram or install the Desktop version.
+2. Create a new Telegram bot with BotFather. Click on this link https://t.me/botfather and allow the website to open Telegram.
+3. A BotFather channel will open. Type `/newbot` in the message line and click the send button.
+
+![](./img-p5/5.6-03.png)
+
+4. Choose a full name for your bot.
+5. Choose a user name for your bot. The name must end in `bot`
+6. A message will appear with information about your bot. Highlight and copy the API token, then paste into your text editor.
+
+![](./img-p5/5.6-06.png)
+
+7. Open the Telegram menu, create a new group, and choose a name for the group.
+8. Add your bot to the group. Type the exact **user name** your chose for your bot in step 5. Select the user when it appears in the list, the click create.
+
+![](./img-p5/5.6-08.png)
+
+9. In the newly created group, type and send at least one message; it can be anything.
+10. Copy the link below and paste to your text editor. Replace `<YOUR BOT API TOKEN with>` the token ID from step 6.
+
+```
+https://api.telegram.org/bot<YOUR BOT API TOKEN>/getUpdates
+```
+
+![](./img-p5/5.6-10.gif)
+
+11. We now need to find your `chat id` number. Copy the link you just edited into a web browser.
+
+![](./img-p5/5.6-11.gif)
+
+12. Look for text that says `{"id"}:` then copy/paster the number that follows to your text editor.
+
+ ![](./img-p5/5.6-12.gif)
+ 
+13. Return to Grafana
+14. On the left-hand menu, click the alarm icon
+15. Click the `Notification channels` tab at the top
+16. Click on `Add channel`
+ ![](./img-p5/5.6-16.png)
+
+17. Fill in the following information
+ 
+**Name:** it can be anything
+
+**Type:** Telegram
+
+**BOT API Token:** copy/paste from text editor
+
+**Chat ID:** copy/paste from text editor
+
+![](./img-p5/5.6-17.png)
+
+18. Click `send test`. If successful, you will see a new message in Telegram from the Full Name you chose in step 4.
+
+![](./img-p5/5.6-18.png)
+
+19. Click `Save`
+20. Return to the LUKSO dashboard by clicking the Grafana icon and then Lukso under the dashboard section.
+ 
+![](./img-p5/5.6-20.png)
+
+21. Scroll down on a dashboard to `Alerts` section
+22. Select each alert and click `Edit`
+23. In `Alert` tab, select notifications `send to` and choose the name you chose in step 17
+24. Click the back arrow on the top left of the Grafana screen
+25. Repeat for **each alert**
+ 
+![](./img-p5/5.6-24.gif)
+
+ 
+
 ---
 * [Vlad's Guide](https://github.com/lykhonis/lukso-node-guide#prometheus)
 * [CoinCashew](https://www.coincashew.com/coins/overview-eth/guide-or-how-to-setup-a-validator-on-eth2-mainnet/part-i-installation/monitoring-your-validator-with-grafana-and-prometheus?q=grafana)

@@ -12,7 +12,7 @@ In this step, the SSH server will be configured. The following keywords will be 
 
 ### 1.1 -  open the configuration file:
 
-Connect to you node machine
+Establish an SSH connection to your node machine and run the following command.
 
 ```
 sudo nano /etc/ssh/sshd_config
@@ -88,13 +88,13 @@ Install Fail2ban to block IP addresses that are attempting to access our node. F
 sudo apt-get install fail2ban -y
 ```
 ### 4.2 - configure fail2ban
-Edit a config to monitor ssh logins
+Create a config file to monitor ssh logins
 
 ```
 sudo nano /etc/fail2ban/jail.local
 ```
 
-Replace `<ssh-port>` to match the ssh port number.
+Paste the code below into the text editor. Replace `<ssh-port>` to match your ssh port number.
 
 ```
 [sshd]
@@ -117,6 +117,7 @@ sudo systemctl restart fail2ban
 
 ## Step 5 - Improve SSH Connection
 
+**This step is only required for Ubuntu Desktop installations. If you installed Ubuntu Server, you may skip this step.**
 
 WiFi power management may slow down SSH connections. Modifying the config file will disable it.
 
