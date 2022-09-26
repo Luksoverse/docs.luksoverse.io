@@ -79,14 +79,29 @@ The steps in this guide only enable remote access from a computer on the same ne
 
 ### 1.2 - Install the server
 
+
 1. Attach a monitor and keyboard to your node machine. 
-2. Follow [Ubuntu's official guide](https://ubuntu.com/tutorials/install-ubuntu-server#1-overview) to install the operating system. After step 14 is complete, and the system reboots, you should see a login screen.
+2. Follow [Ubuntu's official guide](https://ubuntu.com/tutorials/install-ubuntu-server#1-overview) to install the operating system.
+:::warning
+Use a strong password for your node machine
+:::
+:::note
+Some options will appear which are not documented in the Ubuntu guide. Leave the settings unchanged and choose done for these options.
+:::
+3. After step 14 is complete and the system reboots, you should see a login screen.
   ![1.2.2](./img-p1/1.2.2.png)
-3. Login with the username and password created during the installation. After a successful login, you should see a `$` prompt.
+
+If the login prompt does not appear, press enter.
+
+4. Login with the username and password created during the installation. After a successful login, you should see a `$` prompt.
 
  ![1.2.3](./img-p1/1.2.3.png)
  
-4. Update the server with these three commands before proceeding. Type the command --> press `Enter`.
+5. Update the server with these three commands. Type the command, then press `Enter`.
+
+:::caution
+Read the output when executing commands!! Make sure you see no warning or errors.
+:::
 
 ```
 sudo apt update
@@ -94,22 +109,29 @@ sudo apt update
 ```
 sudo apt upgrade -y
 ```
+Press ```enter``` when asked which services should be restarted.
 ```
 sudo apt install -y 
 ```
 
-5. Install the Nano text editor.
+6. Install SSH.
 ```
-nano wget make git
+sudo apt-get install openssh-server
+```
+
+7. Install the Nano text editor.
+```
+sudo apt-get -y install nano
 ```
 
 ## Step 2 - Configure Settings
-These steps will need to be typed into your node terminal to prepare for remote access. In part two, we will be able to copy/paste all commands.
+These steps will need to be typed into your node terminal to prepare for remote access.
 
 ### 2.1 - Open the SSH config file
 ```
 sudo nano /etc/ssh/sshd_config
 ```
+
 ![2.1-nano-command](./img-p1/2.1.gif)
 
 ### 2.2 - Change SSH Port Number
@@ -140,8 +162,10 @@ sudo systemctl restart sshd
 
 #### 1 - By default deny all traffic
 
-```sh title="type these command (one at a time)"
+```
 sudo ufw default deny incoming
+```
+```
 sudo ufw default allow outgoing
 ```
 Verify the output of the commands
@@ -149,21 +173,21 @@ Verify the output of the commands
 )
 #### 2 - Allow SSH access
 For this command, replace `<ssh-port>` with the number you chose in step 2.2
-```sh title="type this command"
+```
 sudo ufw allow <ssh-port>/tcp
 ```
 Verify the output of the command
 ![2.3.2-output](./img-p1/2.3.2.png)
 
 #### 3 - Enable firewall
-```sh title="type this command"
+```
 sudo ufw enable
 ```
 Verify the output of the command
 ![2.3.3-output](./img-p1/2.3.3.png)
 
 #### 4 - Confirm firewall settings
-```sh title="type this command"
+```
 sudo ufw status
 ```
 Verify the output of the command
@@ -173,7 +197,7 @@ Verify the output of the command
 
 It is important to set up your node to power on automatically after a power outage. The setting is usually found in the BIOS, but some systems use a jumper on the motherboard. Refer to your hardware manual for instructions.
 ### 3.1 - Shut down the node machine
-```sh title="type this command"
+```
 sudo shutdown -h now
 ```
 ### 3.2 - Configure BIOS
@@ -199,16 +223,18 @@ For these step, you will need your node machine and personal computer.
 ### 4.1 - Log in to router
 1. Log in to your node machine
 1. Determine your router's IP address.
-```sh title="type this command"
+```
 ip route show default
 ```
-3. On your personal computer, Open a web browser and enter the router's IP address.
+the IP address displayed after `default via` is the address of your router.
+
+3. On your personal computer, open a web browser and enter the router's IP address.
 
 A username and password prompt will appear. Login to access the router administrative console. If you do not now your credentials, you will need to reset your router. Refer to your router's manual for instructions on accessing the console.
 
 ### 4.2 - Configure Router
 1. Determine the IP address of your node
-```sh title="type this command"
+```
 hostname -I
 ```
 2. Find the setting for reserving IP addresses. “DHCP Settings” or “DHCP Reservation” are common terms. Refer to your router’s manual for specific instructions.

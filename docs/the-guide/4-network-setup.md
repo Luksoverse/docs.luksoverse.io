@@ -1,9 +1,4 @@
 # Part 4 - LUKSO Network Setup
-:::danger ToDo
-- Run through LUKSO steps
-- Write relevant explanations
-- grammerly
-:::
 
 
 ## About 

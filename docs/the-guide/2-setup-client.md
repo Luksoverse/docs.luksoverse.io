@@ -17,7 +17,7 @@ If you installed Ubuntu Desktop and do not plan to control your node from a pers
 
 The next steps will configure Windows Terminal (or PowerShell) to connect to you node device.
 
-#### Step 1 - Open Terminal
+#### Step 1 - Open Terminal (or PowerShell if using Windows 10)
 
 1. Search windows for the Terminal application
 2. Right click
@@ -35,14 +35,14 @@ Add-WindowsCapability -Online -Name OpenSSH.Client~~~~0.0.1.0
 
 
 
-#### Step 3 - Connect to node
+#### Step 3 - Test ability to connect to node
 1. Copy/paste command. Before pressing enter, replace `<node-user>`, `<node-ip>`, and `<ssh-port>` with your information
 ```
 ssh <node-user>@<node-ip> -p <ssh-port>
 ```
 
-2. Execute the above command. 
-3. When Promted with the authenticity warning, type `yes` and press `Enter` 
+2. Press `enter`
+3. When prompted with the authenticity warning, type `yes` and press `Enter` 
 4. Then enter the node's password, press `enter`. You should now see your node's command line.
 5. Disconnect from node machine
 ```sh
@@ -57,8 +57,9 @@ Example of Steps 1 - 3
 #### Step 4 - Generate SSH Keys
 SSH is more secure when using public/private keys instead of a password. In this step we will generate keys and send the public key to the node machine.
 
+You should now be disconnected from your node and back to a Windows command prompt. Copy/paste the following command.
 
-```sh
+```
 ssh-keygen -t rsa -b 4096
 ```
 
@@ -73,6 +74,23 @@ Replace `<node-user>`, `<node-ip>`, and `<ssh-port>` with your information
 cat ~/.ssh/id_rsa.pub | ssh <node-user>@<node-ip> -p <ssh-port> "cat >> ~/.ssh/authorized_keys"
 ```
 
+If asked if you are sure you want to continue, type `yes` and press `enter`
+
+Type your node passwords, then press `enter`
+
+#### Step 6 - Test SSH connection with keys
+You should not be able to connect to your node using public and private keys instead of a password. Test the connection by connecting to you node with the following command. This time you will be asked for the passphrase created in Step 4.
+
+```
+ssh <node-user>@<node-ip> -p <ssh-port>
+```
+
+You should now see the command line of you node machine again. 
+
+Type `exit` to return to the Windows command prompt.
+
+Type `exit` again to close Windows Terminal
+
 Example of Steps 4 - 5
 ![4-5 Example](./img-p2/win04-05.gif)
 
@@ -80,15 +98,24 @@ Example of Steps 4 - 5
 We will create a desktop icon to simplify logging into your node
 
 1. Right-click on the Windows desktop --> new -->  shortcut
-2. In the "Type the location of the item" box, paste the command below. Replace the user-specific information.
-```
+2. In the "Type the location of the item" box, paste the command below. 
+ 
+For Windows Terminal
+```sh title="replace <node-user> <node-ip> <ssh-port> with your information"
 wt ssh <node-user>@<node-ip> -p <ssh-port>
 ```
-3. Choose any name for the shortcut.
+
+For PowerShell
+```sh title="replace <node-user> <node-ip> <ssh-port> with your information"
+powershell ssh <node-user>@<node-ip> -p <ssh-port>
+```
+
+1. Click "next"
+1. Choose any name for the shortcut
+1. Click "finish"
 
 You should now have an icon on your desktop that will automatically opens the SSH connection to your node machine.
 
-4. Test the new icon. Notice how it asks for a passphrase instead of a password. This is the passphrase you chose when creating the SSH keys.
 
 Example of Step 6
 ![6 Example](./img-p2/win06.gif)
