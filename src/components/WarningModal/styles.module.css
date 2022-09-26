@@ -1,0 +1,23 @@
+.warningModalContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  width: 100vw;
+  height: 100vh;
+  background-color: #333;
+}
+
+.warningText {
+  color: #fff;
+  font-size: 2em;
+}
+
+.warningButton {
+  background-color: transparent;
+  color: #fff;
+  border: 1px solid #fff;
+  border-radius: 21px;
+  padding: 5px 10px;
+  font-size: 2em;
+}
