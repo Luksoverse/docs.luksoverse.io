@@ -10,7 +10,7 @@ WireGuard is much faster at making connections than OpenVPN, it can complete a c
 
 The codebase for WireGuard is also drastically smaller then OpenVPN’s. This allows the software to be more secure thanks to the smaller attack surface and bugs being able to be dealt with easier.
 
-None of this would be possible of course without the PiVPN project which you can find at https://pivpn.io. This project is maintained to be a simple and easy solution for getting OpenVPN or WireGuard VPN services running on a Linux based host.
+None of this would be possible of course without the PiVPN project which you can find at [https://pivpn.io](https://pivpn.io). This project is maintained to be a simple and easy solution for getting OpenVPN or WireGuard VPN services running on a Linux based host.
 
 ### **Part 1 - Update your OS**
 
