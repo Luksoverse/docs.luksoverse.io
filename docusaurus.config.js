@@ -10,7 +10,7 @@ const config = {
   tagline: "The community place for docs",
   url: "https://docs.luksoverse.io",
   baseUrl: "/",
-  onBrokenLinks: "throw",
+  onBrokenLinks: "warn",
   onBrokenMarkdownLinks: "warn",
   favicon: "img/lv-logo.jpg",
 
