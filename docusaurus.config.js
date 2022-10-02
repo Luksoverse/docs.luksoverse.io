@@ -10,7 +10,7 @@ const config = {
   tagline: "The community place for docs",
   url: "https://docs.luksoverse.io",
   baseUrl: "/",
-  onBrokenLinks: "warn",
+  onBrokenLinks: "throw",
   onBrokenMarkdownLinks: "warn",
   favicon: "img/lv-logo.jpg",
 
@@ -83,19 +83,19 @@ const config = {
               },
               {
                 label: "Johhny's Node Guide",
-                to: "/docs/Community Guides/2-Johhny EBD Node Guide",
+                to: "/docs/Community Guides/Johhny EBD Node Guide",
               },
               {
                 label: "VPN Guide",
-                to: "/docs/Community Guides/3-vpn",
+                to: "/docs/Community Guides/vpn",
               },
               {
                 label: "SSH Guide",
-                to: "/docs/Community Guides/4-ssh",
+                to: "/docs/Community Guides/ssh",
               },
               {
                 label: "SSH Security",
-                to: "/docs/Community Guides/5-SSH Security",
+                to: "/docs/Community Guides/sshsecurity",
               },
             ],
           },
