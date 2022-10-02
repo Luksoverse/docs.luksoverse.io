@@ -83,7 +83,7 @@ const config = {
               },
               {
                 label: "Johhny's Node Guide",
-                to: "/docs/Community Guides/Johhny's Node Guide",
+                to: "/docs/Community Guides/Johhny EBD Node Guide",
               },
               {
                 label: "VPN Guide",
