@@ -11,7 +11,7 @@ const Cards = () => {
     {
       title: "Johhny's Node Guide",
       description: "Setting up your system and start the LUKSO network.",
-      path: "/docs/Community Guides/Johhny's Node Guide",
+      path: "docs/Community Guides/Johhny EBD Node Guide.md",
     },
     {
       title: "System & Monitoring",

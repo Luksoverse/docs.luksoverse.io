@@ -1,4 +1,4 @@
-# Hardening SSH Security :muscle:
+# SSH Security
 Guide by [Johnny EBD](https://t.me/moonmclaren)
 
 ![](https://i.imgur.com/xMIlKZo.jpg)

@@ -1,4 +1,4 @@
-# **Lukso Validator Node Guide**
+# Johnny's Node Guide
 Guide by [Johnny EBD](https://t.me/moonmclaren)
 
 > **_Disclaimer_**
