@@ -21,7 +21,7 @@ const Cards = () => {
     {
       title: "VPN",
       description: "How to setup a VPN for your node.",
-      path: "/docs/3-Community Guides/vpn",
+      path: "/docs/3-Community Guides/3-vpn",
     },
     {
       title: "SSH",
