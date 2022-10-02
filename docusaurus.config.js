@@ -82,12 +82,20 @@ const config = {
                 to: "/docs/the-guide/start-here",
               },
               {
-                label: "SSH Guide",
-                to: "/docs/Community Guides/ssh",
+                label: "Johhny's Node Guide",
+                to: "/docs/Community Guides/2-Johhny EBD Node Guide",
               },
               {
                 label: "VPN Guide",
-                to: "/docs/Community Guides/vpn",
+                to: "/docs/Community Guides/3-vpn",
+              },
+              {
+                label: "SSH Guide",
+                to: "/docs/Community Guides/4-ssh",
+              },
+              {
+                label: "SSH Security",
+                to: "/docs/Community Guides/5-SSH Security",
               },
             ],
           },
@@ -130,7 +138,7 @@ const config = {
       },
     }),
   customFields: {
-    warningText: "Put your warning here",
+    warningText: "Warning: Our manuals and instructions are guidelines only and should be used at your own risk. A basic understanding of what you’re doing is strongly advised. Luksoverse is not responsible for any harm or loss to your computer or digital assets.",
   },
 };
 
