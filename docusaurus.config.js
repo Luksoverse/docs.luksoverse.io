@@ -83,19 +83,19 @@ const config = {
               },
               {
                 label: "Johhny's Node Guide",
-                to: "/docs/Community Guides/Johhny EBD Node Guide",
+                to: "/docs/Community Guides/2-Johhny EBD Node Guide",
               },
               {
                 label: "VPN Guide",
-                to: "/docs/Community Guides/vpn",
+                to: "/docs/Community Guides/3-vpn",
               },
               {
                 label: "SSH Guide",
-                to: "/docs/Community Guides/ssh",
+                to: "/docs/Community Guides/4-ssh",
               },
               {
                 label: "SSH Security",
-                to: "/docs/Community Guides/SSH Security",
+                to: "/docs/Community Guides/5-SSH Security",
               },
             ],
           },
