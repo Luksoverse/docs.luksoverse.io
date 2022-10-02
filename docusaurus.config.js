@@ -82,12 +82,20 @@ const config = {
                 to: "/docs/the-guide/start-here",
               },
               {
-                label: "SSH Guide",
-                to: "/docs/Community Guides/ssh",
+                label: "Johhny's Node Guide",
+                to: "/docs/Community Guides/Johhny's Node Guide",
               },
               {
                 label: "VPN Guide",
                 to: "/docs/Community Guides/vpn",
+              },
+              {
+                label: "SSH Guide",
+                to: "/docs/Community Guides/ssh",
+              },
+              {
+                label: "SSH Security",
+                to: "/docs/Community Guides/SSH Security",
               },
             ],
           },

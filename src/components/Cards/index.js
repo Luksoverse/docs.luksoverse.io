@@ -9,9 +9,19 @@ const Cards = () => {
       path: "/docs/the-guide/start-here",
     },
     {
+      title: "Johhny's Node Guide",
+      description: "Setting up your system and start the LUKSO network.",
+      path: "/docs/Community Guides/Johhny's Node Guide",
+    },
+    {
       title: "System & Monitoring",
       description: "How to setup your system and Grafana/Prometheus dashboard.",
       path: "/docs/Community Guides/System & monitoring setup",
+    },
+    {
+      title: "VPN",
+      description: "How to setup a VPN for your node.",
+      path: "/docs/Community Guides/vpn",
     },
     {
       title: "SSH",
@@ -19,9 +29,9 @@ const Cards = () => {
       path: "/docs/Community Guides/ssh",
     },
     {
-      title: "VPN",
-      description: "How to setup a VPN for your node.",
-      path: "/docs/Community Guides/vpn",
+      title: "SSH Security",
+      description: "Improve your SSH security.",
+      path: "/docs/Community Guides/SSH Security",
     },
   ];
   return (
