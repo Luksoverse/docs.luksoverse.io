@@ -65,7 +65,7 @@ const config = {
           },
           {
             type: "doc",
-            docId: "Community Guides/ssh",
+            docId: "Community Guides/1Johhny EBD Node Guide",
             position: "left",
             label: "Community Guides",
           },
@@ -83,19 +83,19 @@ const config = {
               },
               {
                 label: "Johhny's Node Guide",
-                to: "/docs/Community Guides/Johhny EBD Node Guide",
+                to: "/docs/Community Guides/1Johhny EBD Node Guide",
               },
               {
                 label: "VPN Guide",
-                to: "/docs/Community Guides/vpn",
+                to: "/docs/Community Guides/3vpn",
               },
               {
                 label: "SSH Guide",
-                to: "/docs/Community Guides/ssh",
+                to: "/docs/Community Guides/4ssh",
               },
               {
                 label: "SSH Security",
-                to: "/docs/Community Guides/sshsecurity",
+                to: "/docs/Community Guides/5sshsecurity",
               },
             ],
           },
