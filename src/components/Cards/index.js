@@ -9,7 +9,7 @@ const Cards = () => {
       path: "/docs/the-guide/start-here",
     },
     {
-      title: "Johhny's Node Guide",
+      title: "Johnny's Node Guide",
       description: "Setting up your system and start the LUKSO network.",
       path: "/docs/Community Guides/1Johhny EBD Node Guide",
     },
