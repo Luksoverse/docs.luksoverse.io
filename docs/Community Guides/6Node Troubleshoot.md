@@ -50,5 +50,18 @@ Change `USERNAME` to your Discord or Telegram username.
 
 Close it with `ctrl+X` and save it.
 
+## Reset Docker
+
+If you have any problems with your Docker processes, you can stop and delete all Docker processes with the following commands.
+
+```
+sudo docker ps -a | awk '{print $1}' | xargs -L1 sudo docker rm
+```
+
+```
+sudo docker images | awk '{print $3}' | xargs -L1 sudo docker rmi
+```
+
+
 
 ## More fixes will be added if necessary.
