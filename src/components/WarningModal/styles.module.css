@@ -5,19 +5,41 @@
   align-items: center;
   width: 100vw;
   height: 100vh;
-  background-color: #333;
+  background-color: rgba(51, 3, 0, 0.8);
+  position: fixed;
+  z-index: 10000;
 }
 
 .warningText {
-  color: #fff;
-  font-size: 2em;
+  color: pink;
+  font-size: 1em;
+  max-width: 840px;
+  margin: 0 50px;
+  border: 1px solid pink;
+  background-color: #333;
+  padding: 20px 40px;
+  border-radius: 20px;
 }
 
 .warningButton {
-  background-color: transparent;
-  color: #fff;
-  border: 1px solid #fff;
+  background-color: #333;
+  color: pink;
+  border: 1px solid pink;
   border-radius: 21px;
   padding: 5px 10px;
-  font-size: 2em;
+  font-size: 1em;
+}
+
+.warningButton:hover {
+  background-color: transparent;
+  box-shadow: 0 0 23px pink;
+}
+
+@media (min-width: 600px) {
+  .warningText {
+    font-size: 2em;
+  }
+  .warningButton {
+    font-size: 2em;
+  }
 }

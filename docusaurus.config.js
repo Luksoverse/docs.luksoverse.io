@@ -138,7 +138,8 @@ const config = {
       },
     }),
   customFields: {
-    warningText: "Warning: Our manuals and instructions are guidelines only and should be used at your own risk. A basic understanding of what you’re doing is strongly advised. Luksoverse is not responsible for any harm or loss to your computer or digital assets.",
+    warningText:
+      "Warning: Our manuals and instructions are guidelines only and should be used at your own risk. A basic understanding of what you’re doing is strongly advised. Luksoverse is not responsible for any harm or loss to your computer or digital assets.",
   },
 };
 
