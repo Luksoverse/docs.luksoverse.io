@@ -3,7 +3,7 @@ import WarningModal from "../components/WarningModal";
 import useDocusaurusContext from "@docusaurus/useDocusaurusContext";
 
 export default function Root({ children }) {
-  const [hasReadWarning, setHasReadWarning] = useState(false);
+  const [hasReadWarning, setHasReadWarning] = useState(true);
 
   useEffect(() => {
     const checkRead = localStorage.getItem("siteWarning");
