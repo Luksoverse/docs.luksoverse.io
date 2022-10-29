@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
 import clsx from "clsx";
 import Link from "@docusaurus/Link";
 import useDocusaurusContext from "@docusaurus/useDocusaurusContext";
@@ -6,7 +6,6 @@ import Layout from "@theme/Layout";
 import HomepageFeatures from "@site/src/components/HomepageFeatures";
 import styles from "./index.module.css";
 import Cards from "../components/Cards";
-import WarningModal from "../components/WarningModal";
 
 function HomepageHeader() {
   const { siteConfig } = useDocusaurusContext();
@@ -30,41 +29,22 @@ function HomepageHeader() {
 }
 
 export default function Home() {
-  const [hasReadWarning, setHasReadWarning] = useState(false);
-
-  useEffect(() => {
-    const checkRead = localStorage.getItem("siteWarning");
-    setHasReadWarning(JSON.parse(checkRead));
-  }, [hasReadWarning]);
-
-  const hideWarning = () => {
-    localStorage.setItem("siteWarning", "true");
-    setHasReadWarning(true);
-  };
-
   const { siteConfig } = useDocusaurusContext();
 
   return (
     <>
-      {!hasReadWarning && siteConfig.customFields.warningText ? (
-        <WarningModal
-          warningText={siteConfig.customFields?.warningText}
-          hideWarning={hideWarning}
-        />
-      ) : (
-        <Layout
-          title={`${siteConfig.title}`}
-          description="The LUKSO Community place for docs."
-        >
-          <HomepageHeader />
-          <main className={styles.container}>
-            <section className={styles.cardContainer}>
-              <Cards />
-            </section>
-            <HomepageFeatures />
-          </main>
-        </Layout>
-      )}
+      <Layout
+        title={`${siteConfig.title}`}
+        description="The LUKSO Community place for docs."
+      >
+        <HomepageHeader />
+        <main className={styles.container}>
+          <section className={styles.cardContainer}>
+            <Cards />
+          </section>
+          <HomepageFeatures />
+        </main>
+      </Layout>
     </>
   );
 }

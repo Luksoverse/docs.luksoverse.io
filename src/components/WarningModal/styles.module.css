@@ -5,19 +5,41 @@
   align-items: center;
   width: 100vw;
   height: 100vh;
-  background-color: #333;
+  background-color: #000000cc;
+  position: fixed;
+  z-index: 10000;
 }
 
 .warningText {
-  color: #fff;
-  font-size: 2em;
+  color: #9c00b1;
+  font-size: 1em;
+  max-width: 840px;
+  margin: 0 50px;
+  border: 1px #535353;
+  background-color: #333;
+  padding: 20px 40px;
+  border-radius: 20px;
 }
 
 .warningButton {
-  background-color: transparent;
-  color: #fff;
-  border: 1px solid #fff;
+  background-color: #333;
+  color: #9c00b1;
+  border: 3px solid #484747;
   border-radius: 21px;
   padding: 5px 10px;
-  font-size: 2em;
+  font-size: 1em;
+}
+
+.warningButton:hover {
+  background-color: transparent;
+  box-shadow: 0 0 10px white;
+}
+
+@media (min-width: 600px) {
+  .warningText {
+    font-size: 2em;
+  }
+  .warningButton {
+    font-size: 2em;
+  }
 }
