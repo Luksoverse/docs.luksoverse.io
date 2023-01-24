@@ -82,6 +82,10 @@ const config = {
                 to: "/docs/the-guide/start-here",
               },
               {
+                label: "Mainnet info",
+                to: "/docs/mainnet/mainnet-info.md",
+              },
+              {
                 label: "Johhny's Node Guide",
                 to: "/docs/Community Guides/1Johhny EBD Node Guide",
               },
