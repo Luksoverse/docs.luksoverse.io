@@ -31,7 +31,6 @@ Mini PCs are designed for 24/7 use and low power consumption, making them ideal 
 | RAM       | 16GB     | 32GB
 | Storage   | 512GB |1TB
 | Price     | $629     |$949
-| Link      | [Amazon](https://a.co/d/1UdrolU)     |[Amazon](https://a.co/d/iE7niEu)
 
 A backup system (or parts) is also something to consider. If your node is offline, you will incur slashing penalties roughly equal to the rewards you would have gained while being online. For example, if you average 1 LYX per day in rewards, you will lose 1 LYX per day if offline.
 
