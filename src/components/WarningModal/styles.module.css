@@ -1,8 +1,9 @@
 .warningModalContainer {
   display: flex;
   flex-direction: column;
-  justify-content: space-around;
+  justify-content: center;
   align-items: center;
+  gap: 15px;
   width: 100vw;
   height: 100vh;
   background-color: #000000cc;
@@ -11,7 +12,7 @@
 }
 
 .warningText {
-  color: #9c00b1;
+  color: #fee6e7;
   font-size: 1em;
   max-width: 1028px;
   margin: 0 50px;
@@ -19,11 +20,12 @@
   background-color: #333;
   padding: 20px 40px;
   border-radius: 20px;
+  text-align: justify;
 }
 
 .warningButton {
   background-color: #333;
-  color: #9c00b1;
+  color: #fee6e7;
   border: 3px solid #484747;
   border-radius: 21px;
   padding: 5px 10px;
@@ -32,7 +34,7 @@
 
 .warningButton:hover {
   background-color: transparent;
-  box-shadow: 0 0 10px white;
+  box-shadow: 0 0 10px #fee6e7;
 }
 
 @media (min-width: 600px) {

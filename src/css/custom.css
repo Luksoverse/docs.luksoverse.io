@@ -43,7 +43,14 @@
 }
 
 .buttons_src-pages-index-module {
-  display: flex;
-  flex-direction: column;
-  gap: 20px;
+  flex-direction: column !important;
+  gap: 20px !important;
 }
+
+/* @media screen and (max-width: 996px) {
+  .buttons_src-pages-index-module {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+} */
