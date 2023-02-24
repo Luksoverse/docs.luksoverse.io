@@ -43,14 +43,12 @@
 }
 
 .buttons_src-pages-index-module {
-  flex-direction: column !important;
-  gap: 20px !important;
+  flex-direction: column;
+  gap: 20px;
 }
 
-/* @media screen and (max-width: 996px) {
-  .buttons_src-pages-index-module {
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
-  }
-} */
+.buttons_AeoN {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
