@@ -49,9 +49,9 @@ const config = {
   themeConfig:
     /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
     ({
+      image: 'img/lv-logo.jpg',
       navbar: {
         title: 'The Luksoverse - docs',
-        image: 'img/lv-logo.jpg',
         logo: {
           alt: 'My Site Logo',
           src: 'img/black-logo.png',
