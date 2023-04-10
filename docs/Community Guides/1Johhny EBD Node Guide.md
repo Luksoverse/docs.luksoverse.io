@@ -1,8 +1,9 @@
 # Johnny's Node Guide
+
 Guide by [Johnny EBD](https://t.me/moonmclaren)
 
 > **_Disclaimer_**
-This article (the guide) is for informational purposes only and does not constitute professional advice. The author does not guarantee accuracy of the information in this article and the author is not responsible for any damages or losses incurred by following this article. A full disclaimer can be found at the bottom of this page — please read it before continuing.
+> This article (the guide) is for informational purposes only and does not constitute professional advice. The author does not guarantee accuracy of the information in this article and the author is not responsible for any damages or losses incurred by following this article. A full disclaimer can be found at the bottom of this page — please read it before continuing.
 
 This is a guide to setup a Lukso validator node in a home environment. It suggests the use of a dedicated machine to run a node with validation, separate from a personal client for remote access.
 
@@ -26,6 +27,7 @@ This is a guide to setup a Lukso validator node in a home environment. It sugges
 I had to manually change the BIOS settings to ensure that, if power gets reset, NUC always auto starts. A simple test is to unplug and plug power cord right back in.
 
 For NUC I followed the following steps:
+
 1. Press F2 during boot to enter BIOS setup
 2. Go to `Power` -> `Secondary Power Settings` menu
 3. Set the option for `After Power Failure` to `Power On`
@@ -55,7 +57,7 @@ sudo dpkg-reconfigure -plow unattended-upgrades
 ```
 
 ### Disable Root Access
-    
+
 Root access should not be used. Instead a user should be using `sudo` to perform privileged operations on a system.
 
 ```shell=
@@ -134,6 +136,7 @@ sudo nano /etc/NetworkManager/conf.d/default-wifi-powersave-on.conf
 ```
 
 Config:
+
 ```
 [connection]
 wifi.powersave = 2
@@ -214,7 +217,7 @@ Content of the configuration file should have:
 global:
   scrape_interval: 15s
   evaluation_interval: 15s
-  
+
 scrape_configs:
   - job_name: 'prometheus'
     scrape_interval: 5s
@@ -331,6 +334,7 @@ sudo systemctl daemon-reload
 sudo systemctl start prometheus
 sudo systemctl enable prometheus
 ```
+
 #### **Prometheus update script**
 
 In order to easily update Prometheus you can run this [script](https://github.com/remyroy/ethstaker/blob/main/scripts/update-prometheus.py), courtesy of remyroy, for which you need to have one of python's latest version and you can check that with:
@@ -546,7 +550,7 @@ The script will check the current installed version and it will compare it with 
 
 ### Json Exporter
 
-#### **Prerequisites** 
+#### **Prerequisites**
 
 Check `go` version if installed:
 
@@ -736,7 +740,8 @@ sudo systemctl enable blackbox_exporter
 Luksoverse wishes prosperous validation to everyone in hopes that this guide was complete and easy enough to follow. Any suggestions you might have please don't hesitate to reach out to any of us.
 
 > **_Full Disclaimer_**
-This article (the guide) is for informational purposes only and does not constitute professional advice. The author does not warrant or guarantee the accuracy, integrity, quality, completeness, currency, or validity of any information in this article. All information herein is provided “as is” without warranty of any kind and is subject to change at any time without notice. The author disclaims all express, implied, and statutory warranties of any kind, including warranties as to accuracy, timeliness, completeness, or fitness of the information in this article for any particular purpose. The author is not responsible for any direct, indirect, incidental, consequential or any other damages arising out of or in connection with the use of this article or in reliance on the information available on this article. This includes any personal injury, business interruption, loss of use, lost data, lost profits, or any other pecuniary loss, whether in an action of contract, negligence, or other misuse, even if the author has been informed of the possibility.
+> This article (the guide) is for informational purposes only and does not constitute professional advice. The author does not warrant or guarantee the accuracy, integrity, quality, completeness, currency, or validity of any information in this article. All information herein is provided “as is” without warranty of any kind and is subject to change at any time without notice. The author disclaims all express, implied, and statutory warranties of any kind, including warranties as to accuracy, timeliness, completeness, or fitness of the information in this article for any particular purpose. The author is not responsible for any direct, indirect, incidental, consequential or any other damages arising out of or in connection with the use of this article or in reliance on the information available on this article. This includes any personal injury, business interruption, loss of use, lost data, lost profits, or any other pecuniary loss, whether in an action of contract, negligence, or other misuse, even if the author has been informed of the possibility.
+
 ## Credits
 
 - https://github.com/metanull-operator/eth2-ubuntu

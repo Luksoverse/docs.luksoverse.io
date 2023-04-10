@@ -1,4 +1,5 @@
 # WireGuard tunnel via PiVPN
+
 Guide by [Johnny EBD](https://t.me/moonmclaren)
 ![](https://i.imgur.com/w4MEqOr.png)
 
@@ -16,7 +17,7 @@ None of this would be possible of course without the PiVPN project which you can
 
 First things first, let’s get everything updated. Run this command:
 
-**```sudo apt update && sudo apt upgrade -y```**
+**`sudo apt update && sudo apt upgrade -y`**
 
 This will take a few minutes to complete.
 
@@ -24,17 +25,17 @@ This will take a few minutes to complete.
 
 Run the following command:
 
-**```curl -L https://install.pivpn.io | bash```**
+**`curl -L https://install.pivpn.io | bash`**
 
 ![](https://i.imgur.com/htMUznt.png)
 
-This will start the PiVPN installation wizard (you will get an ***OS not tested yet*** prompt, just ignore it).
+This will start the PiVPN installation wizard (you will get an **_OS not tested yet_** prompt, just ignore it).
 
 First step is to set a static IP on your PiVPN server. Click **OK**.
 
 ![](https://i.imgur.com/9O19kDb.png)
 
-Setting a static IP address basically means that we want PiVPN to run on an IP address that will never change.  This is because we will be setting up a firewall rule that allows traffic to flow through to the PiVPN.
+Setting a static IP address basically means that we want PiVPN to run on an IP address that will never change. This is because we will be setting up a firewall rule that allows traffic to flow through to the PiVPN.
 
 You can achieve an IP address that never changes by manually setting an IP address that is outside of your DHCP lease pool range, or by telling DHCP that the IP address assigned to your PiVPN server should never change (this is called a DHCP reservation).
 
@@ -135,7 +136,7 @@ Now that we have successfully installed the WireGuard software to our Host, we c
 
 To be able to create this profile, we will be making use of the PiVPN script again by running the following command:
 
-**```sudo pivpn add```**
+**`sudo pivpn add`**
 
 All you need to do is type in a name for the profile that you are creating. We chose our Host's name just to keep it simple and easy to understand.
 
@@ -155,7 +156,7 @@ Luckily for us, the PiVPN software comes with a QR code generator that we can us
 
 To generate a QR code for your profile, you will need to start by running the following command:
 
-**```pivpn -qr PROFILENAME```**
+**`pivpn -qr PROFILENAME`**
 
 Make sure you replace **PROFILENAME** with the name you set in the previous section. In our case, this will be **Host**.
 
@@ -175,27 +176,27 @@ It is recommended to use Termius as it can store the SSH generated keys safely a
 
 Last few steps will be to run the debugging wizard, which will fix any settings issues, with:
 
-**```pivpn -d```**
+**`pivpn -d`**
 
 You can also check your UFW and WireGuard status with:
 
-**```sudo systemctl status wg-quick@wg0.service```**
+**`sudo systemctl status wg-quick@wg0.service`**
 
-**```sudo ufw status verbose```**
+**`sudo ufw status verbose`**
 
-... just to make sure everything is working properly. 
+... just to make sure everything is working properly.
 
 **If so you should delete/disable your router's IPv4 SSH open/forwarding rule as you no longer need it and leaving it open just exposes your system to a security risk.**
 
-Well… Not quite done yet. Because you wouldn’t want to skip backups right?  **RIGHT?!?** Run this command:
+Well… Not quite done yet. Because you wouldn’t want to skip backups right? **RIGHT?!?** Run this command:
 
-**```pivpn -bk```**
+**`pivpn -bk`**
 
-This will create a backup TGZ file that contains your PiVPN configs and user profiles. The backup file is created in **/home/Host/pivpnbackup**. 
+This will create a backup TGZ file that contains your PiVPN configs and user profiles. The backup file is created in **/home/Host/pivpnbackup**.
 Download that file with WinSCP and save it in a secure location – you’ll also want to be sure to make a new backup anytime you make significant changes to your PiVPN configuration.
 
 If for some reason you need to revert this whole process, the PiVPN script has got you covered once more with the following uninstall command:
 
-**```pivpn -u```**
+**`pivpn -u`**
 
 That's it, hope you enjoyed yet another Luksoverse tutorial.

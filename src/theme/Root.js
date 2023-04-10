@@ -1,17 +1,17 @@
-import React, { useEffect, useState } from "react";
-import WarningModal from "../components/WarningModal";
-import useDocusaurusContext from "@docusaurus/useDocusaurusContext";
+import React, { useEffect, useState } from 'react';
+import WarningModal from '../components/WarningModal';
+import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
 
 export default function Root({ children }) {
   const [hasReadWarning, setHasReadWarning] = useState(true);
 
   useEffect(() => {
-    const checkRead = localStorage.getItem("siteWarning");
+    const checkRead = localStorage.getItem('siteWarning');
     setHasReadWarning(JSON.parse(checkRead));
   }, [hasReadWarning]);
 
   const hideWarning = () => {
-    localStorage.setItem("siteWarning", "true");
+    localStorage.setItem('siteWarning', 'true');
     setHasReadWarning(true);
   };
 

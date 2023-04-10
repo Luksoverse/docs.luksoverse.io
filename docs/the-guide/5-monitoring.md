@@ -3,7 +3,7 @@ import TabItem from '@theme/TabItem';
 
 # Part 5 - Monitoring
 
-This guide will show you step by step how to do monitoring on your machine by giving you the instructions to install and configure all the tools needed. 
+This guide will show you step by step how to do monitoring on your machine by giving you the instructions to install and configure all the tools needed.
 
 ## Why would you want to do monitoring?
 
@@ -31,7 +31,6 @@ Connect to your node machine and proceed to the next step.
 
 ## Step 1 - Node Exporter
 
-
 ### 1.1 - Add a user
 
 ```
@@ -43,27 +42,32 @@ sudo adduser --system node_exporter --group --no-create-home
 #### Download Node Exporter
 
 Check https://prometheus.io/download/#node_exporter to make sure 1.3.1 is the latest stable. As of this writing, 1.4.0 was still in pre-release.
+
 ```
 wget https://github.com/prometheus/node_exporter/releases/download/v1.3.1/node_exporter-1.3.1.linux-amd64.tar.gz
 ```
 
 #### Extract the archive
+
 ```
 tar xzvf node_exporter-1.3.1.linux-amd64.tar.gz
 ```
 
 #### Copy the binary to the following location and set ownership
+
 ```
 sudo cp node_exporter-1.3.1.linux-amd64/node_exporter /usr/local/bin/
 sudo chown node_exporter:node_exporter /usr/local/bin/node_exporter
 ```
 
 #### Clean up
+
 ```rm node_exporter-1.3.1.linux-amd64.tar.gz
 rm -rf node_exporter-1.3.1.linux-amd64
 ```
 
 ### 1.3 - Configure the system service
+
 #### Create a node explorer configuration file.
 
 ```
@@ -88,16 +92,19 @@ WantedBy=multi-user.target
 ```
 
 #### Save and quit
+
 `ctrl+x`, `y`, `enter`
 
 ### 1.4 - Enable the service
 
 #### Refresh systemd to reflect the changes
+
 ```
 sudo systemctl daemon-reload
 ```
 
 #### Start and check the status of the service
+
 ```
 sudo systemctl start node_exporter
 sudo systemctl is-active node_exporter
@@ -106,13 +113,14 @@ sudo systemctl is-active node_exporter
 The output should be `active`.
 
 #### Set Node Exporter to start on boot
+
 ```
 sudo systemctl enable node_exporter
 ```
 
 ## Step 2 - Json Exporter
 
-### 2.1 -  Prerequisites 
+### 2.1 - Prerequisites
 
 #### Install Go:
 
@@ -124,11 +132,12 @@ sudo mv go /usr/local/go-1.17.7
 sudo ln -sf /usr/local/go-1.17.7/bin/go /usr/bin/go
 go version
 ```
+
 #### Install Make:
+
 ```
 sudo apt install make
 ```
-
 
 ### 2.2 - Add user
 
@@ -152,6 +161,7 @@ rm -rf json_exporter
 ### 2.4 - Configure
 
 #### Create directory and set ownership
+
 ```
 sudo mkdir /etc/json_exporter
 sudo chown json_exporter:json_exporter /etc/json_exporter
@@ -222,6 +232,7 @@ sudo systemctl enable json_exporter
 Blackbox exporter pings google and cloudflare to track latency.
 
 ### 3.1 - Add a user for the service
+
 ```shell=
 sudo adduser --system blackbox_exporter --group --no-create-home
 ```
@@ -248,12 +259,14 @@ sudo setcap cap_net_raw+ep /usr/local/bin/blackbox_exporter
 ### 3.4 - Configure the exporter
 
 #### Create directory and assign ownership
+
 ```
 sudo mkdir /etc/blackbox_exporter
 sudo chown blackbox_exporter:blackbox_exporter /etc/blackbox_exporter
 ```
 
 #### Open configuration file
+
 ```
 sudo nano /etc/blackbox_exporter/blackbox.yml
 ```
@@ -331,7 +344,6 @@ Confirm the current **LTS** version for `linux-amd64` [here](https://prometheus.
 **Only use the LTS version**
 
 If a newer version exists, replace all occurrences of `2.37.1` with the new version number in the code box below.
-
 
 ```
 cd
@@ -442,14 +454,15 @@ sudo chmod 755 /var/lib/prometheus
 ```
 
 ### 4.4 - Open port to access metrics.
-Opening this port allows access to prometheus metrics in the web browser of you personal computer while connected to the local network. Opening a port in this way poses a slight security risk. For an alternative see **coming soon**
 
+Opening this port allows access to prometheus metrics in the web browser of you personal computer while connected to the local network. Opening a port in this way poses a slight security risk. For an alternative see **coming soon**
 
 #### Open the port
 
 ```shell=
 sudo ufw allow 9090/tcp
 ```
+
 ### 4.5 - Configure services
 
 #### Open the configuration file
@@ -495,8 +508,6 @@ sudo systemctl start prometheus
 sudo systemctl enable prometheus
 ```
 
-
-
 ## Step 5 - Grafana
 
 ### 5.1 - Install
@@ -516,6 +527,7 @@ sudo apt-get install grafana-enterprise
 ### 5.2 - Configure Service
 
 #### Open the configuration file
+
 ```shell=
 sudo nano /lib/systemd/system/grafana-server.service
 ```
@@ -529,8 +541,6 @@ Press `crtl` + `6` to set a mark
 Press `alt` + `shift` + `t` to clear
 
 #### Copy/paste the contents below to the empty configuration file.
-
-
 
 ```
 [Unit]
@@ -603,6 +613,7 @@ sudo systemctl enable grafana-server
 ```
 
 ### 5.4 - Open port to access metrics.
+
 Opening this port allows access to grafana's dashboard in the web browser of you personal computer while connected to the local network.
 
 ```shell=
@@ -613,12 +624,12 @@ sudo ufw allow 3000/tcp
 
 Login to grafana by opening a web browser `http://<node-ip>:3000`. Replace `<node-ip>` with IP of your node machine. This is same IP used to ssh.
 
-
 ```shell= title="Default credentials"
 username: admin
 password: admin
 ```
- Set a new secure (long) password when prompted by grafana.
+
+Set a new secure (long) password when prompted by grafana.
 
 #### Data Source
 
@@ -688,16 +699,16 @@ https://api.telegram.org/bot<YOUR BOT API TOKEN>/getUpdates
 
 12. Look for text that says `{"id"}:` then copy/paster the number that follows to your text editor.
 
- ![](./img-p5/5.6-12.gif)
- 
+![](./img-p5/5.6-12.gif)
+
 13. Return to Grafana
 14. On the left-hand menu, click the alarm icon
 15. Click the `Notification channels` tab at the top
 16. Click on `Add channel`
- ![](./img-p5/5.6-16.png)
+    ![](./img-p5/5.6-16.png)
 
 17. Fill in the following information
- 
+
 **Name:** it can be anything
 
 **Type:** Telegram
@@ -714,7 +725,7 @@ https://api.telegram.org/bot<YOUR BOT API TOKEN>/getUpdates
 
 19. Click `Save`
 20. Return to the LUKSO dashboard by clicking the Grafana icon and then Lukso under the dashboard section.
- 
+
 ![](./img-p5/5.6-20.png)
 
 21. Scroll down on a dashboard to `Alerts` section
@@ -722,14 +733,13 @@ https://api.telegram.org/bot<YOUR BOT API TOKEN>/getUpdates
 23. In `Alert` tab, select notifications `send to` and choose the name you chose in step 17
 24. Click the back arrow on the top left of the Grafana screen
 25. Repeat for **each alert**
- 
+
 ![](./img-p5/5.6-24.gif)
 
- 
-
 ---
-* [Vlad's Guide](https://github.com/lykhonis/lukso-node-guide#prometheus)
-* [CoinCashew](https://www.coincashew.com/coins/overview-eth/guide-or-how-to-setup-a-validator-on-eth2-mainnet/part-i-installation/monitoring-your-validator-with-grafana-and-prometheus?q=grafana)
-* [Ethereum.org](https://ethereum.org/en/developers/tutorials/monitoring-geth-with-influxdb-and-grafana/)
-* [Prysm Docs](https://docs.prylabs.network/docs/prysm-usage/monitoring/grafana-dashboard)
-* [Ethstaker](https://github.com/remyroy/ethstaker/blob/main/monitoring.md)
+
+- [Vlad's Guide](https://github.com/lykhonis/lukso-node-guide#prometheus)
+- [CoinCashew](https://www.coincashew.com/coins/overview-eth/guide-or-how-to-setup-a-validator-on-eth2-mainnet/part-i-installation/monitoring-your-validator-with-grafana-and-prometheus?q=grafana)
+- [Ethereum.org](https://ethereum.org/en/developers/tutorials/monitoring-geth-with-influxdb-and-grafana/)
+- [Prysm Docs](https://docs.prylabs.network/docs/prysm-usage/monitoring/grafana-dashboard)
+- [Ethstaker](https://github.com/remyroy/ethstaker/blob/main/monitoring.md)

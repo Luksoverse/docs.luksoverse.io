@@ -1,10 +1,11 @@
 # SSH Security
+
 Guide by [Johnny EBD](https://t.me/moonmclaren)
 
 ![](https://i.imgur.com/xMIlKZo.jpg)
 
 > **_Disclaimer_**
-This article is for informational purposes only and does not constitute professional advice. The author does not guarantee accuracy of the information in this article and the author is not responsible for any damages or losses incurred by following this article.
+> This article is for informational purposes only and does not constitute professional advice. The author does not guarantee accuracy of the information in this article and the author is not responsible for any damages or losses incurred by following this article.
 
 This tutorial will show you how to set up an SSH two-factor authentication on your Ubuntu server using the well-known Google Authenticator, so you can continue to use your password and keys without worrying if they've been compromised or not.
 
@@ -18,7 +19,7 @@ Two-factor authentication (2FA) requires two pieces of information in order to l
 
 ### Install and Configure Google Authenticator
 
-> **_NOTE:_** The open-source server software used in this guide is called libpam-google-authenticator, which is installed from the default Ubuntu repository.  Google the company isn't involved in the authentication process in any way, shape or form. Both the server software and the mobile app don’t need network access.
+> **_NOTE:_** The open-source server software used in this guide is called libpam-google-authenticator, which is installed from the default Ubuntu repository. Google the company isn't involved in the authentication process in any way, shape or form. Both the server software and the mobile app don’t need network access.
 
 Log into your Ubuntu server and run the following command to install Google Authenticator from the default Ubuntu package repository:
 
@@ -36,10 +37,10 @@ When asked `Do you want authentication tokens to be time-based?` Answer `y`.
 
 Then you will see a QR code that you can scan using a TOTP app on your phone. There are a few recommended apps:
 
-* **Google Authenticator** is the most well-known TOTP mobile app. You can install it via Google Play or Apple app store on your mobile phone. Please note that it isn’t open-source.
-* If you don’t trust Google, you can either use **Authy**, a popular choice, or **FreeOTP**, an open-source TOTP mobile app developed by Red Hat.
+- **Google Authenticator** is the most well-known TOTP mobile app. You can install it via Google Play or Apple app store on your mobile phone. Please note that it isn’t open-source.
+- If you don’t trust Google, you can either use **Authy**, a popular choice, or **FreeOTP**, an open-source TOTP mobile app developed by Red Hat.
 
-Scan the QR code with your TOTP app on your mobile phone.  Note that you need to enlarge the terminal window to scan the full QR code.
+Scan the QR code with your TOTP app on your mobile phone. Note that you need to enlarge the terminal window to scan the full QR code.
 
 ![](https://i.imgur.com/AeUWvCV.png)
 
@@ -123,15 +124,17 @@ Save and close the file. Then restart SSH daemon for the change to take effect.
 ```shell=
 sudo systemctl restart ssh
 ```
+
 From now on you need to use SSH keys and Google Authenticator verification code to login.
 
- > **_KEY ASPECTS TO NOTE:_**
- > * Emergency Scratch Codes are your backup codes. If you lose your phone, you can enter one of five emergency scratch codes instead of a one-time password to complete the two-step verification. These codes are for one-time use only.
- > * If you want to change the secret key, simply log into your server and run google-authenticator command again to update the ~/.google_authenticator file.
- > * Since the one-time password is computed using the shared secret key and the current time, it’s a good idea to check if the time synchronization on your Ubuntu server is active with ```timedatectl``` (if not please run ```sudo systemctl start systemd-timesyncd.service```), although previously we have allowed a time skew of 4 minutes between the Ubuntu server and the mobile app.
- >  * Your Ubuntu server and the TOTP mobile app can use different time zones.
+> **_KEY ASPECTS TO NOTE:_**
+>
+> - Emergency Scratch Codes are your backup codes. If you lose your phone, you can enter one of five emergency scratch codes instead of a one-time password to complete the two-step verification. These codes are for one-time use only.
+> - If you want to change the secret key, simply log into your server and run google-authenticator command again to update the ~/.google_authenticator file.
+> - Since the one-time password is computed using the shared secret key and the current time, it’s a good idea to check if the time synchronization on your Ubuntu server is active with `timedatectl` (if not please run `sudo systemctl start systemd-timesyncd.service`), although previously we have allowed a time skew of 4 minutes between the Ubuntu server and the mobile app.
+> - Your Ubuntu server and the TOTP mobile app can use different time zones.
 
-## Block Unauthorised Access :shield: 
+## Block Unauthorised Access :shield:
 
 ![](https://i.imgur.com/hdprr44.jpg)
 
