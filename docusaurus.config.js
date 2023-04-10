@@ -51,6 +51,7 @@ const config = {
     ({
       navbar: {
         title: 'The Luksoverse - docs',
+        image: 'img/lv-logo.jpg',
         logo: {
           alt: 'My Site Logo',
           src: 'img/black-logo.png',
