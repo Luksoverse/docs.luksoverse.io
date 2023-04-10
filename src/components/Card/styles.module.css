@@ -10,10 +10,10 @@
   color: var(--ifm-color-primary-dark);
   border: 1px solid #373737;
   border-radius: 20px;
-  transition: all .4s ease-out .2s;
+  transition: all 0.4s ease-out 0.2s;
 }
 
 .card:hover {
-  box-shadow: 0 6px 16px 0 rgba(0,0,0,0.1);
+  box-shadow: 0 6px 16px 0 rgba(0, 0, 0, 0.1);
   transform: scale(1.05);
 }

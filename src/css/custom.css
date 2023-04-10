@@ -31,7 +31,7 @@
   --ifm-menu-color-active: #fff;
 }
 
-.text--center{
+.text--center {
   display: flex;
   flex-direction: column;
   justify-content: center;

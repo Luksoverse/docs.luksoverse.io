@@ -1,7 +1,6 @@
 # Part 4 - LUKSO Network Setup
 
-
-## About 
+## About
 
 LUKSO uses the same software and architecture of Ethereum and will launch completely transitioned to proof-of-stake. It will resemble a post-merge Ethereum, commonly referred to as Ethereum 2.0 but no longer technically correct as the Ethereum foundation has moved away from that term.
 
@@ -18,12 +17,11 @@ A validator consists of a LUKSO node and a third piece of client software respon
 Please review all the information in the [Network](https://docs.lukso.tech/networks/l16-testnet/) section of LUKSO's website.
 
 ## Step 1 - Run a node
+
 #### [Follow LUKSO's official documentation for this step.](https://docs.lukso.tech/networks/l16-testnet/run-node)
 
 ## Step 2 - Become a validator
 
 #### [Follow LUKSO's official documentation for the next steps.](https://docs.lukso.tech/networks/l16-testnet/become-validator)
 
-
 #### After your node is up and running begin Part 4: Monitoring.
-

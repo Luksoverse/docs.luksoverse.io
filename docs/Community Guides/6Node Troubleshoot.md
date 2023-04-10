@@ -1,4 +1,5 @@
 # LUKSO node troubleshoot
+
 Guide by [JordyDutch](https://github.com/JordyDutch)
 
 ## Permission denied
@@ -28,10 +29,13 @@ This will delete all node "history" data and un-important info. All your importa
 :::
 
 Clear your node data
+
 ```
 sudo lukso network clear
 ```
+
 Update and restart your node and validators
+
 ```
 sudo lukso network refresh
 ```
@@ -61,7 +65,5 @@ sudo docker ps -a | awk '{print $1}' | xargs -L1 sudo docker rm
 ```
 sudo docker images | awk '{print $3}' | xargs -L1 sudo docker rmi
 ```
-
-
 
 ## More fixes will be added if necessary.

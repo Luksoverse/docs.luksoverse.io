@@ -1,4 +1,5 @@
 # System & Monitoring setup
+
 Guide by [Volodymyr Lykhonis](https://github.com/lykhonis)
 
 This is a guide to setup a Lukso validator node in home environment. The guide suggests a use of a dedicated machine to run a node with validators, separate from a personal working machine.
@@ -66,6 +67,7 @@ I've spent around $850. Current price seem to be less around $700. I connected m
 I had to manually change BIOS settings of NUC to ensure if power gets reset, NUC auto starts. A simple test is unplug and plug power cord back in.
 
 For NUC I followed following steps:
+
 1. Press F2 during boot to enter BIOS setup
 2. Go to `Power` -> `Secondary Power Settings` menu
 3. Set the option for `After Power Failure` to `Power One`
@@ -104,6 +106,7 @@ sudo vim /etc/ssh/sshd_config
 ```
 
 Change and enable a port by uncommenting (removing `#`) and changing `22` to new chosen port number:
+
 ```shell=
 Port 50000
 ```
@@ -112,7 +115,7 @@ Save and close editor by pressing `SHIFT` + `:`, then type `wq`, and hit enter.
 
 #### Configure Firewall
 
-Enable ssh in firewall by replacing *replace-port* with new port:
+Enable ssh in firewall by replacing _replace-port_ with new port:
 
 ```shell=
 sudo ufw allow replace-port
@@ -133,7 +136,7 @@ In order to locate a node machine in local network, it requires IP. Execute foll
 ifconfig
 ```
 
-Locate IP  address (`inet`) in `eno1` section, e.g. `192.168.86.29`.
+Locate IP address (`inet`) in `eno1` section, e.g. `192.168.86.29`.
 
 ```
 eno1: flags=4163<UP,BROADCAST,RUNNING,MULTICAST>  mtu 1500
@@ -147,10 +150,10 @@ Close ssh session by executing `exit`.
 Verify basic access to a node machine by using ssh. SSH requires user name of a node machine, its hostname and previously chosen ssh port.
 
 ```shell=
-vim ~/.ssh/config 
+vim ~/.ssh/config
 ```
 
-Type in the following and replace *replace-user*, *replace-ip*, and *replace-port*:
+Type in the following and replace _replace-user_, _replace-ip_, and _replace-port_:
 
 ```shell=
 Host lukso
@@ -218,13 +221,13 @@ Close ssh session by executing `exit`.
 ```shell=
 ssh lukso
 ```
-    
+
 Stay connected to a remote node machine to perform next steps.
 
 ### Keep System Up to Date
-    
+
 Update a system manually:
-    
+
 ```shell=
 sudo apt-get update -y
 sudo apt dist-upgrade -y
@@ -240,7 +243,7 @@ sudo dpkg-reconfigure -plow unattended-upgrades
 ```
 
 ### Disable Root Access
-    
+
 A root access should not be used. Instead, a user should be using `sudo` to perform privilged operations on a system.
 
 ```shell=
@@ -261,7 +264,7 @@ Edit a config to monitor ssh logins
 sudo vim /etc/fail2ban/jail.local
 ```
 
-Replace *replace-port* to match the ssh port number.
+Replace _replace-port_ to match the ssh port number.
 
 ```shell=
 [sshd]
@@ -339,6 +342,7 @@ sudo vim /etc/NetworkManager/conf.d/default-wifi-powersave-on.conf
 ```
 
 Config:
+
 ```shell=
 [connection]
 wifi.powersave = 2
@@ -715,7 +719,7 @@ sudo systemctl enable node_exporter
 
 ### Json Exporter
 
-#### Prerequisites 
+#### Prerequisites
 
 Check `go` version if installed:
 
