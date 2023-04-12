@@ -60,9 +60,27 @@ const config = {
         items: [
           {
             type: 'doc',
+            docId: 'mainnet/mainnet-info',
+            position: 'left',
+            label: 'Mainnet',
+          },
+          {
+            type: 'doc',
+            docId: 'mainnet/mainnet-info',
+            position: 'left',
+            label: 'Testnet',
+          },
+          {
+            type: 'doc',
+            docId: 'mainnet/mainnet-info',
+            position: 'left',
+            label: 'Devnet',
+          },
+          {
+            type: 'doc',
             docId: 'the-guide/start-here',
             position: 'left',
-            label: 'Run your L16 node',
+            label: 'L16 Testnet',
           },
           {
             type: 'doc',

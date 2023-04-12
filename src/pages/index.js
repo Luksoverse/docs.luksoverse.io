@@ -24,7 +24,7 @@ function HomepageHeader() {
           </Link>
           <Link
             className="button button--secondary button--lg"
-            to="/docs/mainnet-info.md"
+            to="/docs/mainnet/mainnet-info.md"
           >
             Mainnet information
           </Link>
