@@ -6,14 +6,14 @@
 
 /* You can override the default Infima variables here. */
 :root {
-  --ifm-color-primary: #fff;
+  --ifm-color-primary: #1b1b1b;
   --ifm-color-primary-dark: #333;
   --ifm-color-primary-darker: #fff;
   --ifm-color-primary-darkest: #fff;
   --ifm-color-primary-light: #fff;
   --ifm-color-primary-lighter: #fff;
   --ifm-color-primary-lightest: #fff;
-  --ifm-link-color: #1560db ;
+  --ifm-link-color: #1560db;
   --ifm-code-font-size: 95%;
   --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.1);
   --ifm-menu-color-active: #333;
@@ -28,9 +28,9 @@
   --ifm-color-primary-light: #333;
   --ifm-color-primary-lighter: #333;
   --ifm-color-primary-lightest: #333;
-  --ifm-navbar-link-hover-color: #fff;
+  --ifm-navbar-link-hover-color: #333;
   --ifm-link-decoration: #fff;
-  --ifm-link-color: #1560db ;
+  --ifm-link-color: #1560db;
   --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.3);
   --ifm-menu-color-active: #fff;
 }
@@ -51,4 +51,12 @@
   display: flex;
   flex-direction: column;
   gap: 20px;
+}
+
+.heroBanner_src-pages-index-module {
+  padding: 4rem 0;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+  color: #fff;
 }
