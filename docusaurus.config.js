@@ -84,6 +84,12 @@ const config = {
           },
           {
             type: 'doc',
+            docId: 'L16-archive/run-node',
+            position: 'left',
+            label: 'L16 Testnet (CLI archive)',
+          },
+          {
+            type: 'doc',
             docId: 'Community Guides/1Johhny EBD Node Guide',
             position: 'left',
             label: 'Community Guides',
