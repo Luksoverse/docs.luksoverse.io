@@ -1,4 +1,9 @@
-# LUKSO node troubleshoot
+---
+title: Node Troubleshoot
+sidebar_position: 6
+---
+
+# Node Troubleshoot
 
 Guide by [JordyDutch](https://github.com/JordyDutch)
 

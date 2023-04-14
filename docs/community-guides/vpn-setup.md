@@ -1,4 +1,9 @@
-# WireGuard tunnel via PiVPN
+---
+title: WireGuard Tunnel
+sidebar_position: 3
+---
+
+# WireGuard Tunnel via PiVPN
 
 Guide by [Johnny EBD](https://t.me/moonmclaren)
 ![](https://i.imgur.com/w4MEqOr.png)

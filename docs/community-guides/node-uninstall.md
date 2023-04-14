@@ -1,3 +1,8 @@
+---
+title: Node Uninstall
+sidebar_position: 7
+---
+
 # Node Uninstall
 
 Guide by [Felix Hildebrandt](https://github.com/fhildeb)

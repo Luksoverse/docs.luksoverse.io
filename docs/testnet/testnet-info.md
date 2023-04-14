@@ -1,5 +1,5 @@
 ---
-title: Mainnet Info
+title: Testnet Info
 sidebar_position: 1
 ---
 

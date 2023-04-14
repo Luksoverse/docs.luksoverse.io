@@ -1,241 +1,60 @@
-# System & Monitoring setup
+---
+title: Johnny's Node Guide
+sidebar_position: 1
+---
 
-Guide by [Volodymyr Lykhonis](https://github.com/lykhonis)
+# Johnny's Node Guide
 
-This is a guide to setup a Lukso validator node in home environment. The guide suggests a use of a dedicated machine to run a node with validators, separate from a personal working machine.
+Guide by [Johnny EBD](https://t.me/moonmclaren)
 
-> **_NOTE:_** Most of the steps require working in a terminal
+> **_Disclaimer_**
+> This article (the guide) is for informational purposes only and does not constitute professional advice. The author does not guarantee accuracy of the information in this article and the author is not responsible for any damages or losses incurred by following this article. A full disclaimer can be found at the bottom of this page — please read it before continuing.
 
-- [Prerequisites](#prerequisites)
-  - [My Setup](#my-setup)
-    - [Auto Start](#auto-start)
-- [System Setup](#system-setup)
-  - [Update](#update)
-  - [Remote Access](#remote-access)
-    - [Install SSH](#install-ssh)
-    - [Configure SSH](#configure-ssh)
-    - [Configure Firewall](#configure-firewall)
-    - [Enable SSH](#enable-ssh)
-    - [Resolve Hostname](#resolve-hostname)
-    - [Disable Password Authentication](#disable-password-authentication)
-    - [Disable Non-Key Remote Access](#disable-non-key-remote-access)
-    - [Verify Remote Access](#verify-remote-access)
-  - [Keep System Up to Date](#keep-system-up-to-date)
-  - [Disable Root Access](#disable-root-access)
-  - [Block Unathorised Access](#block-unathorised-access)
-  - [Configure Firewall](#configure-firewall)
-  - [Improve SSH Connection](#improve-ssh-connection)
-- [Node Setup](#node-setup)
-- [Monitoring](#monitoring)
-  - [Prometheus](#prometheus)
-    - [Configure](#configure)
-    - [Configure Service](#configure-service)
-  - [Grafana](#grafana)
-    - [Configure Service](#configure-service-1)
-    - [Configure Dashboard](#configure-dashboard)
-      - [Data Source](#data-source)
-      - [Install Dashboard](#install-dashboard)
-      - [Enable Alerts](#enable-alerts)
-  - [Node Exporter](#node-exporter)
-    - [Configure Service](#configure-service-2)
-  - [Json Exporter](#json-exporter)
-    - [Prerequisites](#prerequisites-1)
-    - [Build and Install](#build-and-install)
-    - [Configure](#configure-1)
-    - [Configure Service](#configure-service-3)
-  - [Ping](#ping)
-    - [Configure](#configure-2)
-    - [Configure Service](#configure-service-4)
-- [Credits](#credits)
+This is a guide to setup a Lukso validator node in a home environment. It suggests the use of a dedicated machine to run a node with validation, separate from a personal client for remote access.
 
-## Prerequisites
+> **_NOTE_**
+> Most of the following steps require working in a terminal
+
+## Pre-Requisites :spiral_note_pad:
 
 - [Ubuntu](https://ubuntu.com/)
-- Dedicated PC
+- Dedicated mini-PC
 
-### My Setup
+### My Setup :computer:
 
-- Ubuntu 20.04.4 LTS
-- [Intel NUC 10 Performance Kit – Intel Core i5](https://www.amazon.com/dp/B083GH1SSN/ref=cm_sw_r_cp_api_glt_i_PAVWC2JD4QTRSVHFFX10?_encoding=UTF8&psc=1)
-- [Memory Kit 16GB (8GBx2)](https://www.amazon.com/dp/B083VWCZLQ/ref=cm_sw_r_cp_api_glt_i_1YV0G8K4GAH0NYP6BN00?_encoding=UTF8&psc=1)
-- [Samsung 970 EVO Plus SSD 1TB](https://www.amazon.com/dp/B07MFZY2F2/ref=cm_sw_r_cp_api_glt_i_XF7ZS3XYJCQM5PH05P7V?_encoding=UTF8&psc=1)
+- Ubuntu 22.04.1 LTS
+- Intel NUC 12 Pro core i7 1260p
+- Kingston Fury Impact 32GB (16GBx2) DDR4 3200MHz
+- Seagate Firecuda 530 Gen4 NVME 2TB with heatsink
 
-I've spent around $850. Current price seem to be less around $700. I connected my NUC with ethernet cable directly into my router.
+#### **Auto Start**
 
-#### Auto Start
+I had to manually change the BIOS settings to ensure that, if power gets reset, NUC always auto starts. A simple test is to unplug and plug power cord right back in.
 
-I had to manually change BIOS settings of NUC to ensure if power gets reset, NUC auto starts. A simple test is unplug and plug power cord back in.
-
-For NUC I followed following steps:
+For NUC I followed the following steps:
 
 1. Press F2 during boot to enter BIOS setup
 2. Go to `Power` -> `Secondary Power Settings` menu
-3. Set the option for `After Power Failure` to `Power One`
+3. Set the option for `After Power Failure` to `Power On`
 4. Press F10 to save changes and exit BIOS
 
-## System Setup
+## System Setup :gear:
 
-> **_NOTE:_** Following steps are performed directly on a node machine.
+> **_NOTE_**
+> The following steps are performed directly on a node machine.
 
-In order to remotelly access a machine running a node, it needs to be configured.
-
-### Update
-
-```shell=
-sudo apt update
-sudo apt upgrade -y
-sudo apt install -y vim wget make git
-```
-
-### Remote Access
-
-SSH is used to enable remote access from other machine using localy network through WiFi or broadband connections. This is a common practice and can be quite useful if a node machine does not have input (keyboard/mouse) nor a display. Once setup, a node machine can be placed elsewhere and only personal computer could be used to control and maintain it.
-
-#### Install SSH
+### Update Manually and Install Dependencies
 
 ```shell=
-sudo apt install --assume-yes openssh-server
-```
-
-#### Confiugre SSH
-
-Choose a port number larger than `50000`. This will be used later.
-
-```shell=
-sudo vim /etc/ssh/sshd_config
-```
-
-Change and enable a port by uncommenting (removing `#`) and changing `22` to new chosen port number:
-
-```shell=
-Port 50000
-```
-
-Save and close editor by pressing `SHIFT` + `:`, then type `wq`, and hit enter.
-
-#### Configure Firewall
-
-Enable ssh in firewall by replacing _replace-port_ with new port:
-
-```shell=
-sudo ufw allow replace-port
-```
-
-#### Enable SSH
-
-```shell=
-sudo systemctl start ssh
-sudo systemctl enable ssh
-```
-
-#### Resolve Hostname
-
-In order to locate a node machine in local network, it requires IP. Execute following command to resolve a node machine's IP:
-
-```shell=
-ifconfig
-```
-
-Locate IP address (`inet`) in `eno1` section, e.g. `192.168.86.29`.
-
-```
-eno1: flags=4163<UP,BROADCAST,RUNNING,MULTICAST>  mtu 1500
-      inet 192.168.86.29  netmask 255.255.255.0  broadcast 192.168.86.255
-```
-
-Close ssh session by executing `exit`.
-
-> **_NOTE:_** Following steps are performed a personal computer.
-
-Verify basic access to a node machine by using ssh. SSH requires user name of a node machine, its hostname and previously chosen ssh port.
-
-```shell=
-vim ~/.ssh/config
-```
-
-Type in the following and replace _replace-user_, _replace-ip_, and _replace-port_:
-
-```shell=
-Host lukso
-  User replace-user
-  HostName replace-ip
-  Port replace-port
-```
-
-Attempt to connect to verify the configuration:
-
-```shell=
-ssh lukso
-```
-
-Once connected, enter a password of user on a node machine. If a connection was okay, a shell should be presented in a terminal. At this point, it could closed.
-
-#### Disable Password Authentication
-
-On a personal computer, create new key pair for ssh authentication if needed.
-
-```shell=
-ssh-keygen -t rsa -b 4096
-```
-
-Copy a generated public key **keyname.pub** to a node machine. Replace **keyname.pub** with a key in home directory.
-
-```shell=
-ssh-copy-id -i ~/.ssh/keyname.pub lukso
-```
-
-#### Disable Non-Key Remote Access
-
-On a personal computer, try to ssh again. This time it should not prompt for a password.
-
-```shell=
-ssh lukso
-```
-
-Configure SSH by opening a configuration file and modifying several options:
-
-```shell=
-sudo vim /etc/ssh/sshd_config
-```
-
-Options:
-
-```shell=
-ChallengeResponseAuthentication no
-PasswordAuthentication no
-PermitRootLogin prohibit-password
-PermitEmptyPasswords no
-```
-
-Save and close editor by pressing `SHIFT` + `:`, then type `wq`, and hit enter. Validate SSH configuration and restart ssh service.
-
-```shell=
-sudo sshd -t
-sudo systemctl restart sshd
-```
-
-Close ssh session by executing `exit`.
-
-#### Verify Remote Access
-
-```shell=
-ssh lukso
-```
-
-Stay connected to a remote node machine to perform next steps.
-
-### Keep System Up to Date
-
-Update a system manually:
-
-```shell=
-sudo apt-get update -y
+sudo apt-get update
+sudo apt-get upgrade -y
 sudo apt dist-upgrade -y
 sudo apt-get autoremove
 sudo apt-get autoclean
+sudo apt-get install -y nano wget make curl git net-tools
 ```
 
-Keep a system up to date automatically:
+### Keep your System Up to Date Automatically
 
 ```shell=
 sudo apt-get install unattended-upgrades
@@ -244,42 +63,10 @@ sudo dpkg-reconfigure -plow unattended-upgrades
 
 ### Disable Root Access
 
-A root access should not be used. Instead, a user should be using `sudo` to perform privilged operations on a system.
+Root access should not be used. Instead a user should be using `sudo` to perform privileged operations on a system.
 
 ```shell=
 sudo passwd -l root
-```
-
-### Block Unathorised Access
-
-Install `fail2ban` to block IP addresses that exceed failed ssh login attempts.
-
-```shell=
-sudo apt-get install fail2ban -y
-```
-
-Edit a config to monitor ssh logins
-
-```shell=
-sudo vim /etc/fail2ban/jail.local
-```
-
-Replace _replace-port_ to match the ssh port number.
-
-```shell=
-[sshd]
-enabled=true
-port=replace-port
-filter=sshd
-logpath=/var/log/auth.log
-maxretry=3
-ignoreip=
-```
-
-Save and close editor by pressing `SHIFT` + `:`, then type `wq`, and hit enter. Restart `fail2ban` service:
-
-```shell=
-sudo systemctl restart fail2ban
 ```
 
 ### Configure Firewall
@@ -314,9 +101,9 @@ Verify firewall configuration:
 sudo ufw status
 ```
 
-It should look something like this (may be missing some ports):
+It should look something like this:
 
-```shell=
+```
 Status: active
 
 To                         Action      From
@@ -324,31 +111,43 @@ To                         Action      From
 13000/tcp                  ALLOW       Anywhere
 12000/udp                  ALLOW       Anywhere
 30303/tcp                  ALLOW       Anywhere
-ssh-port/tcp               ALLOW       Anywhere
 30303/udp                  ALLOW       Anywhere
 13000/tcp (v6)             ALLOW       Anywhere (v6)
 12000/udp (v6)             ALLOW       Anywhere (v6)
 30303/tcp (v6)             ALLOW       Anywhere (v6)
-ssh-port/tcp (v6)          ALLOW       Anywhere (v6)
 30303/udp (v6)             ALLOW       Anywhere (v6)
 ```
 
-### Improve SSH Connection
+## Secure Remote Access :closed_lock_with_key:
 
-While setting up a system, ssh terminal may seem to be slow due wifi power management settings on a node machine. To disable it, modify a config.
+### WireGuard tunnel via PiVPN
+
+Please read [this](https://hackmd.io/@JohnnyEBD/HyTqm4ejc) dedicated guide with detailed steps on how to easily setup a VPN host using the PiVPN installation script.
+
+### OpenSSH Server Setup
+
+Also refer to [this](https://hackmd.io/@JohnnyEBD/HkXf-1SC9) essential guide on how to setup and securely access your Ubuntu server with SSH service.
+
+### Hardening SSH Security :muscle:
+
+Optionally follow [this](https://hackmd.io/@JohnnyEBD/HJAio-lzo) guide to vastly improve the security of SSH service on your Ubuntu server by enabling 2FA and Fail2Ban.
+
+#### **Improve SSH Connection**
+
+While setting up a system, SSH terminal may seem to be slow due to wifi power management settings on a node machine. To disable it, modify the config:
 
 ```shell=
-sudo vim /etc/NetworkManager/conf.d/default-wifi-powersave-on.conf
+sudo nano /etc/NetworkManager/conf.d/default-wifi-powersave-on.conf
 ```
 
 Config:
 
-```shell=
+```
 [connection]
 wifi.powersave = 2
 ```
 
-Save and close editor by pressing `SHIFT` + `:`, then type `wq`, and hit enter. Restart `NetworkManager` service:
+Close editor by pressing `ctrl` + `X`, then save. Restart `NetworkManager` service:
 
 ```shell=
 sudo systemctl restart NetworkManager
@@ -356,52 +155,56 @@ sudo systemctl restart NetworkManager
 
 ## Node Setup
 
-> **_NOTE:_** Following steps are performed on personal machine.
+> **_NOTE_**
+> Following steps are performed on a personal machine.
 
-Access a remote node machine
+Access your remote node machine
 
 ```shell=
-ssh lukso
+ssh johnnyebd
 ```
 
-**TBD AS LUKSO IS PREPEARING FOR L16 TESTNET**.
-In the meantime follow developments and instructions of [L16 beta](https://docs.lukso.tech/networks/l16-testnet).
+**TBD AS LUKSO IS PREPARING FOR MAINNET LAUNCH** :fire::rocket::new_moon:
 
-## Monitoring
+In the meantime follow developments and instructions for [L16 beta](https://docs.lukso.tech/networks/l16-testnet).
+
+## Monitoring :telescope:
 
 Sets up a dashboard to monitor state of a node machine, node, and validators.
 
 > **_NOTE:_** Following steps are performed on personal machine.
 
-Access a remote node machine
+Access your remote node machine
 
 ```shell=
-ssh lukso
+ssh johnnyebd
 ```
 
 ### Prometheus
+
+Add user to collect node stats:
 
 ```shell=
 sudo adduser --system prometheus --group --no-create-home
 ```
 
-Identify latest version for `linux-amd64` [here](https://prometheus.io/download/), e.g. `2.34.0`. Install prometheus by replacing `{VERSION}` in the following:
+Identify latest version for `linux-amd64` [here](https://prometheus.io/download/), e.g. `2.38.0`, and install prometheus with the following:
 
 ```shell=
 cd
-wget https://github.com/prometheus/prometheus/releases/download/v{VERSION}/prometheus-{VERSION}.linux-amd64.tar.gz
-tar xzvf prometheus-{VERSION}.linux-amd64.tar.gz
-cd prometheus-{VERSION}.linux-amd64
+wget https://github.com/prometheus/prometheus/releases/download/v2.38.0/prometheus-2.38.0.linux-amd64.tar.gz
+tar xzvf prometheus-2.38.0.linux-amd64.tar.gz
+cd prometheus-2.38.0.linux-amd64
 sudo cp promtool /usr/local/bin/
 sudo cp prometheus /usr/local/bin/
 sudo chown root:root /usr/local/bin/promtool /usr/local/bin/prometheus
 sudo chmod 755 /usr/local/bin/promtool /usr/local/bin/prometheus
 cd
-rm prometheus-{VERSION}.linux-amd64.tar.gz
-rm -rf prometheus-{VERSION}.linux-amd64
+rm prometheus-2.38.0.linux-amd64.tar.gz
+rm -rf prometheus-2.38.0.linux-amd64
 ```
 
-#### Configure
+#### **Configure**
 
 ```shell=
 sudo mkdir -p /etc/prometheus/console_libraries /etc/prometheus/consoles /etc/prometheus/files_sd /etc/prometheus/rules /etc/prometheus/rules.d
@@ -410,10 +213,10 @@ sudo mkdir -p /etc/prometheus/console_libraries /etc/prometheus/consoles /etc/pr
 Edit configuration file:
 
 ```shell=
-sudo vim /etc/prometheus/prometheus.yml
+sudo nano /etc/prometheus/prometheus.yml
 ```
 
-The content of configuration file:
+Content of the configuration file should have:
 
 ```
 global:
@@ -498,10 +301,10 @@ Open port to access to metrics. This is optional, only for external use:
 sudo ufw allow 9090/tcp
 ```
 
-#### Configure Service
+#### **Configure Service**
 
 ```shell=
-sudo vim /etc/systemd/system/prometheus.service
+sudo nano /etc/systemd/system/prometheus.service
 ```
 
 The content of service configuration file:
@@ -524,7 +327,6 @@ ExecStart=/usr/local/bin/prometheus \
 	--storage.tsdb.retention.time=31d \
 	--web.console.templates=/etc/prometheus/consoles \
 	--web.console.libraries=/etc/prometheus/console_libraries
-ExecReload=/bin/kill -HUP $MAINPID
 
 [Install]
 WantedBy=multi-user.target
@@ -538,6 +340,29 @@ sudo systemctl start prometheus
 sudo systemctl enable prometheus
 ```
 
+#### **Prometheus update script**
+
+In order to easily update Prometheus you can run this [script](https://github.com/remyroy/ethstaker/blob/main/scripts/update-prometheus.py), courtesy of remyroy, for which you need to have one of python's latest version and you can check that with:
+
+```shell=
+python3 --version
+```
+
+If it's an older version than 3.10 or not installed at all you can run this command:
+
+```shell=
+sudo apt install python3.10 -y
+```
+
+After that you can download the script and run it.
+
+```shell=
+wget https://raw.githubusercontent.com/remyroy/ethstaker/main/scripts/update-prometheus.py
+python3 update-prometheus.py
+```
+
+The script will check the current installed version and it will compare it with the latest stable release version on Github. If there is a new version available, it will prompt you to update it.
+
 ### Grafana
 
 Install:
@@ -546,16 +371,16 @@ Install:
 cd
 sudo apt-get install -y apt-transport-https
 sudo apt-get install -y software-properties-common wget
-wget -q -O - https://packages.grafana.com/gpg.key | sudo apt-key add -
+wget -qO- https://packages.grafana.com/gpg.key | sudo tee /etc/apt/trusted.gpg.d/grafana.asc
 sudo add-apt-repository "deb https://packages.grafana.com/oss/deb stable main"
 sudo apt-get update
-sudo apt-get install grafana-enterprise
+sudo apt-get install grafana
 ```
 
-#### Configure Service
+#### **Configure Service**
 
 ```shell=
-sudo vim /lib/systemd/system/grafana-server.service
+sudo nano /lib/systemd/system/grafana-server.service
 ```
 
 The content of service configuration file:
@@ -627,33 +452,33 @@ sudo systemctl start grafana-server
 sudo systemctl enable grafana-server
 ```
 
-Open port to access to metrics. This is optional, only for external use:
+Open port to access metrics. This is optional and only for external use:
 
 ```shell=
 sudo ufw allow 3000/tcp
 ```
 
-#### Configure Dashboard
+#### **Configure Dashboard**
 
-Login to grafana by navigating to webrowser `http://192.168.86.29:3000`. Replace `192.168.86.29` with IP of your node machine. This is same IP used to ssh.
+Login to grafana by navigating to webrowser `http://192.168.86.29:3000`. Replace `192.168.86.29` with the IP of your node machine. This is same IP used to ssh.
 
 Default credentials are username and password `admin`. Set a new secure (long) password when prompted by grafana.
 
-##### Data Source
+##### **Data Source**
 
 1. On the left-hand menu, hover over the gear menu and click on `Data Sources`
 2. Then click on the Add Data Source button
 3. Hover over the Prometheus card on screen, then click on the Select button
 4. Enter http://127.0.0.1:9090/ into the URL field, then click Save & Test
 
-##### Install Dashboard
+##### **Install Dashboard**
 
 1. Hover over the plus symbol icon in the left-hand menu, then click on Import
-2. Copy and paste [the dashboard](https://github.com/Luksoverse/lukso-node-guide/blob/main/grafana/dashboard.json) into the `Import via panel json` text box on the screen
+2. Copy and paste [the dashboard](https://github.com/lykhonis/lukso-node-guide/blob/main/grafana/dashboard.json) into the `Import via panel json` text box on the screen
 3. Then click the Load button
 4. Then click the Import button
 
-##### Enable Alerts
+##### **Enable Alerts**
 
 1. On the left-hand menu, hover over the alarm menue and click on `Notification channels`
 2. Click on `New channel`
@@ -668,7 +493,7 @@ On lukso dashboard:
 
 ### Node Exporter
 
-Monitors node stats:
+Add user to monitors node stats:
 
 ```shell=
 sudo adduser --system node_exporter --group --no-create-home
@@ -678,18 +503,18 @@ Install:
 
 ```shell=
 cd
-wget https://github.com/prometheus/node_exporter/releases/download/v1.0.1/node_exporter-1.0.1.linux-amd64.tar.gz
-tar xzvf node_exporter-1.0.1.linux-amd64.tar.gz
-sudo cp node_exporter-1.0.1.linux-amd64/node_exporter /usr/local/bin/
+wget https://github.com/prometheus/node_exporter/releases/download/v1.3.1/node_exporter-1.3.1.linux-amd64.tar.gz
+tar xzvf node_exporter-1.3.1.linux-amd64.tar.gz
+sudo cp node_exporter-1.3.1.linux-amd64/node_exporter /usr/local/bin/
 sudo chown node_exporter:node_exporter /usr/local/bin/node_exporter
-rm node_exporter-1.0.1.linux-amd64.tar.gz
-rm -rf node_exporter-1.0.1.linux-amd64
+rm node_exporter-1.3.1.linux-amd64.tar.gz
+rm -rf node_exporter-1.3.1.linux-amd64
 ```
 
-#### Configure Service
+#### **Configure Service**
 
 ```shell=
-sudo vim /etc/systemd/system/node_exporter.service
+sudo nano /etc/systemd/system/node_exporter.service
 ```
 
 The content of service configuration file:
@@ -717,9 +542,20 @@ sudo systemctl start node_exporter
 sudo systemctl enable node_exporter
 ```
 
+#### **Node Exporter update script**
+
+In order to easily update Node Exporter you can run this [script](https://github.com/remyroy/ethstaker/blob/main/scripts/update-node-exporter.py), courtesy of remyroy. Download and run it with:
+
+```shell=
+wget https://raw.githubusercontent.com/remyroy/ethstaker/main/scripts/update-node-exporter.py
+python3 update-node-exporter.py
+```
+
+The script will check the current installed version and it will compare it with the latest stable release version on Github. If there is a new version available, it will prompt you to update it.
+
 ### Json Exporter
 
-#### Prerequisites
+#### **Prerequisites**
 
 Check `go` version if installed:
 
@@ -727,18 +563,18 @@ Check `go` version if installed:
 go version
 ```
 
-If it is less than `1.17.7` please install following:
+If it is less than `1.18.5` please install following:
 
 ```shell=
-wget https://dl.google.com/go/go1.17.7.linux-amd64.tar.gz
-sudo tar -xvf go1.17.7.linux-amd64.tar.gz
-rm go1.17.7.linux-amd64.tar.gz
-sudo mv go /usr/local/go-1.17.7
-sudo ln -sf /usr/local/go-1.17.7/bin/go /usr/bin/go
+wget https://dl.google.com/go/go1.18.5.linux-amd64.tar.gz
+sudo tar -xvf go1.18.5.linux-amd64.tar.gz
+rm go1.18.5.linux-amd64.tar.gz
+sudo mv go /usr/local/go-1.18.5
+sudo ln -sf /usr/local/go-1.18.5/bin/go /usr/bin/go
 go version
 ```
 
-#### Build and Install
+#### **Build and Install**
 
 User:
 
@@ -752,14 +588,14 @@ Install:
 cd
 git clone https://github.com/prometheus-community/json_exporter.git
 cd json_exporter
-make build
+sudo make build
 sudo cp json_exporter /usr/local/bin/
 sudo chown json_exporter:json_exporter /usr/local/bin/json_exporter
 cd
 rm -rf json_exporter
 ```
 
-#### Configure
+#### **Configure**
 
 ```shell=
 sudo mkdir /etc/json_exporter
@@ -769,16 +605,18 @@ sudo chown json_exporter:json_exporter /etc/json_exporter
 Setup `LYX` token price:
 
 ```shell=
-sudo vim /etc/json_exporter/json_exporter.yml
+sudo nano /etc/json_exporter/json_exporter.yml
 ```
 
 The content of configuration file:
 
 ```
-metrics:
-- name: lyxusd
-  path: "{.lukso-token.usd}"
-  help: Lukso (LYX) price in USD
+modules:
+  default:
+    metrics:
+    - name: lyxusd
+      path: "{.lukso-token.usd}"
+      help: Lukso (LYX) price in USD
 ```
 
 Change ownership of configuration file:
@@ -787,10 +625,10 @@ Change ownership of configuration file:
 sudo chown json_exporter:json_exporter /etc/json_exporter/json_exporter.yml
 ```
 
-#### Configure Service
+#### **Configure Service**
 
 ```shell=
-sudo vim /etc/systemd/system/json_exporter.service
+sudo nano /etc/systemd/system/json_exporter.service
 ```
 
 The content of service configuration file:
@@ -820,7 +658,7 @@ sudo systemctl enable json_exporter
 
 ### Ping
 
-Pings google and cloudflare to track latency. This is optional.
+Pings google and cloudflare to track latency.
 
 ```shell=
 sudo adduser --system blackbox_exporter --group --no-create-home
@@ -830,13 +668,13 @@ Install:
 
 ```shell=
 cd
-wget https://github.com/prometheus/blackbox_exporter/releases/download/v0.18.0/blackbox_exporter-0.18.0.linux-amd64.tar.gz
-tar xvzf blackbox_exporter-0.18.0.linux-amd64.tar.gz
-sudo cp blackbox_exporter-0.18.0.linux-amd64/blackbox_exporter /usr/local/bin/
+wget https://github.com/prometheus/blackbox_exporter/releases/download/v0.22.0/blackbox_exporter-0.22.0.linux-amd64.tar.gz
+tar xvzf blackbox_exporter-0.22.0.linux-amd64.tar.gz
+sudo cp blackbox_exporter-0.22.0.linux-amd64/blackbox_exporter /usr/local/bin/
 sudo chown blackbox_exporter:blackbox_exporter /usr/local/bin/blackbox_exporter
 sudo chmod 755 /usr/local/bin/blackbox_exporter
-rm blackbox_exporter-0.18.0.linux-amd64.tar.gz
-rm -rf blackbox_exporter-0.18.0.linux-amd64
+rm blackbox_exporter-0.22.0.linux-amd64.tar.gz
+rm -rf blackbox_exporter-0.22.0.linux-amd64
 ```
 
 Enable ping permissions:
@@ -845,7 +683,7 @@ Enable ping permissions:
 sudo setcap cap_net_raw+ep /usr/local/bin/blackbox_exporter
 ```
 
-#### Configure
+#### **Configure**
 
 ```shell=
 sudo mkdir /etc/blackbox_exporter
@@ -853,7 +691,7 @@ sudo chown blackbox_exporter:blackbox_exporter /etc/blackbox_exporter
 ```
 
 ```shell=
-sudo vim /etc/blackbox_exporter/blackbox.yml
+sudo nano /etc/blackbox_exporter/blackbox.yml
 ```
 
 The content of configuration file:
@@ -873,10 +711,10 @@ Change ownership of configuration file:
 sudo chown blackbox_exporter:blackbox_exporter /etc/blackbox_exporter/blackbox.yml
 ```
 
-#### Configure Service
+#### **Configure Service**
 
 ```shell=
-sudo vim /etc/systemd/system/blackbox_exporter.service
+sudo nano /etc/systemd/system/blackbox_exporter.service
 ```
 
 The content of service configuration file:
@@ -904,6 +742,14 @@ sudo systemctl start blackbox_exporter
 sudo systemctl enable blackbox_exporter
 ```
 
+Luksoverse wishes prosperous validation to everyone in hopes that this guide was complete and easy enough to follow. Any suggestions you might have please don't hesitate to reach out to any of us.
+
+> **_Full Disclaimer_**
+> This article (the guide) is for informational purposes only and does not constitute professional advice. The author does not warrant or guarantee the accuracy, integrity, quality, completeness, currency, or validity of any information in this article. All information herein is provided “as is” without warranty of any kind and is subject to change at any time without notice. The author disclaims all express, implied, and statutory warranties of any kind, including warranties as to accuracy, timeliness, completeness, or fitness of the information in this article for any particular purpose. The author is not responsible for any direct, indirect, incidental, consequential or any other damages arising out of or in connection with the use of this article or in reliance on the information available on this article. This includes any personal injury, business interruption, loss of use, lost data, lost profits, or any other pecuniary loss, whether in an action of contract, negligence, or other misuse, even if the author has been informed of the possibility.
+
 ## Credits
 
 - https://github.com/metanull-operator/eth2-ubuntu
+- https://github.com/lykhonis/lukso-node-guide
+- https://github.com/remyroy/ethstaker
+- https://github.com/SomerEsat/ethereum-staking-guides
