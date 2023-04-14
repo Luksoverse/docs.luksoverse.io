@@ -90,7 +90,7 @@ const config = {
           },
           {
             type: 'doc',
-            docId: 'l16-archive/parameters',
+            docId: 'l16-archive-docs/parameters',
             position: 'left',
             label: 'L16 Archive',
           },

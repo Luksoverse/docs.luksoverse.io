@@ -46,7 +46,7 @@ const Cards = () => {
     {
       title: 'Archive Docs',
       description: 'Guides and Specs for L16 and depricated LUKSO CLI versions.',
-      path: '/docs/l16-archive/parameters',
+      path: '/docs/l16-archive-docs/parameters',
     },
   ];
   return (
