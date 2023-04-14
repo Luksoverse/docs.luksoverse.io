@@ -18,13 +18,13 @@ function HomepageHeader() {
         <div className={styles.buttons}>
           <Link
             className="button button--secondary button--lg"
-            to="/docs/the-guide/start-here"
+            to="/docs/node-guide/start-here"
           >
             Set up your L16 node!
           </Link>
           <Link
             className="button button--secondary button--lg"
-            to="/docs/mainnet/mainnet-info.md"
+            to="/docs/mainnet/mainnet-info"
           >
             Mainnet information
           </Link>

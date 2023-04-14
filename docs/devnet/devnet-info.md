@@ -1,5 +1,5 @@
 ---
-title: Mainnet Info
+title: Devnet Info
 sidebar_position: 1
 ---
 

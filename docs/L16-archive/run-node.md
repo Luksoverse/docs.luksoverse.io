@@ -1,5 +1,5 @@
 ---
-title: Run a node
+title: Run a Node
 sidebar_position: 2
 ---
 

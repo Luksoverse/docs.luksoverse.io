@@ -1,8 +1,9 @@
 ---
+title: Become a Validator
 sidebar_position: 3
 ---
 
-# Become a validator
+# Become a Validator
 
 :::info
 Before running validators on your node, make sure your node is running and working correctly. For more information, check the [Run a node](./run-node) page.
@@ -14,6 +15,7 @@ Before running validators on your node, make sure your node is running and worki
 cd lukso-l16-testnet
 sudo lukso network validator setup
 ```
+
 This will create a key store and a transaction wallet. The purpose of the transaction wallet is to call and pay for the deposit transaction.
 
 :::info
@@ -37,6 +39,7 @@ Choose to create a separate withdraw Mnemonic.
 The Mnemonics will appear in your `node_config.yaml` file.
 
 Open your `node_config.yaml`
+
 ```
 nano node_config.yaml
 ```
@@ -44,6 +47,7 @@ nano node_config.yaml
 Copy your Mnemonics and store them somewhere safe and offline.
 
 ## Check your balance
+
 Check if the wallet has enough funds:
 
 ```sh
@@ -55,7 +59,6 @@ Visit the [Faucet](https://faucet.l16.lukso.network) and paste the transaction w
 :::info
 Transfer **enough** (#validators x staking_amount **+ extra LYXt to pay deposit fees**) funds to the transaction wallet public's address.
 :::
-
 
 ## Submit the transaction
 

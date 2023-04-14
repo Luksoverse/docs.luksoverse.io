@@ -1,3 +1,8 @@
+---
+title: Part 4 - LUKSO Network Setup
+sidebar_position: 4
+---
+
 # Part 4 - LUKSO Network Setup
 
 ## About

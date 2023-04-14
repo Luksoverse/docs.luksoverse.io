@@ -11,21 +11,28 @@ If you get an error that the permission is denied use `sudo` in front of your co
 
 ## Sync issues
 
-When your node is not syncing use the following steps. All steps have to be executed in your node directory so first ```cd``` to the right directory.
+When your node is not syncing use the following steps. All steps have to be executed in your node directory so first `cd` to the right directory.
 
 Update the LUKSO CLI
+
 ```
 sudo curl https://install.l16.lukso.network | sudo bash
 ```
+
 Update your node files
+
 ```
 sudo lukso network update
 ```
+
 Restart you node
+
 ```
 sudo lukso network restart
 ```
+
 Start your validator
+
 ```
 sudo lukso network validator start
 ```
@@ -55,6 +62,5 @@ sudo nano node_config.yaml
 ```
 
 Change your node name close it with `ctrl+X` and save it.
-
 
 ## More fixes will be added if necessary.

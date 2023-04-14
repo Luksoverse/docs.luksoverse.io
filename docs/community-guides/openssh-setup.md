@@ -1,3 +1,8 @@
+---
+title: OpenSSH Server
+sidebar_position: 4
+---
+
 # OpenSSH Server Setup
 
 Guide by [Johnny EBD](https://t.me/moonmclaren)
@@ -68,7 +73,7 @@ sudo ufw status
 
 ![](https://i.imgur.com/j45KizC.jpg)
 
-:information_source: In this section you'll be setting up a client on a separate Ubuntu machine inside your local network. Make sure to change **`username`** with the actual user name and **`ip_address`** with the IP Address of the Ubuntu machine where you installed the OpenSSH server. **If you won't be using a Linux based device feel free to skip ahead to chapter _Termius as client_.**
+:information*source: In this section you'll be setting up a client on a separate Ubuntu machine inside your local network. Make sure to change **`username`** with the actual user name and **`ip_address`** with the IP Address of the Ubuntu machine where you installed the OpenSSH server. \*\*If you won't be using a Linux based device feel free to skip ahead to chapter \_Termius as client*.\*\*
 
 To connect to your Ubuntu server over LAN invoke the SSH command followed by the username and the IP address in the following format:
 

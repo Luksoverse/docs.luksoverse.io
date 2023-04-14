@@ -1,3 +1,8 @@
+---
+title: Part 3 - Settings & Security
+sidebar_position: 3
+---
+
 # Part 3 - Settings & Security
 
 In part three, we will update various settings to improve security.

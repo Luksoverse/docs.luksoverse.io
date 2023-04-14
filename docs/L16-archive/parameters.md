@@ -1,5 +1,5 @@
 ---
-title: 'Network parameters'
+title: 'Network Parameters'
 sidebar_position: 1
 ---
 
@@ -30,7 +30,7 @@ The L16 Public Testnet will be the last stable test network before the mainnet l
 
 :::tip
 
-Check the [LUKSO browser extension](../../guides/browser-extension/install-browser-extension.md).
+Check the [LUKSO browser extension](https://docs.lukso.tech/guides/browser-extension/install-browser-extension).
 
 :::
 

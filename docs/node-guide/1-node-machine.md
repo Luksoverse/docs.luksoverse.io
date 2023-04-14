@@ -1,3 +1,8 @@
+---
+title: Part 1 - Setup Node Machine
+sidebar_position: 1
+---
+
 # Part 1 - Setup Node Machine
 
 Required equipment:

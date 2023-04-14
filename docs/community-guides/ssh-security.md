@@ -1,3 +1,8 @@
+---
+title: SSH Security
+sidebar_position: 5
+---
+
 # SSH Security
 
 Guide by [Johnny EBD](https://t.me/moonmclaren)
