@@ -9,7 +9,7 @@ import Admonition from '@theme/Admonition';
 
 ## Before you begin
 
-Core contributors: [RobG](https://github.com/KEEZ-RobG) & [RobG](https://github.com/JordyDutch)
+Core contributors: [RobG](https://github.com/KEEZ-RobG) & [JordyDutch](https://github.com/JordyDutch)
 
 Running a validator node is a highly technical task and a long term commitment. It's a responsibility to your investment and to the network. The network's **security and stability** depends on properly maintained nodes and validator software running 24/7. You will need to:
 
