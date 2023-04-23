@@ -130,11 +130,11 @@ sudo systemctl enable node_exporter
 #### Install Go:
 
 ```shell=
-wget https://dl.google.com/go/go1.17.7.linux-amd64.tar.gz
-sudo tar -xvf go1.17.7.linux-amd64.tar.gz
-rm go1.17.7.linux-amd64.tar.gz
-sudo mv go /usr/local/go-1.17.7
-sudo ln -sf /usr/local/go-1.17.7/bin/go /usr/bin/go
+wget https://dl.google.com/go/go1.20.3.linux-amd64.tar.gz
+sudo tar -xvf go1.20.3.linux-amd64.tar.gz
+rm go1.20.3.linux-amd64.tar.gz
+sudo mv go /usr/local/go-1.20.3
+sudo ln -sf /usr/local/go-1.20.3/bin/go /usr/bin/go
 go version
 ```
 
@@ -246,13 +246,13 @@ sudo adduser --system blackbox_exporter --group --no-create-home
 
 ```shell=
 cd
-wget https://github.com/prometheus/blackbox_exporter/releases/download/v0.18.0/blackbox_exporter-0.18.0.linux-amd64.tar.gz
-tar xvzf blackbox_exporter-0.18.0.linux-amd64.tar.gz
-sudo cp blackbox_exporter-0.18.0.linux-amd64/blackbox_exporter /usr/local/bin/
+wget https://github.com/prometheus/blackbox_exporter/releases/download/v0.22.0/blackbox_exporter-0.22.0.linux-amd64.tar.gz
+tar xvzf blackbox_exporter-0.22.0.linux-amd64.tar.gz
+sudo cp blackbox_exporter-0.22.0.linux-amd64/blackbox_exporter /usr/local/bin/
 sudo chown blackbox_exporter:blackbox_exporter /usr/local/bin/blackbox_exporter
 sudo chmod 755 /usr/local/bin/blackbox_exporter
-rm blackbox_exporter-0.18.0.linux-amd64.tar.gz
-rm -rf blackbox_exporter-0.18.0.linux-amd64
+rm blackbox_exporter-0.22.0.linux-amd64.tar.gz
+rm -rf blackbox_exporter-0.22.0.linux-amd64
 ```
 
 ### 3.3 - Enable ping permissions
@@ -342,26 +342,26 @@ sudo adduser --system prometheus --group --no-create-home
 
 ### 4.2 - Install
 
-As of this writing, the current long term support (LTS) version of Prometheus is 2.37.1
+As of this writing, the current long term support (LTS) version of Prometheus is 2.43.0
 
 Confirm the current **LTS** version for `linux-amd64` [here](https://prometheus.io/download/)
 
 **Only use the LTS version**
 
-If a newer version exists, replace all occurrences of `2.37.1` with the new version number in the code box below.
+If a newer version exists, replace all occurrences of `2.43.0` with the new version number in the code box below.
 
 ```
 cd
-wget https://github.com/prometheus/prometheus/releases/download/v2.37.1/prometheus-2.37.1.linux-amd64.tar.gz
-tar xzvf prometheus-2.37.1.linux-amd64.tar.gz
-cd prometheus-2.37.1.linux-amd64
+wget https://github.com/prometheus/prometheus/releases/download/v2.43.0/prometheus-2.43.0.linux-amd64.tar.gz
+tar xzvf prometheus-2.43.0.linux-amd64.tar.gz
+cd prometheus-2.43.0.linux-amd64
 sudo cp promtool /usr/local/bin/
 sudo cp prometheus /usr/local/bin/
 sudo chown root:root /usr/local/bin/promtool /usr/local/bin/prometheus
 sudo chmod 755 /usr/local/bin/promtool /usr/local/bin/prometheus
 cd
-rm prometheus-2.37.1.linux-amd64.tar.gz
-rm -rf prometheus-2.37.1.linux-amd64
+rm prometheus-2.43.0.linux-amd64.tar.gz
+rm -rf prometheus-2.43.0.linux-amd64
 ```
 
 ### 4.3 - Configure

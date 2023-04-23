@@ -732,14 +732,14 @@ Check `go` version if installed:
 go version
 ```
 
-If it is less than `1.17.7` please install following:
+If it is less than `1.20.3` please install following:
 
 ```shell=
-wget https://dl.google.com/go/go1.17.7.linux-amd64.tar.gz
-sudo tar -xvf go1.17.7.linux-amd64.tar.gz
-rm go1.17.7.linux-amd64.tar.gz
-sudo mv go /usr/local/go-1.17.7
-sudo ln -sf /usr/local/go-1.17.7/bin/go /usr/bin/go
+wget https://dl.google.com/go/go1.20.3.linux-amd64.tar.gz
+sudo tar -xvf go1.20.3.linux-amd64.tar.gz
+rm go1.20.3.linux-amd64.tar.gz
+sudo mv go /usr/local/go-1.20.3
+sudo ln -sf /usr/local/go-1.20.3/bin/go /usr/bin/go
 go version
 ```
 
