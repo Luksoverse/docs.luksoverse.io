@@ -5,7 +5,7 @@ Core contributors: [JordyDutch](https://github.com/JordyDutch) & [Selby](https:/
 ## Prepare Your System
 
 :::danger
-This guide is still in progress. You can use it but we will do some editting soon.
+This guide is still in progress. You can use it but it will change and content will be added.
 :::
 
 :::tip
@@ -23,7 +23,7 @@ After install is complete, in Settings,
 
 Go to Luksoverse Docs website (using your normal computer, NOT your validator machine) and follow steps 1, 2, 3 and 5 (skip part 4 until mainnet is actually launching) to prepare your systems security and set up your Grafana/Prometheus Dashboard.
 
-[https://docs.luksoverse.io/docs/node-guide/start-here/](https://docs.luksoverse.io/docs/node-guide/start-here/)
+**[https://docs.luksoverse.io/docs/node-guide/start-here/](https://docs.luksoverse.io/docs/node-guide/start-here/)**
 
 ## Setup Your Wagyu Key Generator
 
@@ -35,7 +35,7 @@ Best practice is to generate your keys in a clean and separate location from you
 
 Download the latests Wagyu Key Generator
 
-[https://github.com/lukso-network/tools-wagyu-key-gen/releases/tag/v1.8.0](https://github.com/lukso-network/tools-wagyu-key-gen/releases/tag/v1.8.0)
+**[https://github.com/lukso-network/tools-wagyu-key-gen/releases/tag/v1.8.0](https://github.com/lukso-network/tools-wagyu-key-gen/releases/tag/v1.8.0)**
 
 - The **.dmg** version is for **MacOS**
 - The **.AppImage** is for **Linux(Ubuntu)**
@@ -84,7 +84,7 @@ Execute the LUKSO Key Generator:
 
 Download the latests Wagyu Key Generator, for MacOS you need the **.dmg** file.
 
-[https://github.com/lukso-network/tools-wagyu-key-gen/releases/tag/v1.8.0](https://github.com/lukso-network/tools-wagyu-key-gen/releases/tag/v1.8.0)
+**[https://github.com/lukso-network/tools-wagyu-key-gen/releases/tag/v1.8.0](https://github.com/lukso-network/tools-wagyu-key-gen/releases/tag/v1.8.0)**
 
 Unzip the file and double click on it to install and run it.
 
@@ -92,7 +92,7 @@ Unzip the file and double click on it to install and run it.
 
 Download the latests Wagyu Key Generator, for Windows you need the **.exe** file.
 
-[https://github.com/lukso-network/tools-wagyu-key-gen/releases/tag/v1.8.0](https://github.com/lukso-network/tools-wagyu-key-gen/releases/tag/v1.8.0)
+**[https://github.com/lukso-network/tools-wagyu-key-gen/releases/tag/v1.8.0](https://github.com/lukso-network/tools-wagyu-key-gen/releases/tag/v1.8.0)**
 
 Unzip the file and double click on it to install and run it.
 
@@ -116,8 +116,8 @@ If you are creating an new secret recovery phrase, make sure you save your Mnemo
 
 You can buy a Bildfodl here with our referal link on their official websites:
 
-[Privacy Pro's official website](https://shop.privacypros.io?afmc=16s&utm_campaign=16s&utm_source=leaddyno&utm_medium=affiliate)
-[Ledger officials website](https://shop.ledger.com/?r=655771bf89ed)
+**[Privacy Pro's official website](https://shop.privacypros.io?afmc=16s&utm_campaign=16s&utm_source=leaddyno&utm_medium=affiliate)**
+**[Ledger officials website](https://shop.ledger.com/?r=655771bf89ed)**
 
 :::danger
 Save your Mnemonic somewhere safe and offline! It is the only way to recover your validator funds!
@@ -139,13 +139,13 @@ Create a new Ethereum address on for example a Ledger or Trezor wallet and never
 
 You can buy a Ledger or Trezor cold-wallet on their official websites here with our referall link:
 
-[Ledger official website](https://shop.ledger.com/?r=655771bf89ed)
+**[Ledger official website](https://shop.ledger.com/?r=655771bf89ed)**
 
 You should see 1 deposit_data file and a keystore for every validator you created. If you put in 15 you would see 15 `keystore-m` files.
 
 Save these files on a freshly formatted USB stick, check here how to format an USB stick on your OS:
 
-[https://blog.balena.io/did-etcher-break-my-usb-sd-card/](https://blog.balena.io/did-etcher-break-my-usb-sd-card/)
+**[https://blog.balena.io/did-etcher-break-my-usb-sd-card/](https://blog.balena.io/did-etcher-break-my-usb-sd-card/)**
 
 ## Deposit Your LYXe
 
@@ -168,4 +168,4 @@ The deposit website will check if your `deposit_data-[timestamp].json` is valid 
 You now have to sign a transaction of 32 LYXe for every validator you want to deposit. If you have signed all transactions for every of your X amount of keys you are prepared for mainnet and you can wait for further instructions how to start up your node.
 
 **If you want to add or change things, please contribute to our guides on our GitHub!**
-[https://github.com/Luksoverse/docs.luksoverse.io](https://github.com/Luksoverse/docs.luksoverse.io)
+**[https://github.com/Luksoverse/docs.luksoverse.io](https://github.com/Luksoverse/docs.luksoverse.io)**
