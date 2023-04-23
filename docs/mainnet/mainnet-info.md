@@ -11,7 +11,7 @@ This guide is still in progress. You can use it but we will do some editting soo
 :::tip
 Install Ubuntu 22.04 (LTS) or later and choose the minimal version when prompted (also choose NOT to install third-party applications).
 
-***If you are erasing a machine with Windows already installed you may need to go to advance settings and allow Windows to boot from a USB drive***
+**_If you are erasing a machine with Windows already installed you may need to go to advance settings and allow Windows to boot from a USB drive_**
 
 Erasing the disk and using your machine as a dedicated validator is highly recommended. Be aware, you will be wiping the drive clean, including any operating systems or files currently on the machine. Save any files you want to keep before proceeding.
 
