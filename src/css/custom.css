@@ -20,6 +20,7 @@
   --ifm-navbar-link-hover-color: #333;
   --ifm-tabs-color-active-border: rgb(0, 0, 0);
   --ifm-tabs-color-active: rgb(0, 0, 0);
+  --ifm-breadcrumb-color-active: rgb(0, 0, 0);
 }
 
 /* For readability concerns, you should choose a lighter palette in dark mode. */
@@ -36,6 +37,7 @@
   --ifm-link-color: #1560db;
   --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.3);
   --ifm-menu-color-active: #fff;
+  --ifm-breadcrumb-color-active: #fff;
 }
 
 .text--center {
