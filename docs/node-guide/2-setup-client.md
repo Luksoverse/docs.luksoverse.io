@@ -140,7 +140,7 @@ The SSH command requires the username, IP address, and port number of the node m
 Simplify the SSH command by updating the SSH config file with your node credentials.
 
 ```
-nano ~/.ssh/config
+sudo nano ~/.ssh/config
 ```
 
 Copy/Paste the following into the config file.
