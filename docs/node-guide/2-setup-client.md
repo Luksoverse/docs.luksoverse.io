@@ -127,7 +127,7 @@ Example of Step 6
 ![6 Example](./img-p2/win06.gif)
 
   </TabItem>
-  <TabItem value="ubuntu" label="Ubuntu">
+  <TabItem value="ubuntu/MacOS" label="Ubuntu/MacOS">
 
 ## Configure Personal Device - Ubuntu
 
@@ -191,14 +191,6 @@ Test key login. This time it should not prompt for a password.
 ssh lukso
 ```
 
-  </TabItem>
-  <TabItem value="Windows" label="Windows (Putty)">
-Coming Soon
-  </TabItem>
-  <TabItem value="macOS" label="macOS">
-Coming Soon
-  </TabItem>
-</Tabs>
 
 Remain connected and proceed to Part 3
 
