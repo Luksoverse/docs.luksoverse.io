@@ -5,6 +5,10 @@ sidebar_position: 4
 
 # Part 4 - LUKSO Network Setup
 
+:::warning
+Skip this part until we start to launch mainnet.
+:::
+
 ## About
 
 LUKSO uses the same software and architecture of Ethereum and will launch completely transitioned to proof-of-stake. It will resemble a post-merge Ethereum, commonly referred to as Ethereum 2.0 but no longer technically correct as the Ethereum foundation has moved away from that term.

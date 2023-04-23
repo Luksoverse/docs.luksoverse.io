@@ -9,17 +9,13 @@ import Admonition from '@theme/Admonition';
 
 ## Before you begin
 
-Guide by [RobG](https://github.com/KEEZ-RobG)
+Core contributors: [RobG](https://github.com/KEEZ-RobG) & [RobG](https://github.com/JordyDutch)
 
 Running a validator node is a highly technical task and a long term commitment. It's a responsibility to your investment and to the network. The network's **security and stability** depends on properly maintained nodes and validator software running 24/7. You will need to:
 
 - Monitor you node continuously
 - Be prepared to update your node whenever new client software is released
 - Be ready to learn
-
-## Start Now
-
-L16 test net is live. If you are planning to run a validator for mainnet, start practicing ASAP!
 
 ## Codeblocks
 

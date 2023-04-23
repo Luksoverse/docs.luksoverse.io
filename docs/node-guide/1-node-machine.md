@@ -39,7 +39,7 @@ A backup system (or parts) is also something to consider. If your node is offlin
 
 ## Step 1 - Install Ubuntu Server
 
-This guide will follow the steps for Ubuntu 22.04 LTS **Server** as our node operating system, and we will interact with the node remotely from a personal computer/laptop.
+This guide will follow the steps for Ubuntu 22.04 LTS **Server or Desktop** as our node operating system, and we will interact with the node remotely from a personal computer/laptop.
 
 You have the option to install the desktop version of Ubuntu and operate the node like a desktop computer with a keyboard, mouse and monitor attached. However, there are a number of reason to choose a server installation for you node.
 
@@ -124,7 +124,19 @@ sudo apt-get install openssh-server
 7. Install the Nano text editor.
 
 ```
-sudo apt-get -y install nano
+sudo apt-get install nano -y
+```
+
+8. Install curl.
+
+```
+sudo apt install curl
+```
+
+9. Install Git.
+
+```
+sudo apt install git
 ```
 
 ## Step 2 - Configure Settings
