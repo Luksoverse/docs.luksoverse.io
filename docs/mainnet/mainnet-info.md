@@ -1,5 +1,7 @@
 # Luksoverse mainnet guide
 
+Core contributors: [JordyDutch](https://github.com/JordyDutch) & [Selby](https://twitter.com/SelbyFox)
+
 ## Prepare Your System
 
 :::danger
