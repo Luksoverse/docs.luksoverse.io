@@ -8,8 +8,10 @@ Core contributors: [JordyDutch](https://github.com/JordyDutch) & [Selby](https:/
 This guide is still in progress. You can use it but we will do some editting soon.
 :::
 
-:::warning
+:::tip
 Install Ubuntu 22.04 (LTS) or later and choose the minimal version when prompted (also choose NOT to install third-party applications).
+
+**_If you are erasing a machine with Windows already installed you may need to go to advance settings and allow Windows to boot from a USB drive_**
 
 Erasing the disk and using your machine as a dedicated validator is highly recommended. Be aware, you will be wiping the drive clean, including any operating systems or files currently on the machine. Save any files you want to keep before proceeding.
 
@@ -139,7 +141,11 @@ You can buy a Ledger or Trezor cold-wallet on their official websites here with 
 
 [Ledger official website](https://shop.ledger.com/?r=655771bf89ed)
 
-You should see 1 deposit_data file and a keystore for every validator you created. If you put in 15 you would see 15 `keystore-m` files
+You should see 1 deposit_data file and a keystore for every validator you created. If you put in 15 you would see 15 `keystore-m` files.
+
+Save these files on a freshly formatted USB stick, check here how to format an USB stick on your OS:
+
+[https://blog.balena.io/did-etcher-break-my-usb-sd-card/](https://blog.balena.io/did-etcher-break-my-usb-sd-card/)
 
 ## Deposit Your LYXe
 
