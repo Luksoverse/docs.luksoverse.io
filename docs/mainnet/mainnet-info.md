@@ -8,7 +8,7 @@ Core contributors: [JordyDutch](https://github.com/JordyDutch) & [Selby](https:/
 This guide is still in progress. You can use it but we will do some editting soon.
 :::
 
-:::warning
+:::tip
 Install Ubuntu 22.04 (LTS) or later and choose the minimal version when prompted (also choose NOT to install third-party applications).
 
 Erasing the disk and using your machine as a dedicated validator is highly recommended. Be aware, you will be wiping the drive clean, including any operating systems or files currently on the machine. Save any files you want to keep before proceeding.
