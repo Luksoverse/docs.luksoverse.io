@@ -46,29 +46,29 @@ sudo adduser --system node_exporter --group --no-create-home
 
 #### Download Node Exporter
 
-Check https://prometheus.io/download/#node_exporter to make sure 1.3.1 is the latest stable. As of this writing, 1.4.0 was still in pre-release.
+Check https://prometheus.io/download/#node_exporter to make sure 1.5.1 is the latest stable. As of this writing, 1.4.0 was still in pre-release.
 
 ```
-wget https://github.com/prometheus/node_exporter/releases/download/v1.3.1/node_exporter-1.3.1.linux-amd64.tar.gz
+wget https://github.com/prometheus/node_exporter/releases/download/v1.5.1/node_exporter-1.5.1.linux-amd64.tar.gz
 ```
 
 #### Extract the archive
 
 ```
-tar xzvf node_exporter-1.3.1.linux-amd64.tar.gz
+tar xzvf node_exporter-1.5.1.linux-amd64.tar.gz
 ```
 
 #### Copy the binary to the following location and set ownership
 
 ```
-sudo cp node_exporter-1.3.1.linux-amd64/node_exporter /usr/local/bin/
+sudo cp node_exporter-1.5.1.linux-amd64/node_exporter /usr/local/bin/
 sudo chown node_exporter:node_exporter /usr/local/bin/node_exporter
 ```
 
 #### Clean up
 
-```rm node_exporter-1.3.1.linux-amd64.tar.gz
-rm -rf node_exporter-1.3.1.linux-amd64
+```rm node_exporter-1.5.1.linux-amd64.tar.gz
+rm -rf node_exporter-1.5.1.linux-amd64
 ```
 
 ### 1.3 - Configure the system service

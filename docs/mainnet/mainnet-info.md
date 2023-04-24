@@ -117,6 +117,7 @@ If you are creating an new secret recovery phrase, make sure you save your Mnemo
 You can buy a Bildfodl here with our referal link on their official websites:
 
 **[Privacy Pro's official website](https://shop.privacypros.io?afmc=16s&utm_campaign=16s&utm_source=leaddyno&utm_medium=affiliate)**
+
 **[Ledger officials website](https://shop.ledger.com/?r=655771bf89ed)**
 
 :::danger
