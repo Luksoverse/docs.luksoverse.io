@@ -18,9 +18,8 @@ If you installed Ubuntu Desktop and do not plan to control your node from a pers
 
 <Tabs>
 <TabItem value="MacOS" label="MacOS">
-## Configure Personal Device - Ubuntu
 
-The next steps will configure the client software on a personal device running Ubuntu. You will use this device to control your node remotely.
+The next steps will configure the client software on a **personal device** running MacOS. You will use this device to control your node remotely.
 
 #### Step 1 - Install HomeBrew and OpenSSH
 
@@ -99,7 +98,7 @@ ssh lukso
 
 ## Configure Personal Device - Ubuntu
 
-The next steps will configure the client software on a personal device running Ubuntu. You will use this device to control your node remotely.
+The next steps will configure the client software on a personal **device running** Ubuntu. You will use this device to control your node remotely.
 
 #### Step 1 - Configure SSH client
 
@@ -162,7 +161,7 @@ ssh lukso
   </TabItem>
 <TabItem value="windows" label="Windows">
 
-The next steps will configure Windows Terminal (or PowerShell) to connect to you node device.
+The next steps will configure your **personal Windows Terminal (or PowerShell)** to connect to you node device.
 
 #### Step 1 - Open Terminal (or PowerShell if using Windows 10)
 
