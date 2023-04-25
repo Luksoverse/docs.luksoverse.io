@@ -17,6 +17,149 @@ If you installed Ubuntu Desktop and do not plan to control your node from a pers
 ### Choose your personal computer's operating system
 
 <Tabs>
+<TabItem value="MacOS" label="MacOS">
+## Configure Personal Device - Ubuntu
+
+The next steps will configure the client software on a personal device running Ubuntu. You will use this device to control your node remotely.
+
+#### Step 1 - Install HomeBrew and OpenSSH
+
+Install HomeBrew package manager for MacOS
+
+```
+/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+```
+
+Install OpenSSH
+
+```
+brew install openssh
+```
+
+#### Step 2 - Configure SSH client
+
+The SSH command requires the username, IP address, and port number of the node machine.
+
+Simplify the SSH command by updating the SSH config file with your node credentials.
+
+```
+sudo nano ~/.ssh/config
+```
+
+Copy/Paste the following into the config file.
+Replace `<node-user>`, `<node-ip>`, and `<ssh-port>`
+IP address and port number have been determined in previous steps.
+`<node-user>` is your node machine's user name.
+
+```
+Host lukso
+  User <node-user>
+  HostName <node-ip>
+  Port <ssh-port>
+```
+
+#### Step 3 - Test connection
+
+Attempt to connect to verify the configuration:
+
+```
+ssh lukso
+```
+
+Disconnect
+
+```
+exit
+```
+
+#### Step 4: Generate SSH Keys
+
+SSH is more secure when using public/private keys instead of a password. In this step we will generate keys on your personal device and send the public key to the node machine.
+
+Ensure you have disconnected from your node machine. On your **personal device**, create a new key pair for ssh authentication.
+
+```
+ssh-keygen -t rsa -b 4096
+```
+
+Copy the public key to the node machine.
+
+```
+ssh-copy-id -i ~/.ssh/id_rsa.pub lukso
+```
+
+Test key login. This time it should not prompt for a password.
+
+```
+ssh lukso
+```
+
+  </TabItem>
+  <TabItem value="ubuntu" label="Ubuntu">
+
+## Configure Personal Device - Ubuntu
+
+The next steps will configure the client software on a personal device running Ubuntu. You will use this device to control your node remotely.
+
+#### Step 1 - Configure SSH client
+
+The SSH command requires the username, IP address, and port number of the node machine.
+
+Simplify the SSH command by updating the SSH config file with your node credentials.
+
+```
+sudo nano ~/.ssh/config
+```
+
+Copy/Paste the following into the config file.
+Replace `<node-user>`, `<node-ip>`, and `<ssh-port>`
+IP address and port number have been determined in previous steps.
+`<node-user>` is your node machine's user name.
+
+```
+Host lukso
+  User <node-user>
+  HostName <node-ip>
+  Port <ssh-port>
+```
+
+#### Step 2 - Test connection
+
+Attempt to connect to verify the configuration:
+
+```
+ssh lukso
+```
+
+Disconnect
+
+```
+exit
+```
+
+#### Step 3: Generate SSH Keys
+
+SSH is more secure when using public/private keys instead of a password. In this step we will generate keys on your personal device and send the public key to the node machine.
+
+Ensure you have disconnected from your node machine. On your **personal device**, create a new key pair for ssh authentication.
+
+```
+ssh-keygen -t rsa -b 4096
+```
+
+Copy the public key to the node machine.
+
+```
+ssh-copy-id -i ~/.ssh/id_rsa.pub lukso
+```
+
+Test key login. This time it should not prompt for a password.
+
+```
+ssh lukso
+```
+
+  </TabItem>
 <TabItem value="windows" label="Windows">
 
 The next steps will configure Windows Terminal (or PowerShell) to connect to you node device.
@@ -125,149 +268,6 @@ You should now have an icon on your desktop that will automatically opens the SS
 
 Example of Step 6
 ![6 Example](./img-p2/win06.gif)
-
-  </TabItem>
-  <TabItem value="ubuntu" label="Ubuntu">
-
-## Configure Personal Device - Ubuntu
-
-The next steps will configure the client software on a personal device running Ubuntu. You will use this device to control your node remotely.
-
-#### Step 1 - Configure SSH client
-
-The SSH command requires the username, IP address, and port number of the node machine.
-
-Simplify the SSH command by updating the SSH config file with your node credentials.
-
-```
-sudo nano ~/.ssh/config
-```
-
-Copy/Paste the following into the config file.
-Replace `<node-user>`, `<node-ip>`, and `<ssh-port>`
-IP address and port number have been determined in previous steps.
-`<node-user>` is your node machine's user name.
-
-```
-Host lukso
-  User <node-user>
-  HostName <node-ip>
-  Port <ssh-port>
-```
-
-#### Step 2 - Test connection
-
-Attempt to connect to verify the configuration:
-
-```
-ssh lukso
-```
-
-Disconnect
-
-```
-exit
-```
-
-#### Step 3: Generate SSH Keys
-
-SSH is more secure when using public/private keys instead of a password. In this step we will generate keys on your personal device and send the public key to the node machine.
-
-Ensure you have disconnected from your node machine. On your **personal device**, create a new key pair for ssh authentication.
-
-```
-ssh-keygen -t rsa -b 4096
-```
-
-Copy the public key to the node machine.
-
-```
-ssh-copy-id -i ~/.ssh/id_rsa.pub lukso
-```
-
-Test key login. This time it should not prompt for a password.
-
-```
-ssh lukso
-```
-
-  </TabItem>
-  <TabItem value="macOS" label="macOS">
-## Configure Personal Device - Ubuntu
-
-The next steps will configure the client software on a personal device running Ubuntu. You will use this device to control your node remotely.
-
-#### Step 1 - Install HomeBrew and OpenSSH
-
-Install HomeBrew package manager for MacOS
-
-```
-/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
-```
-
-Install OpenSSH
-
-```
-brew install openssh
-```
-
-#### Step 2 - Configure SSH client
-
-The SSH command requires the username, IP address, and port number of the node machine.
-
-Simplify the SSH command by updating the SSH config file with your node credentials.
-
-```
-sudo nano ~/.ssh/config
-```
-
-Copy/Paste the following into the config file.
-Replace `<node-user>`, `<node-ip>`, and `<ssh-port>`
-IP address and port number have been determined in previous steps.
-`<node-user>` is your node machine's user name.
-
-```
-Host lukso
-  User <node-user>
-  HostName <node-ip>
-  Port <ssh-port>
-```
-
-#### Step 3 - Test connection
-
-Attempt to connect to verify the configuration:
-
-```
-ssh lukso
-```
-
-Disconnect
-
-```
-exit
-```
-
-#### Step 4: Generate SSH Keys
-
-SSH is more secure when using public/private keys instead of a password. In this step we will generate keys on your personal device and send the public key to the node machine.
-
-Ensure you have disconnected from your node machine. On your **personal device**, create a new key pair for ssh authentication.
-
-```
-ssh-keygen -t rsa -b 4096
-```
-
-Copy the public key to the node machine.
-
-```
-ssh-copy-id -i ~/.ssh/id_rsa.pub lukso
-```
-
-Test key login. This time it should not prompt for a password.
-
-```
-ssh lukso
-```
 
   </TabItem>
 </Tabs>
