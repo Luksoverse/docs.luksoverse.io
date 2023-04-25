@@ -17,7 +17,7 @@ If you installed Ubuntu Desktop and do not plan to control your node from a pers
 ### Choose your personal computer's operating system
 
 <Tabs>
-<TabItem value="windows-terminal" label="Windows Terminal">
+<TabItem value="windows" label="Windows">
 
 The next steps will configure Windows Terminal (or PowerShell) to connect to you node device.
 
@@ -191,9 +191,6 @@ Test key login. This time it should not prompt for a password.
 ssh lukso
 ```
 
-  </TabItem>
-  <TabItem value="Windows" label="Windows (Putty)">
-Coming Soon
   </TabItem>
   <TabItem value="macOS" label="macOS">
 ## Configure Personal Device - Ubuntu
