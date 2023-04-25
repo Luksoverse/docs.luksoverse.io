@@ -203,10 +203,13 @@ The next steps will configure the client software on a personal device running U
 #### Step 1 - Install HomeBrew and OpenSSH
 
 Install HomeBrew package manager for MacOS
+
 ```
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 ```
+
 Install OpenSSH
+
 ```
 brew install openssh
 ```
@@ -268,6 +271,7 @@ Test key login. This time it should not prompt for a password.
 ```
 ssh lukso
 ```
+
   </TabItem>
 </Tabs>
 
