@@ -5,6 +5,8 @@ sidebar_position: 3
 
 # WireGuard tunnel via PiVPN
 
+Guide by: [Johnny EBD](https://github.com/JohnnyEBD-LYX)
+
 ![](https://i.imgur.com/w4MEqOr.png)
 
 > **_Disclaimer_**

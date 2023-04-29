@@ -5,6 +5,8 @@ sidebar_position: 5
 
 # Hardening SSH Security :muscle:
 
+Guide by: [Johnny EBD](https://github.com/JohnnyEBD-LYX)
+
 ![](https://i.imgur.com/xMIlKZo.jpg)
 
 > **_Disclaimer_**
