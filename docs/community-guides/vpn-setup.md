@@ -3,10 +3,14 @@ title: WireGuard Tunnel
 sidebar_position: 3
 ---
 
-# WireGuard Tunnel via PiVPN
+# WireGuard tunnel via PiVPN
 
-Guide by [Johnny EBD](https://t.me/moonmclaren)
+Guide by: [Johnny EBD](https://github.com/JohnnyEBD-LYX)
+
 ![](https://i.imgur.com/w4MEqOr.png)
+
+> **_Disclaimer_**
+> This article is for informational purposes only and does not constitute professional advice. The author does not guarantee accuracy of the information in this article and the author is not responsible for any damages or losses incurred by following this article.
 
 This tutorial will show you how to install your own personal VPN into your network using PiVPN as a wrapper for WireGuard. Why would you want to do this?
 
@@ -16,7 +20,7 @@ WireGuard is much faster at making connections than OpenVPN, it can complete a c
 
 The codebase for WireGuard is also drastically smaller then OpenVPN’s. This allows the software to be more secure thanks to the smaller attack surface and bugs being able to be dealt with easier.
 
-None of this would be possible of course without the PiVPN project which you can find at [https://pivpn.io](https://pivpn.io). This project is maintained to be a simple and easy solution for getting OpenVPN or WireGuard VPN services running on a Linux based host.
+None of this would be possible of course without the PiVPN project which you can find at https://pivpn.io. This project is maintained to be a simple and easy solution for getting OpenVPN or WireGuard VPN services running on a Linux based host.
 
 ### **Part 1 - Update your OS**
 
@@ -54,7 +58,7 @@ If the default IP address and gateway are correct to you, then you can safely se
 
 ![](https://i.imgur.com/lNIzvaj.png)
 
-The script might detect that we aren't running it's intended OS and will display this next message. Nothing to see here, you can just safely keep going.
+The script might detect that we aren't running it's intended OS and will display this next message. You can just safely keep going and at the end of the tutorial this issue will be addressed by setting it up manually through the nmcli command.
 
 ![](https://i.imgur.com/ZRzXftS.png)
 
@@ -203,5 +207,61 @@ Download that file with WinSCP and save it in a secure location – you’ll als
 If for some reason you need to revert this whole process, the PiVPN script has got you covered once more with the following uninstall command:
 
 **`pivpn -u`**
+
+## **Set Static IP Address using nmcli command on Ubuntu 22.04**
+
+In the terminal, you can utilize the “nmcli” command to set up a Static IP Address on Ubuntu 22.04. The “nmcli” command enables Linux users to control the “NetworkManager”. It can be also used for printing the status of network device status, creating, modifying, deleting, activating, or deactivating network connections.
+
+For setting up a Static IP Address using the “nmcli” command, follow the below-given step-by-step procedure.
+
+#### Step 1: Check device name
+
+Firstly, press “CTRL+ALT+T” to open up the terminal and then run the following “nmcli” command to check the device name:
+
+**`nmcli connection show`**
+
+The given output shows that our device name is “enp0s3”:
+
+![](https://i.imgur.com/V3bFz0S.png)
+
+#### Step 2: Create a Static connection
+
+In the next step, we will create a new static connection named “static ip” for the “enp0s3” device:
+
+**`sudo nmcli con add type ethernet con-name 'static-ip' ifname enp0s3 ipv4.method manual ipv4.addresses 192.168.1.102/24 gw4 192.168.1.1`**
+
+![](https://i.imgur.com/2tTPTch.png)
+
+#### Step 3: Add DNS IP to static-ip
+
+Then, execute the below-given command for adding the DNS IP to the “static-ip” connection:
+
+**`sudo nmcli con mod static-ip ipv4.dns 192.168.1.1`**
+
+#### Step 4: Activate the Static connection
+
+Make sure that the created “static-ip” connection is active and working on your Ubuntu 22.04:
+
+**`sudo nmcli con up id 'static-ip'`**
+
+The below-given output indicates that our “static-ip” connection is successfully activated:
+
+![](https://i.imgur.com/qEo7Dwf.png)
+
+#### Step 5: Verify the IP assignment to the selected device
+
+Now, execute the “ip” command with the “a” option to validate the IP assigned to the “enp0s3” device:
+
+**`ip a`**
+
+![](https://i.imgur.com/3tuBto4.png)
+
+Lastly, verify the internet connectivity with the help of the following “ping” command:
+
+**`ping google.com`**
+
+As you can see, the given output validates that the configured “static-ip” connection is working perfectly:
+
+![](https://i.imgur.com/ZYvx2N8.png)
 
 That's it, hope you enjoyed yet another Luksoverse tutorial.

@@ -3,9 +3,9 @@ title: SSH Security
 sidebar_position: 5
 ---
 
-# SSH Security
+# Hardening SSH Security :muscle:
 
-Guide by [Johnny EBD](https://t.me/moonmclaren)
+Guide by: [Johnny EBD](https://github.com/JohnnyEBD-LYX)
 
 ![](https://i.imgur.com/xMIlKZo.jpg)
 
@@ -14,7 +14,7 @@ Guide by [Johnny EBD](https://t.me/moonmclaren)
 
 This tutorial will show you how to set up an SSH two-factor authentication on your Ubuntu server using the well-known Google Authenticator, so you can continue to use your password and keys without worrying if they've been compromised or not.
 
-You will also be shown how to stop malicious logins like brute-force attacks if, for some reason, your SSH port becomes exposed to the outside world, by banning IP addresses with the Fail2Ban service in place.
+You will also be shown how to stop malicious logins like brute-force DDoS attacks if, for some reason, your SSH port becomes exposed to the outside world, by banning IP addresses with the Fail2Ban service in place.
 
 ## 2FA with Google Authenticator
 
@@ -91,9 +91,12 @@ At the beginning of this file, you can see the following line, which enables pas
 @include common-auth
 ```
 
-To enable 2FA in SSH, add the following two lines right below it with spaces in between:
+To enable 2FA in SSH, add the following two lines right below it with spaces in between and **add a comment on the Standard Un\*x authentication (#@include common-auth) so it doesn't ask for password anymore**:
 
 ```
+# Standard Un*x authentication.
+#@include common-auth
+
 # two-factor authentication via Google Authenticator
 auth   required   pam_google_authenticator.so
 ```
@@ -179,10 +182,11 @@ bantime=28800
 ignoreip=
 ```
 
-Close editor by pressing `ctrl` + `X`, then save. Restart `fail2ban` service:
+Close editor by pressing `ctrl` + `X`, then save and start `fail2ban` service:
 
 ```shell=
-sudo systemctl restart fail2ban
+sudo systemctl enable fail2ban
+sudo systemctl start fail2ban
 ```
 
 ![](https://i.imgur.com/ZxQjm4K.jpg)
