@@ -4,10 +4,6 @@ Core contributors: **[JordyDutch](https://github.com/JordyDutch)** & **[Selby](h
 
 ## Prepare Your System
 
-:::danger
-This guide is still in progress. You can use it but it will change and content will be added.
-:::
-
 :::tip
 Install Ubuntu 22.04 (LTS) or later and choose the minimal version when prompted (also choose NOT to install third-party applications).
 

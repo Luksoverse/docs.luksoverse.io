@@ -20,13 +20,13 @@ function HomepageHeader() {
             className="button button--secondary button--lg"
             to="/docs/node-guide/start-here"
           >
-            Set up your L16 node!
+            Prepare your device for Mainnet
           </Link>
           <Link
             className="button button--secondary button--lg"
             to="/docs/mainnet/mainnet-info"
           >
-            Mainnet information
+            Generate validator keys
           </Link>
         </div>
       </div>
