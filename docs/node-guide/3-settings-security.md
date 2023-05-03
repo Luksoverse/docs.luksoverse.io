@@ -132,7 +132,7 @@ sudo systemctl enable fail2ban
 sudo systemctl status fail2ban
 ```
 
-## Step 5 - Improve SSH Connection
+## Step 5 - Improve SSH Connection (Skip if using Ubuntu Server)
 
 **This step is only required for Ubuntu Desktop installations. If you installed Ubuntu Server, you may skip this step.**
 
@@ -160,6 +160,53 @@ Save changes and close the editor.
 ```
 sudo systemctl restart NetworkManager
 ```
+
+## Step 6 - Resize Disk Volume (server install only)
+
+**This step is only required for Ubuntu Server installations. If you installed Ubuntu Desktop, you may skip this step.**
+
+The default install of Ubuntu Server does not allocate all of the free disk space to the volume group. Follow these steps to check your system and resize the volume group.
+
+### 6.1 - check the volume group
+
+```
+sudo vgdisplay
+```
+
+Example Output ![6.1 Example](./img-p3/6-1.png)
+Check the output:
+
+`Alloc PE / Size` shows how much space has been allocated to the volume
+
+`Free PE / Size` shows how much space has not been allocated to the volume.
+
+If `Free PE / Size` is zero, you can skip the rest of step 6
+
+If `Free PE / Size` has a value, execute the commands below
+
+### 6.2 - extend and resize the volume
+Execute the two commands below
+
+```
+sudo lvextend -l +100%FREE /dev/ubuntu-vg/ubuntu-lv
+```
+
+```
+sudo resize2fs /dev/mapper/ubuntu--vg-ubuntu--lv
+```
+
+Example Output ![6-2 Example](./img-p3/6-2.png)
+
+### 6.3 - confirm the change
+
+Check the volume group again
+
+```
+sudo vgdisplay
+```
+`Free PE / Size` should now be zero and `Alloc PE / Size` should be the full size of your disk
+
+Example Output ![6-3 Example](./img-p3/6-3.png)
 
 ---
 
