@@ -116,15 +116,20 @@ port=<ssh-port>
 filter=sshd
 logpath=/var/log/auth.log
 maxretry=3
+findtime=300
+bantime=28800
 ignoreip=
 ```
 
 Save changes and close the editor
 
-### 4.3 - restart the service
+### 4.3 - start the service
 
 ```
-sudo systemctl restart fail2ban
+sudo systemctl daemon-reload
+sudo systemctl start fail2ban
+sudo systemctl enable fail2ban
+sudo systemctl status fail2ban
 ```
 
 ## Step 5 - Improve SSH Connection
