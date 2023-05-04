@@ -6,7 +6,7 @@ sidebar_position: 4
 # Part 4 - LUKSO Network Setup
 
 :::warning
-Skip this part until we start to launch mainnet.
+This section will be updated soon. Skip this part until we start to launch mainnet.
 :::
 
 ## About
@@ -23,14 +23,6 @@ A validator consists of a LUKSO node and a third piece of client software respon
 
 ## Before you begin
 
-Please review all the information in the [Network](https://docs.lukso.tech/networks/l16-testnet/) section of LUKSO's website.
-
-## Step 1 - Run a node
-
-#### [Follow LUKSO's official documentation for this step.](https://docs.lukso.tech/networks/l16-testnet/run-node)
-
-## Step 2 - Become a validator
-
-#### [Follow LUKSO's official documentation for the next steps.](https://docs.lukso.tech/networks/l16-testnet/become-validator)
+Comming soon
 
 #### After your node is up and running begin Part 4: Monitoring.
