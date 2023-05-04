@@ -6,6 +6,10 @@ sidebar_position: 5
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
+:::warning
+This page is curretnly being updated. Please do not use.
+:::
+
 # Part 5 - Monitoring
 
 This guide will show you step by step how to do monitoring on your machine by giving you the instructions to install and configure all the tools needed.
