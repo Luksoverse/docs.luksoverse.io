@@ -35,6 +35,12 @@ PermitRootLogin prohibit-password
 PermitEmptyPasswords no
 ```
 
+:::note
+Challenge-response protocol in SSHv1 `ChallengeResponseAuthentication` has been upgraded to keyboard-interactive authentication protocol in SSHv2 which looks like the following:
+
+`KbdInteractiveAuthentication no`
+:::
+
 Save and exit
 
 ### 1.3 - validate SSH configuration
@@ -185,6 +191,7 @@ If `Free PE / Size` is zero, you can skip the rest of step 6
 If `Free PE / Size` has a value, execute the commands below
 
 ### 6.2 - extend and resize the volume
+
 Execute the two commands below
 
 ```
@@ -204,6 +211,7 @@ Check the volume group again
 ```
 sudo vgdisplay
 ```
+
 `Free PE / Size` should now be zero and `Alloc PE / Size` should be the full size of your disk
 
 Example Output ![6-3 Example](./img-p3/6-3.png)
