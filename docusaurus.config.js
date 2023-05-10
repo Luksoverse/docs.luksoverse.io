@@ -6,7 +6,7 @@ const darkCodeTheme = require('prism-react-renderer/themes/dracula');
 
 /** @type {import('@docusaurus/types').Config} */
 const config = {
-  title: 'The Luksoverse - Docs',
+  title: 'Luksoverse - Docs',
   tagline: 'The community place for docs',
   url: 'https://docs.luksoverse.io',
   baseUrl: '/',
@@ -51,7 +51,7 @@ const config = {
     ({
       image: 'img/lv-docs-logo.png',
       navbar: {
-        title: 'The Luksoverse - docs',
+        title: 'Luksoverse - docs',
         logo: {
           alt: 'My Site Logo',
           src: 'img/black-logo.png',

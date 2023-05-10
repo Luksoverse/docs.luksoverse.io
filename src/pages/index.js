@@ -40,8 +40,7 @@ export default function Home() {
   return (
     <>
       <Layout
-        title={`${siteConfig.title}`}
-        description="The LUKSO Community place for docs."
+        description="LUKSO Community Docs"
       >
         <HomepageHeader />
         <main className={styles.container}>
