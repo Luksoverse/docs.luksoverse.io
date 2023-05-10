@@ -9,7 +9,19 @@ import Admonition from '@theme/Admonition';
 
 ## Before you begin
 
-Core contributors: [RobG](https://github.com/KEEZ-RobG) & [JordyDutch](https://github.com/JordyDutch)
+This is a community curated guide and has no official affiliation with The LUKSO Foundation. We do our best to research and publish best practices and keep the guide update, but we make no guarentees on accuracy or claims of best practice. Please do your own research.
+
+**Core contributors:** 
+
+[RobG](https://github.com/KEEZ-RobG)
+
+[JordyDutch](https://github.com/JordyDutch)
+
+[Johnny Ξ₿D.LYX](https://github.com/JohnnyEBD-LYX)
+
+Based on Vlad's guide
+
+## Introduction
 
 Running a validator node is a highly technical task and a long term commitment. It's a responsibility to your investment and to the network. The network's **security and stability** depends on properly maintained nodes and validator software running 24/7. You will need to:
 
