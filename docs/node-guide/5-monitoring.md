@@ -160,7 +160,7 @@ sudo adduser --system json_exporter --group --no-create-home
 cd
 git clone https://github.com/prometheus-community/json_exporter.git
 cd json_exporter
-make build
+sudo make build
 sudo cp json_exporter /usr/local/bin/
 sudo chown json_exporter:json_exporter /usr/local/bin/json_exporter
 cd
@@ -346,26 +346,26 @@ sudo adduser --system prometheus --group --no-create-home
 
 ### 4.2 - Install
 
-As of this writing, the current long term support (LTS) version of Prometheus is 2.43.0
+As of this writing, the current long term support (LTS) version of Prometheus is 2.37.8
 
 Confirm the current **LTS** version for `linux-amd64` [here](https://prometheus.io/download/)
 
 **Only use the LTS version**
 
-If a newer version exists, replace all occurrences of `2.43.0` with the new version number in the code box below.
+If a newer version exists, replace all occurrences of `2.37.8` with the new version number in the code box below.
 
 ```
 cd
-wget https://github.com/prometheus/prometheus/releases/download/v2.43.0/prometheus-2.43.0.linux-amd64.tar.gz
-tar xzvf prometheus-2.43.0.linux-amd64.tar.gz
-cd prometheus-2.43.0.linux-amd64
+wget https://github.com/prometheus/prometheus/releases/download/v2.37.8/prometheus-2.37.8.linux-amd64.tar.gz
+tar xzvf prometheus-2.37.8.linux-amd64.tar.gz
+cd prometheus-2.37.8.linux-amd64
 sudo cp promtool /usr/local/bin/
 sudo cp prometheus /usr/local/bin/
 sudo chown root:root /usr/local/bin/promtool /usr/local/bin/prometheus
 sudo chmod 755 /usr/local/bin/promtool /usr/local/bin/prometheus
 cd
-rm prometheus-2.43.0.linux-amd64.tar.gz
-rm -rf prometheus-2.43.0.linux-amd64
+rm prometheus-2.37.8.linux-amd64.tar.gz
+rm -rf prometheus-2.37.8.linux-amd64
 ```
 
 ### 4.3 - Configure
@@ -631,7 +631,7 @@ sudo ufw allow 3000/tcp
 
 ### 5.5 - Configure Dashboard
 
-Login to grafana by opening a web browser `http://<node-ip>:3000`. Replace `<node-ip>` with IP of your node machine. This is same IP used to ssh.
+Login to grafana by opening a web browser `http://<node-ip>:3000`. Replace `<node-ip>` with IP of your node machine. This is the same IP used to ssh.
 
 ```shell= title="Default credentials"
 username: admin
@@ -645,7 +645,7 @@ Set a new secure (long) password when prompted by grafana.
 1. On the left-hand menu, hover over the gear menu and click on `Data Sources`
 2. Then click on the Add Data Source button
 3. Hover over the Prometheus card on screen, then click on the Select button
-4. Enter http://127.0.0.1:9090/ into the URL field, then click Save & Test
+4. Enter `http://127.0.0.1:9090/` into the URL field, then click Save & Test
 
 #### Install Dashboard
 
@@ -655,9 +655,9 @@ Set a new secure (long) password when prompted by grafana.
 ![test](./img-p5/5.5-dashboard-s2.svg)
 
 3. Return to the Grafana windows in your web browser
-4. Hover over the plus symbol icon in the left-hand menu, then click on Import
+4. Click the plus symbol icon on the top right, then click on Import
 
-![test](./img-p5/5.5-dashboard-s4.png)
+
 
 5. Rigth click and select paste in the `Import via panel json` text box on the screen
 

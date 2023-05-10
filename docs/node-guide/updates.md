@@ -55,3 +55,16 @@ sudo systemctl start fail2ban
 ```
 sudo systemctl status fail2ban
 ```
+
+
+
+### Part 3 Step 6
+:::warning
+This only applies to Ubuntu Server installs. Ignore if you installed the Desktop version of Ubuntu.
+:::
+
+Only 100GB of disk space is allocated in the default installation of Ubuntu Server. These steps were added to configure Ubunut server to use the entire disk space of your drive.
+
+### Fix
+
+Follow [Part 3 Step 6](settings-security#step-6---resize-disk-volume-server-install-only) of the guide.

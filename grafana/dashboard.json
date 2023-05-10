@@ -91,7 +91,9 @@
         "justifyMode": "auto",
         "orientation": "horizontal",
         "reduceOptions": {
-          "calcs": ["lastNotNull"],
+          "calcs": [
+            "lastNotNull"
+          ],
           "fields": "",
           "values": false
         },
@@ -173,7 +175,9 @@
         "justifyMode": "auto",
         "orientation": "horizontal",
         "reduceOptions": {
-          "calcs": ["lastNotNull"],
+          "calcs": [
+            "lastNotNull"
+          ],
           "fields": "",
           "values": false
         },
@@ -230,7 +234,9 @@
         "justifyMode": "auto",
         "orientation": "auto",
         "reduceOptions": {
-          "calcs": ["lastNotNull"],
+          "calcs": [
+            "lastNotNull"
+          ],
           "fields": "",
           "values": false
         },
@@ -304,13 +310,17 @@
       "options": {
         "colorMode": "value",
         "fieldOptions": {
-          "calcs": ["lastNotNull"]
+          "calcs": [
+            "lastNotNull"
+          ]
         },
         "graphMode": "area",
         "justifyMode": "auto",
         "orientation": "horizontal",
         "reduceOptions": {
-          "calcs": ["lastNotNull"],
+          "calcs": [
+            "lastNotNull"
+          ],
           "fields": "",
           "values": false
         },
@@ -321,7 +331,7 @@
       "targets": [
         {
           "exemplar": true,
-          "expr": "sum(validator_balance{job=\"validator\"})-(count(validator_balance{job=\"validator\"} > 16 and validator_statuses{job=\"validator\"} == 3)*220)",
+          "expr": "sum(validator_balance{job=\"validator\"})-(count(validator_balance{job=\"validator\"} > 16 and validator_statuses{job=\"validator\"} == 3)*32)",
           "instant": true,
           "interval": "",
           "legendFormat": "",
@@ -391,7 +401,9 @@
         "justifyMode": "auto",
         "orientation": "horizontal",
         "reduceOptions": {
-          "calcs": ["lastNotNull"],
+          "calcs": [
+            "lastNotNull"
+          ],
           "fields": "",
           "values": false
         },
@@ -401,7 +413,7 @@
       "pluginVersion": "8.2.3",
       "targets": [
         {
-          "expr": "(sum(validator_balance{job=\"validator\"}) - (count(validator_balance{job=\"validator\"} > 16 and validator_statuses{job=\"validator\"} == 3)*220))/(count(validator_balance{job=\"validator\"} > 16 and validator_statuses{job=\"validator\"} == 3)*220)  ",
+          "expr": "(sum(validator_balance{job=\"validator\"}) - (count(validator_balance{job=\"validator\"} > 16 and validator_statuses{job=\"validator\"} == 3)*32))/(count(validator_balance{job=\"validator\"} > 16 and validator_statuses{job=\"validator\"} == 3)*32)  ",
           "instant": true,
           "interval": "",
           "legendFormat": "",
@@ -459,7 +471,9 @@
         "justifyMode": "auto",
         "orientation": "auto",
         "reduceOptions": {
-          "calcs": ["mean"],
+          "calcs": [
+            "mean"
+          ],
           "fields": "",
           "values": false
         },
@@ -531,7 +545,9 @@
         "justifyMode": "auto",
         "orientation": "auto",
         "reduceOptions": {
-          "calcs": ["last"],
+          "calcs": [
+            "last"
+          ],
           "fields": "",
           "values": false
         },
@@ -599,7 +615,9 @@
         "justifyMode": "auto",
         "orientation": "auto",
         "reduceOptions": {
-          "calcs": ["lastNotNull"],
+          "calcs": [
+            "lastNotNull"
+          ],
           "fields": "",
           "values": false
         },
@@ -751,7 +769,9 @@
         "justifyMode": "auto",
         "orientation": "auto",
         "reduceOptions": {
-          "calcs": ["lastNotNull"],
+          "calcs": [
+            "lastNotNull"
+          ],
           "fields": "",
           "values": false
         },
@@ -854,13 +874,17 @@
       "options": {
         "colorMode": "value",
         "fieldOptions": {
-          "calcs": ["lastNotNull"]
+          "calcs": [
+            "lastNotNull"
+          ]
         },
         "graphMode": "area",
         "justifyMode": "auto",
         "orientation": "horizontal",
         "reduceOptions": {
-          "calcs": ["lastNotNull"],
+          "calcs": [
+            "lastNotNull"
+          ],
           "fields": "",
           "values": false
         },
@@ -870,7 +894,7 @@
       "pluginVersion": "8.2.3",
       "targets": [
         {
-          "expr": "sum(validator_balance{job=\"validator\"})-(count(validator_balance{job=\"validator\"} > 16 and validator_statuses{job=\"validator\"} == 3)*220)",
+          "expr": "sum(validator_balance{job=\"validator\"})-(count(validator_balance{job=\"validator\"} > 16 and validator_statuses{job=\"validator\"} == 3)*32)",
           "instant": true,
           "interval": "",
           "legendFormat": "total_balance",
@@ -953,13 +977,17 @@
       "options": {
         "colorMode": "value",
         "fieldOptions": {
-          "calcs": ["lastNotNull"]
+          "calcs": [
+            "lastNotNull"
+          ]
         },
         "graphMode": "area",
         "justifyMode": "auto",
         "orientation": "horizontal",
         "reduceOptions": {
-          "calcs": ["lastNotNull"],
+          "calcs": [
+            "lastNotNull"
+          ],
           "fields": "",
           "values": false
         },
@@ -1046,7 +1074,9 @@
         "justifyMode": "auto",
         "orientation": "auto",
         "reduceOptions": {
-          "calcs": ["lastNotNull"],
+          "calcs": [
+            "lastNotNull"
+          ],
           "fields": "",
           "values": false
         },
@@ -1102,7 +1132,9 @@
         "justifyMode": "center",
         "orientation": "auto",
         "reduceOptions": {
-          "calcs": ["lastNotNull"],
+          "calcs": [
+            "lastNotNull"
+          ],
           "fields": "",
           "values": false
         },
@@ -1171,7 +1203,9 @@
         "justifyMode": "center",
         "orientation": "auto",
         "reduceOptions": {
-          "calcs": ["last"],
+          "calcs": [
+            "last"
+          ],
           "fields": "",
           "values": false
         },
@@ -1264,7 +1298,9 @@
         "justifyMode": "auto",
         "orientation": "horizontal",
         "reduceOptions": {
-          "calcs": ["lastNotNull"],
+          "calcs": [
+            "lastNotNull"
+          ],
           "fields": "",
           "values": false
         },
@@ -1345,7 +1381,9 @@
         "justifyMode": "auto",
         "orientation": "horizontal",
         "reduceOptions": {
-          "calcs": ["lastNotNull"],
+          "calcs": [
+            "lastNotNull"
+          ],
           "fields": "",
           "values": false
         },
@@ -1424,7 +1462,9 @@
         "justifyMode": "auto",
         "orientation": "horizontal",
         "reduceOptions": {
-          "calcs": ["lastNotNull"],
+          "calcs": [
+            "lastNotNull"
+          ],
           "fields": "",
           "values": false
         },
@@ -1434,7 +1474,7 @@
       "pluginVersion": "8.2.3",
       "targets": [
         {
-          "expr": "sum(validator_balance{job=\"validator\"}) - sum(validator_balance{job=\"validator\"} offset 1h != 0) - (220 * count(validator_balance{job=\"validator\"} > 16)) + (220 * count(validator_balance{job=\"validator\"} offset 1h > 16))",
+          "expr": "sum(validator_balance{job=\"validator\"}) - sum(validator_balance{job=\"validator\"} offset 1h != 0) - (32 * count(validator_balance{job=\"validator\"} > 16)) + (32 * count(validator_balance{job=\"validator\"} offset 1h > 16))",
           "instant": false,
           "interval": "",
           "intervalFactor": 3,
@@ -1505,7 +1545,9 @@
         "justifyMode": "auto",
         "orientation": "horizontal",
         "reduceOptions": {
-          "calcs": ["lastNotNull"],
+          "calcs": [
+            "lastNotNull"
+          ],
           "fields": "",
           "values": false
         },
@@ -1515,7 +1557,7 @@
       "pluginVersion": "8.2.3",
       "targets": [
         {
-          "expr": "sum(validator_balance{job=\"validator\"}) - sum(validator_balance{job=\"validator\"} offset 1d != 0) - (220 * count(validator_balance{job=\"validator\"} > 16)) + (220 * count(validator_balance{job=\"validator\"} offset 1d > 16))",
+          "expr": "sum(validator_balance{job=\"validator\"}) - sum(validator_balance{job=\"validator\"} offset 1d != 0) - (32 * count(validator_balance{job=\"validator\"} > 16)) + (32 * count(validator_balance{job=\"validator\"} offset 1d > 16))",
           "instant": false,
           "interval": "",
           "legendFormat": "",
@@ -1585,7 +1627,9 @@
         "justifyMode": "auto",
         "orientation": "horizontal",
         "reduceOptions": {
-          "calcs": ["lastNotNull"],
+          "calcs": [
+            "lastNotNull"
+          ],
           "fields": "",
           "values": false
         },
@@ -1595,7 +1639,7 @@
       "pluginVersion": "8.2.3",
       "targets": [
         {
-          "expr": "sum(validator_balance{job=\"validator\"}) - sum(validator_balance{job=\"validator\"} offset 7d != 0) - (220 * count(validator_balance{job=\"validator\"} > 16)) + (220 * count(validator_balance{job=\"validator\"} offset 7d > 16))",
+          "expr": "sum(validator_balance{job=\"validator\"}) - sum(validator_balance{job=\"validator\"} offset 7d != 0) - (32 * count(validator_balance{job=\"validator\"} > 16)) + (32 * count(validator_balance{job=\"validator\"} offset 7d > 16))",
           "instant": false,
           "interval": "",
           "legendFormat": "",
@@ -1665,7 +1709,9 @@
         "justifyMode": "auto",
         "orientation": "horizontal",
         "reduceOptions": {
-          "calcs": ["lastNotNull"],
+          "calcs": [
+            "lastNotNull"
+          ],
           "fields": "",
           "values": false
         },
@@ -1675,7 +1721,7 @@
       "pluginVersion": "8.2.3",
       "targets": [
         {
-          "expr": "sum(validator_balance{job=\"validator\"}) - sum(validator_balance{job=\"validator\"} offset 30d != 0) - (220 * count(validator_balance{job=\"validator\"} > 16)) + (220 * count(validator_balance{job=\"validator\"} offset 30d > 16))",
+          "expr": "sum(validator_balance{job=\"validator\"}) - sum(validator_balance{job=\"validator\"} offset 30d != 0) - (32 * count(validator_balance{job=\"validator\"} > 16)) + (32 * count(validator_balance{job=\"validator\"} offset 30d > 16))",
           "instant": false,
           "interval": "",
           "legendFormat": "",
@@ -1722,7 +1768,9 @@
         "justifyMode": "center",
         "orientation": "auto",
         "reduceOptions": {
-          "calcs": ["last"],
+          "calcs": [
+            "last"
+          ],
           "fields": "",
           "values": false
         },
@@ -1923,7 +1971,9 @@
         "justifyMode": "center",
         "orientation": "auto",
         "reduceOptions": {
-          "calcs": ["lastNotNull"],
+          "calcs": [
+            "lastNotNull"
+          ],
           "fields": "",
           "values": false
         },
@@ -2010,7 +2060,9 @@
         "justifyMode": "auto",
         "orientation": "horizontal",
         "reduceOptions": {
-          "calcs": ["lastNotNull"],
+          "calcs": [
+            "lastNotNull"
+          ],
           "fields": "/^annualized hourly return$/",
           "values": false
         },
@@ -2020,7 +2072,7 @@
       "pluginVersion": "8.2.3",
       "targets": [
         {
-          "expr": "((sum(validator_balance{job=\"validator\"}) - sum(validator_balance{job=\"validator\"} offset 1h != 0) - (220 * count(validator_balance{job=\"validator\"} > 16)) +\t(220 * count(validator_balance{job=\"validator\"} offset 1h > 16)))/(220 * avg_over_time(count(validator_balance{job=\"validator\"} > 16)[1h:]))) * 365 * 24",
+          "expr": "((sum(validator_balance{job=\"validator\"}) - sum(validator_balance{job=\"validator\"} offset 1h != 0) - (32 * count(validator_balance{job=\"validator\"} > 16)) +\t(32 * count(validator_balance{job=\"validator\"} offset 1h > 16)))/(220 * avg_over_time(count(validator_balance{job=\"validator\"} > 16)[1h:]))) * 365 * 24",
           "hide": false,
           "interval": "",
           "legendFormat": "annualized hourly return",
@@ -2090,7 +2142,9 @@
         "justifyMode": "auto",
         "orientation": "horizontal",
         "reduceOptions": {
-          "calcs": ["lastNotNull"],
+          "calcs": [
+            "lastNotNull"
+          ],
           "fields": "/^annualized daily return$/",
           "values": false
         },
@@ -2100,7 +2154,7 @@
       "pluginVersion": "8.2.3",
       "targets": [
         {
-          "expr": "((sum(validator_balance{job=\"validator\"}) - sum(validator_balance{job=\"validator\"} offset 1d != 0) - (220 * count(validator_balance{job=\"validator\"} > 16)) +\t(220 * count(validator_balance{job=\"validator\"} offset 1d > 16)))/(220 * avg_over_time(count(validator_balance{job=\"validator\"} > 16)[1d:]))) * 365",
+          "expr": "((sum(validator_balance{job=\"validator\"}) - sum(validator_balance{job=\"validator\"} offset 1d != 0) - (32 * count(validator_balance{job=\"validator\"} > 16)) +\t(32 * count(validator_balance{job=\"validator\"} offset 1d > 16)))/(220 * avg_over_time(count(validator_balance{job=\"validator\"} > 16)[1d:]))) * 365",
           "hide": false,
           "interval": "",
           "legendFormat": "annualized daily return",
@@ -2170,7 +2224,9 @@
         "justifyMode": "auto",
         "orientation": "horizontal",
         "reduceOptions": {
-          "calcs": ["lastNotNull"],
+          "calcs": [
+            "lastNotNull"
+          ],
           "fields": "/^annualized weekly return$/",
           "values": false
         },
@@ -2180,7 +2236,7 @@
       "pluginVersion": "8.2.3",
       "targets": [
         {
-          "expr": "((sum(validator_balance{job=\"validator\"}) - sum(validator_balance{job=\"validator\"} offset 7d != 0) - (220 * count(validator_balance{job=\"validator\"} > 16)) +\t(220 * count(validator_balance{job=\"validator\"} offset 7d > 16)))/(220 * avg_over_time(count(validator_balance{job=\"validator\"} > 16)[7d:]))) * (365/7)",
+          "expr": "((sum(validator_balance{job=\"validator\"}) - sum(validator_balance{job=\"validator\"} offset 7d != 0) - (32 * count(validator_balance{job=\"validator\"} > 16)) +\t(32 * count(validator_balance{job=\"validator\"} offset 7d > 16)))/(220 * avg_over_time(count(validator_balance{job=\"validator\"} > 16)[7d:]))) * (365/7)",
           "hide": false,
           "interval": "",
           "legendFormat": "annualized weekly return",
@@ -2250,7 +2306,9 @@
         "justifyMode": "auto",
         "orientation": "horizontal",
         "reduceOptions": {
-          "calcs": ["lastNotNull"],
+          "calcs": [
+            "lastNotNull"
+          ],
           "fields": "",
           "values": false
         },
@@ -2260,7 +2318,7 @@
       "pluginVersion": "8.2.3",
       "targets": [
         {
-          "expr": "((sum(validator_balance{job=\"validator\"}) - sum(validator_balance{job=\"validator\"} offset 30d != 0) - (220 * count(validator_balance{job=\"validator\"} > 16)) +\t(220 * count(validator_balance{job=\"validator\"} offset 30d > 16)))/(220 * avg_over_time(count(validator_balance{job=\"validator\"} > 16)[30d:]))) * (365/30)",
+          "expr": "((sum(validator_balance{job=\"validator\"}) - sum(validator_balance{job=\"validator\"} offset 30d != 0) - (32 * count(validator_balance{job=\"validator\"} > 16)) +\t(32 * count(validator_balance{job=\"validator\"} offset 30d > 16)))/(220 * avg_over_time(count(validator_balance{job=\"validator\"} > 16)[30d:]))) * (365/30)",
           "hide": false,
           "interval": "",
           "legendFormat": "annualized monthly return",
@@ -2329,7 +2387,9 @@
         "justifyMode": "auto",
         "orientation": "horizontal",
         "reduceOptions": {
-          "calcs": ["mean"],
+          "calcs": [
+            "mean"
+          ],
           "fields": "/^lyx$/",
           "values": false
         },
@@ -2384,7 +2444,9 @@
         "justifyMode": "center",
         "orientation": "auto",
         "reduceOptions": {
-          "calcs": ["lastNotNull"],
+          "calcs": [
+            "lastNotNull"
+          ],
           "fields": "",
           "values": false
         },
@@ -2516,7 +2578,11 @@
           "alias": "attested",
           "align": "auto",
           "colorMode": null,
-          "colors": ["#F2495C", "#FF9830", "#73BF69"],
+          "colors": [
+            "#F2495C",
+            "#FF9830",
+            "#73BF69"
+          ],
           "dateFormat": "YYYY-MM-DD HH:mm:ss",
           "decimals": 0,
           "mappingType": 1,
@@ -2529,7 +2595,11 @@
           "alias": "aggregated",
           "align": "auto",
           "colorMode": null,
-          "colors": ["#F2495C", "#FF9830", "#73BF69"],
+          "colors": [
+            "#F2495C",
+            "#FF9830",
+            "#73BF69"
+          ],
           "dateFormat": "YYYY-MM-DD HH:mm:ss",
           "decimals": 0,
           "mappingType": 1,
@@ -2542,7 +2612,11 @@
           "alias": "proposed",
           "align": "auto",
           "colorMode": null,
-          "colors": ["#F2495C", "#FF9830", "#73BF69"],
+          "colors": [
+            "#F2495C",
+            "#FF9830",
+            "#73BF69"
+          ],
           "dateFormat": "YYYY-MM-DD HH:mm:ss",
           "decimals": 0,
           "mappingType": 1,
@@ -2555,7 +2629,11 @@
           "alias": "failed attestations",
           "align": "auto",
           "colorMode": "value",
-          "colors": ["#F2495C", "#FF9830", "#73BF69"],
+          "colors": [
+            "#F2495C",
+            "#FF9830",
+            "#73BF69"
+          ],
           "dateFormat": "YYYY-MM-DD HH:mm:ss",
           "decimals": 0,
           "mappingType": 1,
@@ -2568,7 +2646,11 @@
           "alias": "failed aggregations",
           "align": "auto",
           "colorMode": "value",
-          "colors": ["#F2495C", "#FF9830", "#73BF69"],
+          "colors": [
+            "#F2495C",
+            "#FF9830",
+            "#73BF69"
+          ],
           "dateFormat": "YYYY-MM-DD HH:mm:ss",
           "decimals": 0,
           "mappingType": 1,
@@ -2581,7 +2663,11 @@
           "alias": "balance",
           "align": "auto",
           "colorMode": "value",
-          "colors": ["#F2495C", "#FF9830", "#73BF69"],
+          "colors": [
+            "#F2495C",
+            "#FF9830",
+            "#73BF69"
+          ],
           "dateFormat": "YYYY-MM-DD HH:mm:ss",
           "decimals": 4,
           "link": false,
@@ -2590,7 +2676,10 @@
           "linkUrl": "",
           "mappingType": 1,
           "pattern": "Value #F",
-          "thresholds": ["165", "220"],
+          "thresholds": [
+            "24",
+            "32"
+          ],
           "type": "number",
           "unit": "short"
         },
@@ -2598,13 +2687,17 @@
           "alias": "pubkey",
           "align": "auto",
           "colorMode": null,
-          "colors": ["#F2495C", "#FF9830", "#73BF69"],
+          "colors": [
+            "#F2495C",
+            "#FF9830",
+            "#73BF69"
+          ],
           "dateFormat": "YYYY-MM-DD HH:mm:ss",
           "decimals": 2,
           "link": true,
           "linkTargetBlank": true,
           "linkTooltip": "explorer",
-          "linkUrl": "https://explorer.consensus.l16.lukso.network/validator/${__cell_1:raw}",
+          "linkUrl": "https://explorer.consensus.lukso.network/validator/${__cell_1:raw}",
           "mappingType": 1,
           "pattern": "pubkey_short",
           "thresholds": [],
@@ -2615,12 +2708,18 @@
           "alias": "inactivity score",
           "align": "auto",
           "colorMode": null,
-          "colors": ["#F2495C", "#FF9830", "#73BF69"],
+          "colors": [
+            "#F2495C",
+            "#FF9830",
+            "#73BF69"
+          ],
           "dateFormat": "YYYY-MM-DD HH:mm:ss",
           "decimals": 0,
           "mappingType": 1,
           "pattern": "Value #H",
-          "thresholds": [""],
+          "thresholds": [
+            ""
+          ],
           "type": "number",
           "unit": "short"
         },
@@ -2628,7 +2727,11 @@
           "alias": "status",
           "align": "auto",
           "colorMode": null,
-          "colors": ["#F2495C", "#FF9830", "#73BF69"],
+          "colors": [
+            "#F2495C",
+            "#FF9830",
+            "#73BF69"
+          ],
           "dateFormat": "YYYY-MM-DD HH:mm:ss",
           "decimals": 0,
           "mappingType": 1,
@@ -2804,7 +2907,9 @@
         "justifyMode": "auto",
         "orientation": "horizontal",
         "reduceOptions": {
-          "calcs": ["lastNotNull"],
+          "calcs": [
+            "lastNotNull"
+          ],
           "fields": "",
           "values": false
         },
@@ -2973,13 +3078,17 @@
       "options": {
         "colorMode": "value",
         "fieldOptions": {
-          "calcs": ["lastNotNull"]
+          "calcs": [
+            "lastNotNull"
+          ]
         },
         "graphMode": "none",
         "justifyMode": "center",
         "orientation": "auto",
         "reduceOptions": {
-          "calcs": ["lastNotNull"],
+          "calcs": [
+            "lastNotNull"
+          ],
           "fields": "",
           "values": false
         },
@@ -3056,7 +3165,9 @@
         "justifyMode": "center",
         "orientation": "auto",
         "reduceOptions": {
-          "calcs": ["last"],
+          "calcs": [
+            "last"
+          ],
           "fields": "",
           "values": false
         },
@@ -3140,7 +3251,10 @@
           "id": "filterFieldsByName",
           "options": {
             "include": {
-              "names": ["job", "version"]
+              "names": [
+                "job",
+                "version"
+              ]
             }
           }
         }
@@ -3196,7 +3310,9 @@
         "justifyMode": "center",
         "orientation": "auto",
         "reduceOptions": {
-          "calcs": ["last"],
+          "calcs": [
+            "last"
+          ],
           "fields": "",
           "values": false
         },
@@ -3288,7 +3404,9 @@
         "justifyMode": "auto",
         "orientation": "horizontal",
         "reduceOptions": {
-          "calcs": ["lastNotNull"],
+          "calcs": [
+            "lastNotNull"
+          ],
           "fields": "",
           "values": false
         },
@@ -4215,7 +4333,9 @@
         "justifyMode": "auto",
         "orientation": "horizontal",
         "reduceOptions": {
-          "calcs": ["lastNotNull"],
+          "calcs": [
+            "lastNotNull"
+          ],
           "fields": "",
           "values": false
         },
@@ -4242,14 +4362,20 @@
         "conditions": [
           {
             "evaluator": {
-              "params": [0.9],
+              "params": [
+                0.9
+              ],
               "type": "lt"
             },
             "operator": {
               "type": "and"
             },
             "query": {
-              "params": ["A", "5m", "now"]
+              "params": [
+                "A",
+                "5m",
+                "now"
+              ]
             },
             "reducer": {
               "params": [],
@@ -4259,14 +4385,20 @@
           },
           {
             "evaluator": {
-              "params": [0.9],
+              "params": [
+                0.9
+              ],
               "type": "lt"
             },
             "operator": {
               "type": "or"
             },
             "query": {
-              "params": ["B", "5m", "now"]
+              "params": [
+                "B",
+                "5m",
+                "now"
+              ]
             },
             "reducer": {
               "params": [],
@@ -4408,14 +4540,20 @@
         "conditions": [
           {
             "evaluator": {
-              "params": [2147483648],
+              "params": [
+                2147483648
+              ],
               "type": "lt"
             },
             "operator": {
               "type": "and"
             },
             "query": {
-              "params": ["A", "30m", "now"]
+              "params": [
+                "A",
+                "30m",
+                "now"
+              ]
             },
             "reducer": {
               "params": [],
@@ -4551,14 +4689,20 @@
         "conditions": [
           {
             "evaluator": {
-              "params": [0.1],
+              "params": [
+                0.1
+              ],
               "type": "lt"
             },
             "operator": {
               "type": "and"
             },
             "query": {
-              "params": ["A", "10s", "now"]
+              "params": [
+                "A",
+                "10s",
+                "now"
+              ]
             },
             "reducer": {
               "params": [],
@@ -4568,14 +4712,20 @@
           },
           {
             "evaluator": {
-              "params": [0.1],
+              "params": [
+                0.1
+              ],
               "type": "lt"
             },
             "operator": {
               "type": "or"
             },
             "query": {
-              "params": ["B", "10s", "now"]
+              "params": [
+                "B",
+                "10s",
+                "now"
+              ]
             },
             "reducer": {
               "params": [],
@@ -4716,14 +4866,20 @@
         "conditions": [
           {
             "evaluator": {
-              "params": [40],
+              "params": [
+                40
+              ],
               "type": "gt"
             },
             "operator": {
               "type": "and"
             },
             "query": {
-              "params": ["A", "10m", "now"]
+              "params": [
+                "A",
+                "10m",
+                "now"
+              ]
             },
             "reducer": {
               "params": [],
@@ -4859,14 +5015,20 @@
         "conditions": [
           {
             "evaluator": {
-              "params": [40],
+              "params": [
+                40
+              ],
               "type": "lt"
             },
             "operator": {
               "type": "and"
             },
             "query": {
-              "params": ["A", "5m", "now"]
+              "params": [
+                "A",
+                "5m",
+                "now"
+              ]
             },
             "reducer": {
               "params": [],
@@ -4999,14 +5161,20 @@
         "conditions": [
           {
             "evaluator": {
-              "params": [0.6],
+              "params": [
+                0.6
+              ],
               "type": "gt"
             },
             "operator": {
               "type": "and"
             },
             "query": {
-              "params": ["A", "12h", "now"]
+              "params": [
+                "A",
+                "12h",
+                "now"
+              ]
             },
             "reducer": {
               "params": [],
@@ -5143,14 +5311,20 @@
         "conditions": [
           {
             "evaluator": {
-              "params": [80],
+              "params": [
+                80
+              ],
               "type": "lt"
             },
             "operator": {
               "type": "and"
             },
             "query": {
-              "params": ["A", "10s", "now"]
+              "params": [
+                "A",
+                "10s",
+                "now"
+              ]
             },
             "reducer": {
               "params": [],
@@ -5286,14 +5460,20 @@
         "conditions": [
           {
             "evaluator": {
-              "params": [55],
+              "params": [
+                55
+              ],
               "type": "gt"
             },
             "operator": {
               "type": "and"
             },
             "query": {
-              "params": ["A", "5m", "now"]
+              "params": [
+                "A",
+                "5m",
+                "now"
+              ]
             },
             "reducer": {
               "params": [],
@@ -5430,14 +5610,20 @@
         "conditions": [
           {
             "evaluator": {
-              "params": [50],
+              "params": [
+                50
+              ],
               "type": "gt"
             },
             "operator": {
               "type": "and"
             },
             "query": {
-              "params": ["A", "5m", "now"]
+              "params": [
+                "A",
+                "5m",
+                "now"
+              ]
             },
             "reducer": {
               "params": [],
@@ -5570,14 +5756,20 @@
         "conditions": [
           {
             "evaluator": {
-              "params": [10],
+              "params": [
+                10
+              ],
               "type": "gt"
             },
             "operator": {
               "type": "and"
             },
             "query": {
-              "params": ["A", "10s", "now"]
+              "params": [
+                "A",
+                "10s",
+                "now"
+              ]
             },
             "reducer": {
               "params": [],
@@ -5710,14 +5902,20 @@
         "conditions": [
           {
             "evaluator": {
-              "params": [0.000001],
+              "params": [
+                0.000001
+              ],
               "type": "lt"
             },
             "operator": {
               "type": "and"
             },
             "query": {
-              "params": ["A", "10s", "now"]
+              "params": [
+                "A",
+                "10s",
+                "now"
+              ]
             },
             "reducer": {
               "params": [],
@@ -5727,14 +5925,20 @@
           },
           {
             "evaluator": {
-              "params": [-10],
+              "params": [
+                -10
+              ],
               "type": "gt"
             },
             "operator": {
               "type": "and"
             },
             "query": {
-              "params": ["A", "10s", "now"]
+              "params": [
+                "A",
+                "10s",
+                "now"
+              ]
             },
             "reducer": {
               "params": [],
@@ -5804,7 +6008,7 @@
       "targets": [
         {
           "exemplar": true,
-          "expr": "sum(validator_balance) - sum(validator_balance offset 1h) - count(validator_balance > 16)*220 + count(validator_balance offset 1h > 0)*220",
+          "expr": "sum(validator_balance) - sum(validator_balance offset 1h) - count(validator_balance > 16)*32 + count(validator_balance offset 1h > 0)*32",
           "hide": false,
           "interval": "",
           "intervalFactor": 1,
@@ -5892,5 +6096,5 @@
   "timezone": "",
   "title": "Lukso",
   "uid": "92og3IP7z",
-  "version": 124
+  "version": 125
 }
