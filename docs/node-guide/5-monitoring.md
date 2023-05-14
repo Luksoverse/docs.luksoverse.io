@@ -6,10 +6,6 @@ sidebar_position: 5
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-:::warning
-This page is curretnly being updated. Please do not use.
-:::
-
 # Part 5 - Monitoring
 
 This guide will show you step by step how to do monitoring on your machine by giving you the instructions to install and configure all the tools needed.
@@ -656,8 +652,6 @@ Set a new secure (long) password when prompted by grafana.
 
 3. Return to the Grafana windows in your web browser
 4. Click the plus symbol icon on the top right, then click on Import
-
-
 
 5. Rigth click and select paste in the `Import via panel json` text box on the screen
 
