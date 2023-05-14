@@ -103,7 +103,7 @@ const config = {
             title: 'Docs',
             items: [
               {
-                label: 'Set up your L16 node',
+                label: 'Set up your node',
                 to: '/docs/node-guide/start-here',
               },
               {
