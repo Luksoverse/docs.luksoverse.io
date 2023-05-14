@@ -5,10 +5,6 @@ sidebar_position: 4
 
 # Part 4 - LUKSO Network Setup
 
-:::warning
-This section will be updated soon. Skip this part until we start to launch mainnet.
-:::
-
 ## About
 
 LUKSO uses the same software and architecture of Ethereum and will launch completely transitioned to proof-of-stake. It will resemble a post-merge Ethereum, commonly referred to as Ethereum 2.0 but no longer technically correct as the Ethereum foundation has moved away from that term.
@@ -23,4 +19,12 @@ A validator consists of a LUKSO node and a third piece of client software respon
 
 ## Before you begin
 
-Coming soon
+Make sure you did prepare your system in step 1, 2 and 3 of this guide first.
+
+## Mainnet
+
+Coming soon.
+
+## Testnet
+
+Follow the official LUKSO instructions to setup your Testnet node [here](https://docs.lukso.tech/networks/testnet/parameters/). Proceed to step 5 of this guide after.
