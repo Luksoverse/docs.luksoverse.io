@@ -23,6 +23,4 @@ A validator consists of a LUKSO node and a third piece of client software respon
 
 ## Before you begin
 
-Comming soon
-
-#### After your node is up and running begin Part 4: Monitoring.
+Coming soon
