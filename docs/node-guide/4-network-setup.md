@@ -23,7 +23,7 @@ Make sure you did prepare your system in step 1, 2 and 3 of this guide first.
 
 ## Mainnet
 
-Coming soon.
+Coming soon. Wait for the official LUKSO annoucement how to start your mainnet node.
 
 ## Testnet
 
