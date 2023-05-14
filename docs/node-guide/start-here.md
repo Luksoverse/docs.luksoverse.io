@@ -11,7 +11,7 @@ import Admonition from '@theme/Admonition';
 
 This is a community curated guide and has no official affiliation with The LUKSO Foundation. We do our best to research and publish best practices and keep the guide update, but we make no guarentees on accuracy or claims of best practice. Please do your own research.
 
-**Core contributors:** 
+**Core contributors:**
 
 [RobG](https://github.com/KEEZ-RobG)
 

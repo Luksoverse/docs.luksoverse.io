@@ -2,8 +2,8 @@
 title: 'Guide Updates'
 sidebar_position: 6
 ---
-This page is a log of changes made to the guide and instructions on how to update your system. Only follow these insturctions if you have previously used this guide to setup your system. Reminder: these guides are community suggestions and not supported by the LUKSO Foundation -- DYOR.
 
+This page is a log of changes made to the guide and instructions on how to update your system. Only follow these insturctions if you have previously used this guide to setup your system. Reminder: these guides are community suggestions and not supported by the LUKSO Foundation -- DYOR.
 
 ## 5/4/2023
 
@@ -32,6 +32,7 @@ findtime=300
 bantime=28800
 ignoreip=
 ```
+
 **3. Restart Fail2Ban**
 
 ```
@@ -52,13 +53,13 @@ sudo systemctl start fail2ban
 ```
 
 **2. Confirm Fail2Ban is running**
+
 ```
 sudo systemctl status fail2ban
 ```
 
-
-
 ### Part 3 Step 6
+
 :::warning
 This only applies to Ubuntu Server installs. Ignore if you installed the Desktop version of Ubuntu.
 :::

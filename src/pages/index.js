@@ -39,9 +39,7 @@ export default function Home() {
 
   return (
     <>
-      <Layout
-        description="LUKSO Community Docs"
-      >
+      <Layout description="LUKSO Community Docs">
         <HomepageHeader />
         <main className={styles.container}>
           <section className={styles.cardContainer}>
