@@ -12,4 +12,4 @@ In order to remotelly access a machine running a node, it needs to be configured
 6. [Firewall Configuration](./06-firewall-config.md)
 7. [Bruteforce Protection](./07-bruteforce-shield.md)
 
-**Continue with Section 4: [Router Config](/4-router-config/)**
+**Continue with Section 4: [Router Config](/docs/complete-node-guide/4-router-config/)**

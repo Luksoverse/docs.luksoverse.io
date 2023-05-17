@@ -14,4 +14,4 @@ This section of the node guide covers a range of topics that provide the foundat
 10. [Peer Modification](./10-peer-modification.md)
 11. [LUKSO Docker Setup](./11-docker-setup.md)
 
-**Continue with Section 7: [Node Monitoring](/7-monitoring/)**
+**Continue with Section 7: [Node Monitoring](/docs/complete-node-guide/7-monitoring/)**

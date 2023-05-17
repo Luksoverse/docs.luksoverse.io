@@ -6,4 +6,4 @@ With all the changes for remote access, we have to configure the router. It's th
 2. [Address Reservation](./02-static-address.md)
 3. [Switch to Remote Connection](./03-switch-remote.md)
 
-**Continue with Section 5: [Access Connection](/5-access-connection/)**
+**Continue with Section 5: [Access Connection](/docs/complete-node-guide/5-access-connection/)**
