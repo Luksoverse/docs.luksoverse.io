@@ -1,4 +1,4 @@
-## 3.3 Ubuntu Updates
+# Ubuntu Updates
 
 Keeping the system and it's software up to date is essential and should be done on a regular basis.
 
