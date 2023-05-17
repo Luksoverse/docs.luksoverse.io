@@ -1,4 +1,4 @@
-## 8.1 Enable Alerts
+# Enable Alerts
 
 When unregular behaviour in metrics or reading from Prometheus is recognized, Grafana can send alerts through various types of channels, such as Discord, Telegram, or Email. The following will guide will configure Grafana notification for Telegram.
 

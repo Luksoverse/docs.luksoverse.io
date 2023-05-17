@@ -1,4 +1,4 @@
-## 4.1 Node Address Checkups
+# Node Address Checkups
 
 Since many routers use different software, we first make sure that we are reading the node's connection data correctly before making any substantial changes to the router.
 

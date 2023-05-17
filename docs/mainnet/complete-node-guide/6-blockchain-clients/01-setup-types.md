@@ -1,4 +1,4 @@
-## 6.1 LUKSO Blockchain Setup Types
+# LUKSO Blockchain Setup Types
 
 Regarding the Blockchain Client Setup, there will be multiple ways of running the blockchain clients for LUKSO:
 

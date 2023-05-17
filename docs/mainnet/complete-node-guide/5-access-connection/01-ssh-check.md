@@ -1,4 +1,4 @@
-## 5.1 Check SSH Install
+# Check SSH Install
 
 On my side, Im running MacOS and SSH is installed by default in MacOS Ventura on Version `9.0`. We can check the version directly by calling the SSH software:
 

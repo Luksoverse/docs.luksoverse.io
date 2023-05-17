@@ -1,4 +1,4 @@
-## 7.3 JSON Exporter Setup
+# JSON Exporter Setup
 
 After installing the JSON Exporter, we will move on with the second exporter service for Prometheus: the JSON Exporter, as it's common practice to install the exporters before the main service, as [explained before](./02-node-exporter.md).
 

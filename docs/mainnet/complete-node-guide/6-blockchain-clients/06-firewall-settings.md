@@ -1,4 +1,4 @@
-## 6.6 Firewall Settings
+# Firewall Settings
 
 After you have spot out which ports you need to open, we can go back to editing the firewall settings. We can do this the same way as we did before in the [system setup](/3-system-setup/) section of this guide.
 

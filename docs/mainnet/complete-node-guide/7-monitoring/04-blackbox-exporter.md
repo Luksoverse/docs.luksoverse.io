@@ -1,4 +1,4 @@
-## 7.4 Blackbox Exporter Setup
+# Blackbox Exporter Setup
 
 After installing the Node and JSON Exporters, we will move on with the last exporter service for Prometheus: the Blackbox Exporter, as it's common practice to install the exporters before the main service, as [explained before](./02-node-exporter.md).
 

@@ -1,4 +1,4 @@
-## 7.6 Grafana Dashboard
+# Grafana Dashboard
 
 As the final step within the monitoring, we will set up a Grafana Dashboard to have all gathered
 

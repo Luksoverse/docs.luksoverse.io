@@ -1,4 +1,4 @@
-# 6.4 Client Setups
+# Client Setups
 
 As a validator on an EVM PoS network, you need to run a full node. This is because validators need the entire blockchain data and a real-time view of the network state to validate new blocks and transactions effectively. A light node would not have sufficient data for these operations. On top of that, you could run your validator as an archive node. Let's clarify the differences:
 

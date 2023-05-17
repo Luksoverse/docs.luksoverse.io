@@ -1,4 +1,4 @@
-## 4.3 Switch to Remote Connection
+# Switch to Remote Connection
 
 If everything was alright, you can shutdown your node server and place it in your actual server rack or shelf.
 

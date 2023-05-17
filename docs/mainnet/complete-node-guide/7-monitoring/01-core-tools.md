@@ -1,4 +1,4 @@
-## 7.1 Core Tools for Monitoring
+# Core Tools for Monitoring
 
 Local node monitoring is the process of observing and tracking the performance, health, and status of a blockchain or validator node within a network. This monitoring ensures that the validator node is functioning correctly, efficiently, and securely. By regularly gathering and analyzing key performance metrics, such as CPU usage, memory consumption, disk space, network latency, and the number of connected peers, local node monitoring helps to identify potential issues and bottlenecks, enabling prompt corrective actions.
 

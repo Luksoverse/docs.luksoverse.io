@@ -1,4 +1,4 @@
-## 1.3 Ubuntu Configuration
+# Ubuntu Configuration
 
 > You can have a look at [Ubuntu's Install Guide](https://ubuntu.com/tutorials/install-ubuntu-server#1-overview) for further information. However, most of it seems outdated for the most recent Ubuntu versions. Therefore, I will document the whole process and considerations.
 
