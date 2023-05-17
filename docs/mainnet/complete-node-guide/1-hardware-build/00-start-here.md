@@ -1,4 +1,4 @@
-# Hardware and Build Process
+# Start here
 
 This section of the guide is about building your blockchain node from scratch. Building a custom node can be an exciting and rewarding experience, as it allows you to take an active part in the world of decentralized networks while tailoring the hardware to your specific needs.
 
@@ -10,4 +10,4 @@ In this guide, I will walk you through my entire process, from selecting the com
 4. [Mainboard Swap](/docs/mainnet/complete-node-guide/hardware-build/mainboard-swap)
 5. [Component Installation](/docs/mainnet/complete-node-guide/hardware-build/component-install)
 
-**Continue with Chapter 2: [BIOS Installation](/docs/mainnet/complete-node-guide/2-bios-installation/)**
+**Continue with Chapter 2: [BIOS Installation](/docs/mainnet/complete-node-guide/bios-installation/start-here)**

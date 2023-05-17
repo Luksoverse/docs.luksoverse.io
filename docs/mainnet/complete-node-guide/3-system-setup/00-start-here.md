@@ -1,4 +1,4 @@
-# System Setup
+# Start here
 
 > **_NOTE:_** The following steps are performed directly on a node machine.
 
@@ -12,4 +12,4 @@ In order to remotelly access a machine running a node, it needs to be configured
 6. [Firewall Configuration](/docs/mainnet/complete-node-guide/system-setup/firewall-config)
 7. [Bruteforce Protection](/docs/mainnet/complete-node-guide/system-setup/bruteforce-shield)
 
-**Continue with Section 4: [Router Config](/docs/mainnet/complete-node-guide/4-router-config/)**
+**Continue with Section 4: [Router Config](/docs/mainnet/complete-node-guide/router-config/start-here)**

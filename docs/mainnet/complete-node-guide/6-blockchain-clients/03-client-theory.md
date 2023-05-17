@@ -1,4 +1,4 @@
-## 6.3 Client Theory
+# Client Theory
 
 When engaging with blockchain technologies, it's crucial to understand the different types of software clients involved in the process. The interplay between these clients is what makes a blockchain network function as intended, and understanding their roles and functionalities can help users troubleshoot issues and optimize their experiences.
 

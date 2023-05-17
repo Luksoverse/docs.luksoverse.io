@@ -1,4 +1,4 @@
-## 6.5 Open Network Ports
+# Open Network Ports
 
 In order to let the Blockchain CLients communicate correctly, the ports, e.g., data communication channels, have to be enabled on the node and the router. For each supported blockchain client, there are different ports to open.
 

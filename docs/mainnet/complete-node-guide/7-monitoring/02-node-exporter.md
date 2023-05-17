@@ -1,4 +1,4 @@
-## 7.2 Node Exporter Setup
+# Node Exporter Setup
 
 We will start the monitoring by setting up the three Node Exporter services before we manage the core Prometheus connection to them. Here, everything will be set in place and load when we configure the Dashboard later on.
 

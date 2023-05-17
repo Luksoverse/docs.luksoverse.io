@@ -1,4 +1,4 @@
-## 6.9 LUKSO CLI Validator Setup
+# LUKSO CLI Validator Setup
 
 If the the network started correctly and was syncing, we are able to continue setting up your validator if you would like to participate in the consensus of the blockchain.
 

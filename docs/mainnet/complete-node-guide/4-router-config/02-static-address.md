@@ -1,4 +1,4 @@
-## 4.2 Address Reservation
+# Address Reservation
 
 To avoid connectivity issues, it's recommended to assign a static IP address or reserve an IP address for your node in your home network. A reserved IP address ensures that the node will always use the same IP address, making it easier to configure port forwarding, firewall rules, and other networking settings.
 

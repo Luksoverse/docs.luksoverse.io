@@ -1,4 +1,4 @@
-## 6.7 Router Configuration
+# Router Configuration
 
 To allow external incoming communication into your home network, so they can be forwarded to your node machine with open ports, we also have to open these ports on your router, acting as a second firewall in this case.
 

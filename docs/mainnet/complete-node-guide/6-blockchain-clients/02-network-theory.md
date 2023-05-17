@@ -1,4 +1,4 @@
-## 6.2 Network Theory
+# Network Theory
 
 Let's also clear up the blockchain network we're going to run with this setup and how the compensation works for providing the piece of backend infrastructure. Its important to know the basics of how we will participate.
 

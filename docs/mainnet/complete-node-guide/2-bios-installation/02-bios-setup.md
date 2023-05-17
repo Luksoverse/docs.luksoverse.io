@@ -1,4 +1,4 @@
-## 1.2 BIOS Setup
+# BIOS Setup
 
 Understanding and adjusting the BIOS settings can greatly reduce your node's energy consumption. The right OS can enhance speed and processing.
 

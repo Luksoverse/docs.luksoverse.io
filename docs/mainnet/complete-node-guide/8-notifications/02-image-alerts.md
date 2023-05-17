@@ -1,4 +1,4 @@
-## 8.2 Enable Image Alerts
+# Enable Image Alerts
 
 ### 8.2.1 Install Grafana Image Renderer
 

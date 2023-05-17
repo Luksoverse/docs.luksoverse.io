@@ -1,4 +1,4 @@
-## 2.1 Operating System
+# Operating System
 
 Ubuntu 22.04.2 Server is the latest iteration of one of the most popular and widely-used Linux distributions in the world. Its a proven, reliable platform designed to provide you with a secure, high-performance, and low-maintenance solution tailored for the demanding world of decentralized networks.
 

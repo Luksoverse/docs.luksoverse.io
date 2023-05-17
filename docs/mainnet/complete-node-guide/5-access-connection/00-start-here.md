@@ -1,4 +1,4 @@
-# Establishing a Secure Access Connection
+# Start here
 
 Before we can verify basic access to a node machine by using SSH on our personal computer, we need to check if all packages are installed correctly.
 

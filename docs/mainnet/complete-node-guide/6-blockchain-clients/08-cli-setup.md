@@ -1,4 +1,4 @@
-## 6.8 LUKSO CLI Node Setup
+# LUKSO CLI Node Setup
 
 Now that we have prepared all ports, the firewall and the router, we can actually install the blockchain clients used to participate in the network intself using the LUKSO CLI.
 
