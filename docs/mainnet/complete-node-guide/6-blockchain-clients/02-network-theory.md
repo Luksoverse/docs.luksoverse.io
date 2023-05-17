@@ -39,6 +39,49 @@ When it comes to withdrawels and returns, there are certain wallet addresses to 
 - **Staking Withdrawal Address**: Staking withdrawals refer to withdrawing earned rewards or the initial staked amount (32 LYX) by validators participating in Proof-of-Stake. These withdrawals become possible after the Shapella upgrade & EIP-4895 are up and running on the according network. These staking withdrawals are automatically pushed to the withdrawal address set during the key generation process and are registered on-chain during the deposit. This address cannot be changed once the stake is deposited.
 - **Recipient Fee Address**: The recipient fee address, e.g., transaction or gas fee address, differs from the staking withdrawal. The recipient fee address is associated with the validator when they perform validation duties, such as proposing and attesting to blocks. The recipient fee address is set during the start of the validator client on the node and can be changed upon restart. To set or modify, you need your node's wallet password after importing the validator keys. The fees are paid by users who initiate transactions and smart contract executions on the EVM network. Validators collect the fees as an incentive for their work in maintaining the blockchain.
 
+Both addresses are regular Ethereum Addresses (EOAs) that can be generated in wallets like MetaMask or hardware wallets like Ledger. They could even be the same addresses, meaning you will receive both: withdrawals and fees onto the same address.
+
+> Please keep in mind, that your hardware wallet needs support for importing or using these accounts on regular dApps. Otherwise, you might not be able to manage these funds until the LUKSO network is supported. In case of Ledger, they can easily imported into MetaMask, which should do the trick for most of you. Keep in mind to send some minimal supported funds onto this hardware key, so it will show up again if it was restored from the seed alone.
+
 In conclusion, staking withdrawals refer to withdrawing rewards and staked amounts connected to the consensus mechanism. On the other end, the recipient fee address is where validators receive transaction fees for their validation work itself.
 
 > Typically everything is included in the APY for staking rewards. But as expected, there are fluctuations for various factors such as network usage, the number of validators, and consensus changes.
+
+### 6.2.6 Slashing
+
+In the context of Proof of Stake consensus, the slasher functionality is a mechanism designed to discourage validators from behaving dishonestly or maliciously. If a validator behaves in a way that could compromise the network's integrity—like trying to manipulate the transaction history or proposing conflicting blocks—they can be slashed. When a validator gets slashed, a portion of its staked LYX or LYXt is removed, e,g. burnt. Additionally, they are ejected from the validator set, losing their ability to participate in the consensus process and earn further rewards.
+
+The slashing conditions include:
+
+- **Double Proposal**: If a validator proposes two different blocks during the same time slot.
+- **Surround Vote**: If a validator makes attestations that surround each other, meaning a later vote contradicts an earlier one in a way that isn't just an update.
+
+Without the slasher, slashed validators that have committed offenses might not be promptly removed from the validator set, which could theoretically affect network operation in certain situations. Running a slasher service can be resource-intensive. The slasher service needs to keep track of a significant amount of historical data to detect slashable offences, which can require substantial storage space and processing power.
+
+### 6.2.7 Panelties
+
+In Proof of Stake, validators can be penalized for being offline, technically different as loosing stake due to slashing. Instead, it's considered inactivity leakage or an inactivity penalty. The exact penalties for an offline validator are dynamically adjusted based on the total amount of offline validators and the duration they've been offline.
+
+The idea behind this mechanism is to incentivize validators to stay online and actively participate in the network's consensus process. Validators are expected to be online to propose and attest to blocks. If a validator is offline, they're not fulfilling their role, and so their balance slowly leaks over time.
+
+The penalties for being offline are much less severe than the penalties for malicious behavior that would result in slashing. The inactivity penalty is proportional to the square of the length of time the validator has been offline, meaning the penalty accelerates the longer the validator is offline.
+
+It's important to note that these penalties are only applied during periods where the network isn't finalizing blocks. If the network is finalizing blocks, offline validators don't receive inactivity penalties, but they do miss out on potential rewards.
+
+The design intention is to ensure that validators have a strong incentive to remain online and participate in the consensus process, but without making the penalties so severe that minor issues could result in significant losses. This balance aims to encourage a secure and decentralized network.
+
+#### Panelty Estimation
+
+The exact calculation of these penalties can be complex due to these variables, but here are rough estimates:
+
+```text
+For being offline for 5 hours:    0.01 LYX/LYXt panelty
+For being offline for 1 day:      0.10 LYX/LYXt panelty
+For being offline for 7 days:     1.00 LYX/LYXt panelty
+```
+
+> Remember, these are rough estimates and the actual penalties could be different based on the network conditions. If the network is not finalizing, e.g., more than one-third of the network is offline, penalties can ramp up significantly.
+
+### 6.2.8 Participation Rate
+
+In Proof of Stake consensus, for the chain to finalize blocks, at least two-thirds of the validators need to be online and actively participating. Network stalls can occur due to various reasons, such as network partitions or a significant number of other validators also being offline or not participating effectively around the same time.
