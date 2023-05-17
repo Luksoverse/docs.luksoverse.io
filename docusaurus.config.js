@@ -111,20 +111,12 @@ const config = {
                 to: '/docs/mainnet/mainnet-info',
               },
               {
-                label: "Johhny's Node Guide",
+                label: "Community archive",
                 to: '/docs/community-guides/johnny-ebd-node-guide',
               },
               {
-                label: 'VPN Guide',
+                label: 'Advanced Community Setup',
                 to: '/docs/community-guides/vpn-setup',
-              },
-              {
-                label: 'OpenSSH Server',
-                to: '/docs/community-guides/openssh-setup',
-              },
-              {
-                label: 'SSH Security',
-                to: '/docs/community-guides/ssh-security',
               },
             ],
           },
