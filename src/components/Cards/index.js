@@ -6,7 +6,7 @@ const Cards = () => {
     {
       title: 'Complete Node Guide',
       description: 'A complete guide to prepare your system, install your node and setup monitoring by LUKSO dev Felix Hildebrandt.',
-      path: '/docs/node-guide/start-here',
+      path: '/docs/complete-node-guide/README',
     },
     {
       title: 'Troubleshooting',
