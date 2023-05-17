@@ -13,7 +13,7 @@ I chose an expensive and professional setup because I plan to use the slasher fu
 - **RAM**: Crucial 32GB DDR4 Kit (2x16GB, 2666MHz, CT2K16G4SFRA266)
 - **Storage**: Samsung 970 EVO Plus M.2 NVMe SSD 2TB (PCIe 3.0, 3.500 MB/s Read, 3.300 MB/s Write, MZ-V7S2T0BW)
 
-![Node Parts](./img/build_01.png)
+![Node Parts](/img/build_01.png)
 
 I spent around 1100€. The current prices should be below that at best. I assembled the node myself because I wanted to run a fanless machine. The bespoke housing improves the temperatures and reduces noise. It also eliminates the maintenance of moving parts.
 
