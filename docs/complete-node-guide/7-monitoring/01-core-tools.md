@@ -49,7 +49,7 @@ Our Blockchain Clients have various default ports over which certain monitoring 
 
 #### Prometheus
 
-Opening the Prometheus port allows access to the service's metrics in the web browser of you personal computer. You can do this by adding the port to your firewall as previously done in the [Firewall Config](/3-system-setup/06-firewall-config.md):
+Opening the Prometheus port allows access to the service's metrics in the web browser of you personal computer. You can do this by adding the port to your firewall as previously done in the [Firewall Config](/docs/complete-node-guide/3-system-setup/06-firewall-config.md):
 
 > Opening these ports allows access to them if you personal is connected to the local network. For external access, you would need advanced configurations on your router.
 

@@ -242,7 +242,7 @@ TODO:
 
 If you opened the port as stated within the [Core Tools](./01-core-tools.md) section of the guide, you will now have access to the web interface.
 
-Fetch your node's IP address so you can use it on your personal machine as it is described within the [Address Check](/4-router-config/01-address-check.md) section of the guide:
+Fetch your node's IP address so you can use it on your personal machine as it is described within the [Address Check](/docs/complete-node-guide/4-router-config/01-address-check.md) section of the guide:
 
 ```sh
 ip route show default
