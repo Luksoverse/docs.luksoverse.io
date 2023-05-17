@@ -1,4 +1,4 @@
-# 4. Router Configuration
+# Router Configuration
 
 With all the changes for remote access, we have to configure the router. It's the intermediary for data exchange in the home network and blockchain or connection data has to be allowed to be sent through it.
 

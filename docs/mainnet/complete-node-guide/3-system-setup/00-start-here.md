@@ -1,4 +1,4 @@
-# 3. System Setup
+# System Setup
 
 > **_NOTE:_** The following steps are performed directly on a node machine.
 
