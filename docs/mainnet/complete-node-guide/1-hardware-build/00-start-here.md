@@ -1,6 +1,6 @@
 # Start here
 
-The completete all in 1 guide by LUKSO developer Felix Hildebrandt. It guides you from preparing your sytem, setting up your node and validators until configuring your monitors and notifications.
+The complete all-in-one guide by LUKSO developer Felix Hildebrandt. It guides you from preparing your sytem, setting up your node and validators until configuring your monitors and notifications.
 
 This section of the guide is about building your blockchain node from scratch. Building a custom node can be an exciting and rewarding experience, as it allows you to take an active part in the world of decentralized networks while tailoring the hardware to your specific needs.
 
