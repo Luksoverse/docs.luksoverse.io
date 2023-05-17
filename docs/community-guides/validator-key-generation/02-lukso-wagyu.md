@@ -69,7 +69,7 @@ Then click `NEXT` to continue.
 In case you have multiple wallets to make deposits from, you could either:
 
 - **Generate batches** with the same seed. Therefore just create the keys for the first wallet now and redo the process by importing an existing seed afterwards. This way, you will have multiple `deposit_data.json` files for each wallet. For instance: if you have 30 validators and 3 different wallets with 320 LYXe/LYX each, create 10 validators each during the process using the same seed, or even the same withdrawal address. In the first run, specify you want to generate 10 keys from a fresh seed. In the second run, specify you already have 10 keys. In the 3rd run, specify you already have 20 keys, and generate the last 10. You will end up with 3 different folders.
-- **Modify the deposit file** after you generated your total amount of keys in one folder. Here, create duplicates of the `deposit_data.json` file. Open it up using a JSON Editor and remove as many `pubkey` elements as you want. For instance: if you have 30 validators and 3 different wallets with 320 LYXe/LYX each, generate 30 validators in one go. Afterwards make three copies of the deposit file. In the 1st copy, delete everything after your 10th `pubkey` (validators 1-10). In the 2nd copy, delete the first and last ten `pubkey` elements (validators 11-20). In the 3rd copy, delete the first 20 `pubkey` elements (validators 21-30.) You will end up with one folder but 3 deposit files. There is an in-detail description in the [Validator Staking](/docs/mainnet/validator-key-stake/) section.
+- **Modify the deposit file** after you generated your total amount of keys in one folder. Here, create duplicates of the `deposit_data.json` file. Open it up using a JSON Editor and remove as many `pubkey` elements as you want. For instance: if you have 30 validators and 3 different wallets with 320 LYXe/LYX each, generate 30 validators in one go. Afterwards make three copies of the deposit file. In the 1st copy, delete everything after your 10th `pubkey` (validators 1-10). In the 2nd copy, delete the first and last ten `pubkey` elements (validators 11-20). In the 3rd copy, delete the first 20 `pubkey` elements (validators 21-30.) You will end up with one folder but 3 deposit files. There is an in-detail description in the [Validator Staking](/docs/community-guides/validator-key-stake/) section.
 
 > If your wallets have different amounts of LYXt, LYXe, or LYX, adjust the pubkeys and validator amounts accordingly so it matches the coins your hold.
 
@@ -93,7 +93,7 @@ The final screen will be shown afterwards
 
 Check out the files in your folder. You should have two types of files:
 
-- `deposit_data.json` The file you will use to make deposit transactions in order to activate the keys. You will have to use this file during the [Deposit Launchpad](/docs/mainnet/validator-key-stake/) process.
+- `deposit_data.json` The file you will use to make deposit transactions in order to activate the keys. You will have to use this file during the [Deposit Launchpad](/docs/community-guides/validator-key-stake/) process.
 - `keystore.json`: One keystore file for every validator key you generated. Those files will have to be impoorted into your node as described in the [Validator Setup](/docs/mainnet/complete-node-guide/blockchain-clients/validator-setup) section.
 
 ### Generate Additional Keys
