@@ -122,21 +122,112 @@ Have a look at their specifications if you like:
 - [Lighthouse Parameters](https://lighthouse-book.sigmaprime.io/advanced-datadir.html)
 - [Erigon Parameters](https://github.com/ledgerwatch/erigon)
 
+#### Changing your Node's Name
+
+You can change your node's name to change the appearence to other nodes in the network or on stats pages, it doesn't affect the node's operation or performance.
+
+You can change your node's name, you can do so by:
+
+- passing down the `identity` flag
+- configuring your `toml` files
+
+We added `GV-Luksoverse` to our examples, `GV` stands for Genesis Validator. If you want to support us, please use Luksoverse or Stakingverse.io in your valdiator names!
+
+If you want to set a temporary name, just pass down the identity flag when starting up your execution client. For Geth, it will look like this:
+
+```sh
+lukso start --geth-identity "<GV-Luksoverse-your-node-name>"
+```
+
+For Erigon, it will look like this:
+
+```sh
+lukso start --erigon-identity "<GV-Luksoverse-your-node-name>"
+```
+
+If you want a permanant naming, even when restarting your node without passing the flag, go ahead and edit your `geth.toml` or `erigon.toml` files within `/config/<network>/geth/` or `/config/<network>/erigon/` of the working directory.
+
+Make sure to be in the node folder:
+
+```sh
+cd
+```
+
+Navigate into your node's config folder of your network you want to set the name for. Make sure to adjust the `your-node-folder` and `<network>` `your-execution-client` properties with the actual folder names.
+
+```
+cd <your-node-folder>/configs/<network>/<your-execution-client>
+```
+
+Then open up the file
+
+```
+nano <your-execution-client>.toml
+```
+
+When using Geth, seach for the `[Node]` section and then add the Identity property right under it.
+
+```text
+[Node]
+Identity = "<GV-Luksoverse-your-node-name>"
+```
+
+If you are running on Erigon, enter the following line at the end of the config:
+
+```text
+"identity" = "<GV-Luksoverse-your-node-name>"
+```
+
+Make sure to adjust `<your-node-name>` to your actual name. Also be careful when editing your config files. Make sure you are not deleting anything and that there are spaces in front and behind the `=` symbol.
+
 #### Setting the Graffiti
 
-Using custom flags, we can set up our Graffiti. The graffiti is a term that refers to a customizable field that validators can use when they propose a new block. This field allows validators to inscribe a short message up to 32 bytes into the metadata of the block. These messages are permanently stored on the blockchain and can be publicly viewed.
+The graffiti is a term that refers to a customizable field that validators can use when they propose a new block. This field allows validators to inscribe a short message up to 32 bytes into the metadata of the block. These messages are permanently stored on the blockchain and can be publicly viewed.
 
 The ability to add graffiti to a block gives validators a unique way to mark their contributions to the network. The content of the graffiti can vary greatly. Some validators might use this space to include their validator's name or identifier, while others might use it for fun.
 
 > It's important to note, however, that the graffiti field should be used responsibly. Although it allows for freedom of expression, it's part of the Ethereum blockchain's permanent record, so the community generally encourages respectful and appropriate usage.
 
+There are two types of how to add graffitis to our validator:
+
+- passing down the `graffiti` flag
+- configuring your `yaml` files
+
 ```sh
 # Starting mainnet with graffiti
-lukso start --validator-graffiti "I'm a graffiti!"
+lukso start --validator-graffiti "<Luksoverse-your-graffiti>"
 
 # Starting testnet with graffiti
-lukso start --testnet --validator-graffiti "I'm a graffiti!"
+lukso start --testnet --validator-graffiti "<Lukosverse-your-graffiti>"
 ```
+
+We added `Luksoverse` to our examples. If you want to support us, please use Luksoverse or Stakingverse.io in your Graffiti messages!
+
+In order to make it a permanent graffiti, you can edit the configuration file of the Validator. Make sure to be in the node folder:
+
+```sh
+cd
+```
+
+Navigate into your node's config folder of your network you want to set the name for. Make sure to adjust the `your-node-folder` and `<network>` `your-consensus-client` properties with the actual folder names.
+
+```
+cd <your-node-folder>/configs/<network>/<your-consensus-client>
+```
+
+Then open up the file
+
+```
+nano validator.yaml
+```
+
+Add the following line at the end of the file:
+
+```text
+graffiti: '<Luksoverse-your-graffiti>'
+```
+
+Make sure to adjust `<your-graffiti>` to your actual graffiti. Also be careful when editing your config files. Make sure you are not deleting anything.
 
 #### Startup Folder Structure
 
