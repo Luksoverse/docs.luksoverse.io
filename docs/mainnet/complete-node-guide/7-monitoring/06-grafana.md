@@ -240,7 +240,7 @@ TODO:
 
 ### 7.6.5 Dashboard Setup
 
-If you opened the port as stated within the [Core Tools](./01-core-tools.md) section of the guide, you will now have access to the web interface.
+If you opened the port as stated within the [Core Tools](/docs/mainnet/complete-node-guide/monitoring/core-tools) section of the guide, you will now have access to the web interface.
 
 Fetch your node's IP address so you can use it on your personal machine as it is described within the [Address Check](/docs/mainnet/complete-node-guide/4-router-config/01-address-check.md) section of the guide:
 
@@ -301,10 +301,10 @@ Now we have to add the running Prometheus service to the Grafana Dashboard so we
 
 Chose a dashboard preset you want to load for the LUKSO mainnet and testnet. Within this guide there are two main templates:
 
-- [LUKSO Dashboard EUR](/grafana/lukso-dashboard-eur.json)
-- [LUKSO Dashboard USD](/grafana/lukso-dashboard-eur.json)
+- [LUKSO Dashboard EUR](https://github.com/fhildeb/lukso-node-guide/blob/main/grafana/lukso-dashboard-eur.json)
+- [LUKSO Dashboard USD](https://raw.githubusercontent.com/fhildeb/lukso-node-guide/main/grafana/lukso-dashboard-usd.json)
 
-> Make sure the file matches with the [JSON Exporter](./03-json-exporter.md) External Data Configuration file. You could also specify your own dashboard by adjusting the contents and jobs.
+> Make sure the file matches with the [JSON Exporter](/docs/mainnet/complete-node-guide/monitoring/json-exporter) External Data Configuration file. You could also specify your own dashboard by adjusting the contents and jobs.
 
 1. Copy the raw contents of the file you want
 2. Return to the Grafana page within your web browser

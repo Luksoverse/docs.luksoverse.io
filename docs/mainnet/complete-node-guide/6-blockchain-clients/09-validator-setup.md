@@ -11,8 +11,8 @@ When becoming a validator, you will have to manage some passwords, addresses and
 - **Validator Deposit Key**: It is a keystore file which encrypts your private key using the _Validator Key Password_. It is generated for each potential deposit you want to make. It can be used to import your validator key into a validator client. It's important to store your keystore files securely, as anyone with access to your keystore file and its password would have access to your validator key. If you lose your keystore file, you can regenerate it using your _Validator Mnemonic Seed_, assuming you have also kept that securely stored. With it, the client can verify if you deposited the required 32 LYX/LYXe to become an active validator.
 - **Deposit Data**: This is a JSON file that is generated when you set up your validator using your _Validator Mnemonic Seed_. The JSON file includes various important pieces of information, such as your public key and a signature. This file is used as part of the process to register your validator on the blockchain using transactions.
 - **Validator Wallet Password**: This password is used to secure the wallet that will hold your _Validator Deposit Keys_. The wallet password should be strong and unique, and known only to you. This password will be needed every time you are starting your validator client.
-- **Validator Withdrawal Address**: This is the Ethereum address where your funds will be sent when you decide to stop validating and withdraw your staked LYX. You can check the [Withdrawals and Earnings](02-network-theory.md) section of the guide for more information.
-- **Validator Recipient Fee Address**: This is the Ethereum address where the transaction fees you earn as a validator will be sent. Depending on your setup, this might be the same as your withdrawal address. You can check the [Withdrawals and Earnings](02-network-theory.md) section of the guide for more information.
+- **Validator Withdrawal Address**: This is the Ethereum address where your funds will be sent when you decide to stop validating and withdraw your staked LYX. You can check the [Withdrawals and Earnings](/docs/mainnet/complete-node-guide/blockchain-clients/network-theory) section of the guide for more information.
+- **Validator Recipient Fee Address**: This is the Ethereum address where the transaction fees you earn as a validator will be sent. Depending on your setup, this might be the same as your withdrawal address. You can check the [Withdrawals and Earnings](/docs/mainnet/complete-node-guide/blockchain-clients/network-theory) section of the guide for more information.
 
 ### 6.9.2 Import Mainnet Keys
 
@@ -22,8 +22,8 @@ Only validators that deposited LYXe to the [Genesis Deposit Contract](https://et
 
 Visit the official [Deposit Launchpad](https://deposit.mainnet.lukso.network/) and cautiously go through the process of generating keys and depositing stake to them, in case you have not already.
 
-1. Guide: [Generate Deposit Keys](/validator-key-generation/).
-2. Guide: [Deposit Stake in LYXe](/validator-key-stake/).
+1. Guide: [Generate Deposit Keys](/docs/mainnet/validator-key-generation/lukso-wagyu).
+2. Guide: [Deposit Stake in LYXe](/docs/mainnet/validator-key-stake/).
 
 Copy your folder(s) of your deposit keys from your personal computer into the working directory of your node.
 
@@ -88,8 +88,8 @@ If you want to become a whitelisted validator on our testnet, prepare your valid
 
 Visit the official [Testnet Deposit Launchpad](https://deposit.testnet.lukso.network/) and cautiously go through the process of generating keys and depositing stake to them, in case you have not already.
 
-1. Guide: [Generate Deposit Keys](/validator-key-generation/).
-2. Guide: [Deposit Stake in LYXt](/validator-key-stake/).
+1. Guide: [Generate Deposit Keys](/docs/mainnet/validator-key-generation/lukso-wagyu).
+2. Guide: [Deposit Stake in LYXt](/docs/mainnet/validator-key-stake/).
 
 Copy your folder(s) of your deposit keys from your personal computer into the working directory of your node.
 
@@ -185,7 +185,7 @@ Implementing and running the slasher service is included in the consensus client
 - The node could become unstable and crash due to running out of resources, which could disrupt its participation in the consensus process and potentially lead to penalties if it's also running a validator client.
 - The service could slow down other processes running on the same node, such as if it's also running a beacon node or validator client.
 
-Typical requirements for the slasher service are a modern multi-core CPU, 16GB or RAM and an SSD with decent size. Have a look at the [Storage Comparison](./03-client-theory.md) section for more details on the disk usage.
+Typical requirements for the slasher service are a modern multi-core CPU, 16GB or RAM and an SSD with decent size. Have a look at the [Storage Comparison](/docs/mainnet/complete-node-guide/blockchain-clients/client-theory) section for more details on the disk usage.
 
 In case you can not keep up or have an old machine not able to run the slasher functionalty, you can disable it using a CLI flag. Make sure you use your own transaction fee recipient address.
 

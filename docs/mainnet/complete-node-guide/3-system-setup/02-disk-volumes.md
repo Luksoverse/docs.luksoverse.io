@@ -86,7 +86,7 @@ tmpfs                              3.2G  4.0K  3.2G   1% /run/user/1000
 
 ### 3.2.2 Adding a new disk to the group
 
-In case you have a second storage device, like a 2.5" HHD that you want to add to your node, you can do this by extending the logical volume and the volume group itself across multiple physical devices. Have a look into the [hardware build](/1-hardware-build/) section for more information about adding the HHD to your file.
+In case you have a second storage device, like a 2.5" HHD that you want to add to your node, you can do this by extending the logical volume and the volume group itself across multiple physical devices. Have a look into the [hardware build](/docs/mainnet/complete-node-guide/hardware-build/start-here) section for more information about adding the HHD to your file.
 
 If you add more storage after the node was running, make sure to stop all running blockchain processes and to shut down the node properly using the `sudo shutdown now` command. Then open the case and connect your new storage sitting on the corresponding frame.
 

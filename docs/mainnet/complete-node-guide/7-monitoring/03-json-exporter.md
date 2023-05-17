@@ -239,7 +239,7 @@ The configuration file is split between multiple sections: `[Unit]`, `[Service]`
 
 #### Logging
 
-By default, the service will write journal logs into the `/var/log/journal/` folder using the `journald` service. But you can also configure it to use system logs that are written into the `/var/log/syslog` folder by the `syslog` process. You can find a full explanation within the [first exporter installation](./02-node-exporter.md).
+By default, the service will write journal logs into the `/var/log/journal/` folder using the `journald` service. But you can also configure it to use system logs that are written into the `/var/log/syslog` folder by the `syslog` process. You can find a full explanation within the [first exporter installation](/docs/mainnet/complete-node-guide/monitoring/node-exporter).
 
 ```text
 [Unit]

@@ -2,7 +2,7 @@
 
 Now that we have prepared all ports, the firewall and the router, we can actually install the blockchain clients used to participate in the network intself using the LUKSO CLI.
 
-> If you want to use LUKSO's official Docker Configurations, have a look at the [Docker Setup](./11-docker-setup.md) instead.
+> If you want to use LUKSO's official Docker Configurations, have a look at the [Docker Setup](/docs/mainnet/complete-node-guide/blockchain-clients/docker-setup) instead.
 
 Official Links:
 
@@ -17,7 +17,7 @@ You can control configurations to devnets, the testnet, and the mainnet in one w
 
 In the background, the blockchain clients run directly on the operating system, i.e., in the user directory `/usr/local/` of the Ubuntu Server installation. The services are executed directly from the build and can be accessed via the terminal.
 
-> Please see the [Docker Setup](./11-docker-setup.md) guide if you want to run multiple networks simultaneously or need to have your application separated from the rest of service running on your node machine.
+> Please see the [Docker Setup](/docs/mainnet/complete-node-guide/blockchain-clients/docker-setup) guide if you want to run multiple networks simultaneously or need to have your application separated from the rest of service running on your node machine.
 
 ### 6.8.2 Installing the LUKSO CLI
 

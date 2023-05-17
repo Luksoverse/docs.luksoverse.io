@@ -6,7 +6,7 @@ This section will cover the setup of the Validator keys using the [LUKSO Wagyu K
 
 Wagyu is a tool that aims to simplify the process of staking Ethereum-based blockchains. It provides a user-friendly graphical interface that guides users through the process.
 
-On the other hand, you could also choose to generate deposit keys using the [LUKSO Key Gen CLI](./03-lukso-deposit-cli.md) tool.
+On the other hand, you could also choose to generate deposit keys using the [LUKSO Key Gen CLI](/docs/mainnet/validator-key-generation/lukso-deposit-cli) tool.
 
 ### Download the Software
 
@@ -59,7 +59,7 @@ Continue clicking on `CHECK`.
 
 ![Wagyu Key Screen](/img/gui_keygen_6.png)
 
-You will have to provide the number of new keys to generate, your password that will be used for encrypting the deposit keys you generate and your withdrawal address for all the keys. You can read more about the withdrawal address within the [Earnings & Withdrawals](/6-blockchain-clients/02-network-theory.md) section of the guide.
+You will have to provide the number of new keys to generate, your password that will be used for encrypting the deposit keys you generate and your withdrawal address for all the keys. You can read more about the withdrawal address within the [Earnings & Withdrawals](/docs/mainnet/complete-node-guide/blockchain-clients/network-theory) section of the guide.
 Then click `NEXT` to continue.
 
 > You can generate more keys than you actually want to fund right now. These will spin up in idle mode and wont be activated until they have enough funds on them.
@@ -69,7 +69,7 @@ Then click `NEXT` to continue.
 In case you have multiple wallets to make deposits from, you could either:
 
 - **Generate batches** with the same seed. Therefore just create the keys for the first wallet now and redo the process by importing an existing seed afterwards. This way, you will have multiple `deposit_data.json` files for each wallet. For instance: if you have 30 validators and 3 different wallets with 320 LYXe/LYX each, create 10 validators each during the process using the same seed, or even the same withdrawal address. In the first run, specify you want to generate 10 keys from a fresh seed. In the second run, specify you already have 10 keys. In the 3rd run, specify you already have 20 keys, and generate the last 10. You will end up with 3 different folders.
-- **Modify the deposit file** after you generated your total amount of keys in one folder. Here, create duplicates of the `deposit_data.json` file. Open it up using a JSON Editor and remove as many `pubkey` elements as you want. For instance: if you have 30 validators and 3 different wallets with 320 LYXe/LYX each, generate 30 validators in one go. Afterwards make three copies of the deposit file. In the 1st copy, delete everything after your 10th `pubkey` (validators 1-10). In the 2nd copy, delete the first and last ten `pubkey` elements (validators 11-20). In the 3rd copy, delete the first 20 `pubkey` elements (validators 21-30.) You will end up with one folder but 3 deposit files. There is an in-detail description in the [Validator Staking](/validator-key-stake/) section.
+- **Modify the deposit file** after you generated your total amount of keys in one folder. Here, create duplicates of the `deposit_data.json` file. Open it up using a JSON Editor and remove as many `pubkey` elements as you want. For instance: if you have 30 validators and 3 different wallets with 320 LYXe/LYX each, generate 30 validators in one go. Afterwards make three copies of the deposit file. In the 1st copy, delete everything after your 10th `pubkey` (validators 1-10). In the 2nd copy, delete the first and last ten `pubkey` elements (validators 11-20). In the 3rd copy, delete the first 20 `pubkey` elements (validators 21-30.) You will end up with one folder but 3 deposit files. There is an in-detail description in the [Validator Staking](/docs/mainnet/validator-key-stake/) section.
 
 > If your wallets have different amounts of LYXt, LYXe, or LYX, adjust the pubkeys and validator amounts accordingly so it matches the coins your hold.
 
@@ -93,8 +93,8 @@ The final screen will be shown afterwards
 
 Check out the files in your folder. You should have two types of files:
 
-- `deposit_data.json` The file you will use to make deposit transactions in order to activate the keys. You will have to use this file during the [Deposit Launchpad](/validator-key-stake/) process.
-- `keystore.json`: One keystore file for every validator key you generated. Those files will have to be impoorted into your node as described in the [Validator Setup](/6-blockchain-clients/09-validator-setup.md) section.
+- `deposit_data.json` The file you will use to make deposit transactions in order to activate the keys. You will have to use this file during the [Deposit Launchpad](/docs/mainnet/validator-key-stake/) process.
+- `keystore.json`: One keystore file for every validator key you generated. Those files will have to be impoorted into your node as described in the [Validator Setup](/docs/mainnet/complete-node-guide/blockchain-clients/validator-setup) section.
 
 ### Generate Additional Keys
 
@@ -106,7 +106,7 @@ Enter your validator seed again and press `IMPORT` to start the importing proces
 
 ![Wagyu Seed Import](/img/gui_keygen_11.png)
 
-Now choose the amount of keys that you want to additionally create for this validator, and how many keys you already got in another folder. Also define your withdrawal address for all the additional keys. You can read more about the withdrawal address within the [Earnings & Withdrawals](/6-blockchain-clients/02-network-theory.md) section of the guide.
+Now choose the amount of keys that you want to additionally create for this validator, and how many keys you already got in another folder. Also define your withdrawal address for all the additional keys. You can read more about the withdrawal address within the [Earnings & Withdrawals](/docs/mainnet/complete-node-guide/blockchain-clients/network-theory) section of the guide.
 
 If you want to create a folder with all the keys again, in case you want to update the withdrawal address before deposit or recreate the validator key passwords, you can select `0` for the amount of existing keys (starting index) and the total amount of all your deposit keys as the number of keys to create. This will recreate all your keys for the validator.
 
