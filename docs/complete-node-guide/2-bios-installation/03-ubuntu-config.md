@@ -4,7 +4,7 @@
 
 #### Starting Point
 
-Coming from the [BIOS Setup](./2-bios-setup.md) section, we are left at the beginning of the Ubuntu configuration after selecting `Try or Install Ubuntu Server`.
+Coming from the [BIOS Setup](./02-bios-setup.md) section, we are left at the beginning of the Ubuntu configuration after selecting `Try or Install Ubuntu Server`.
 
 ![Try or Install Ubuntu Server](/img/install_01.png)
 
@@ -119,7 +119,7 @@ By default, the logical volume will have the size of `100GB` to allow flexibilit
 
 If you are certain that you want to use the whole disk space available, set the `Size` property of the logical volume to the maximum value that is shown in front of the input field of the logical volumes pop-up window.
 
-> Within the [system setup](/3-system-setup/) section of the guide there is also whole chapter about extending the the LVM storage of a logical volume later on and how new disks can be added to your system.
+> Within the [system setup](/docs/complete-node-guide/3-system-setup/) section of the guide there is also whole chapter about extending the the LVM storage of a logical volume later on and how new disks can be added to your system.
 
 ![Ubuntu Partition Config](/img/install_08.png)
 
