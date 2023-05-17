@@ -1,6 +1,6 @@
 # Hardware Setup
 
-I chose an expensive and professional setup because I plan to use the slasher functionality and run multiple networks from one node, partly via docker images on top of the LUKSO CLI. Please understand that this is not mandatory. The minimum requirements to run a LUKSO node can be read in the network section of the [official documentation](https://docs.lukso.tech/networks/). You can get an entry level computer to run a validator node for around 600€. By running the node without the slasher functionality, you can further trim down the hardware requirements. You can read more about the Slasher within the [Blockchain Client Chapter](/docs/mainnet/complete-node-guide/6-blockchain-client/).
+I chose an expensive and professional setup because I plan to use the slasher functionality and run multiple networks from one node, partly via docker images on top of the LUKSO CLI. Please understand that this is not mandatory. The minimum requirements to run a LUKSO node can be read in the network section of the [official documentation](https://docs.lukso.tech/networks/). You can get an entry level computer to run a validator node for around 600€. By running the node without the slasher functionality, you can further trim down the hardware requirements. You can read more about the Slasher within the [Blockchain Client Chapter](/docs/mainnet/complete-node-guide/blockchain-clients/start-here).
 
 > _For more information, read the official [Hardware Requirements of Geth](https://geth.ethereum.org/docs/getting-started/hardware-requirements) on the Ethereum Page or the [Requirements of Erigon](https://github.com/ledgerwatch/erigon#system-requirements) as one of the most widely used clients in the Ethereumverse._
 
@@ -23,7 +23,7 @@ Note that you also need thermal paste and screwdrivers and might want to add WiF
 
 The storage may not be sufficient for future-proof use of the node over several years or by several chains. Here, the freezer functionality of Geth comes into play to split the network data on different disks. I plan to expand my storage and add a 4 TB 2.5" HDD to fit the housing. Therefore, make sure to keep all the accessories and frames.
 
-> **NOTE:** Have a look into the [Blockchain Clients](/6-blockchain-clients/) section of the guide to determine how much storage you will need without doing maintenance to your node.
+> **NOTE:** Have a look into the [Blockchain Clients](/docs/mainnet/complete-node-guide/blockchain-clients/start-here) section of the guide to determine how much storage you will need without doing maintenance to your node.
 
 ![Hardware Switch](/img/hardware-switch.png)
 

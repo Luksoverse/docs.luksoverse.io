@@ -18,15 +18,9 @@ function HomepageHeader() {
         <div className={styles.buttons}>
           <Link
             className="button button--secondary button--lg"
-            to="/docs/node-guide/start-here"
+            to="/docs/mainnet/complete-node-guide/hardware-build/start-here"
           >
-            Prepare your device for Mainnet
-          </Link>
-          <Link
-            className="button button--secondary button--lg"
-            to="/docs/mainnet/mainnet-info"
-          >
-            Generate validator keys
+            Start Your Mainnet Node
           </Link>
         </div>
       </div>
