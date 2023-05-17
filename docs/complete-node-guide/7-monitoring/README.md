@@ -1,0 +1,12 @@
+# 7. Node Monitoring
+
+This section of the blockchain node guide provides a comprehensive overview of the monitoring process. It features the use of various tools like Node Exporter, JSON Exporter, Blackbox Exporter, Prometheus, Promtool, and Grafana for tasks such as hardware monitoring, web scraping, network checks, real-time monitoring, and data visualization.
+
+1. [Core Tools and Open Ports](./01-core-tools.md)
+2. [Hardware Monitoring: Node Exporter](./02-node-exporter.md)
+3. [Web Scraping: JSON Exporter](./03-json-exporter.md)
+4. [Network Checks: Blackbox Exporter](./04-blackbox-exporter.md)
+5. [Prometheus and Promtool Monitoring](./05-prometheus.md)
+6. [Using Grafana Dashboards](./06-grafana.md)
+
+**Continue with Section 8: [Grafana Notifications](/8-notifications/)**
