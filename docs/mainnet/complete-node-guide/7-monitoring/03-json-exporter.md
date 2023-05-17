@@ -172,7 +172,7 @@ sudo chown json-exporter-worker:json-exporter-worker /etc/json_exporter/
 Now we can create a new config file within this folder:
 
 ```sh
-sudo vim /etc/json_exporter/json_exporter.yaml
+sudo nano /etc/json_exporter/json_exporter.yaml
 ```
 
 Write the following properties into is file:
@@ -213,10 +213,10 @@ We can now continue the service configuration and link our external metrics ther
 
 After installation, we want to define how the JSON Exporter service should be run. Within Ubuntu, the `/etc/systemd/system/` directory is where system service unit files are stored and used to configure services to start automatically at boot.
 
-Here, we can create a file called `json_exporter.service`. A service file is generally used to define how a deamon processes should be started. In our case, we create the file with the exact name of the JSON Exporter service that also stored within the system directory, in order to modify the JSON Exporter's startup process. We can use Vim, as we did before on various other files.
+Here, we can create a file called `json_exporter.service`. A service file is generally used to define how a deamon processes should be started. In our case, we create the file with the exact name of the JSON Exporter service that also stored within the system directory, in order to modify the JSON Exporter's startup process. We can use nano, as we did before on various other files.
 
 ```sh
-sudo vim /etc/systemd/system/json_exporter.service
+sudo nano /etc/systemd/system/json_exporter.service
 ```
 
 The configuration file is split between multiple sections: `[Unit]`, `[Service]`, and `[Install]`. The unit contains generic options that are not dependent on the type of service and provide documentation. The service and install section is where we will house our configuration properties:

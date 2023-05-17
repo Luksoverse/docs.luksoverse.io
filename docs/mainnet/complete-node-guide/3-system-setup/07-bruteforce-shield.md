@@ -42,7 +42,7 @@ For the blockchain node, its recommended to set properties for the SSH deamon pr
 Open the configuration file:
 
 ```sh
-sudo vim /etc/fail2ban/jail.local
+sudo nano /etc/fail2ban/jail.local
 ```
 
 Input the properties into the configuration snippet:

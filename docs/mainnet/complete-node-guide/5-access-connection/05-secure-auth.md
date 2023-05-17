@@ -3,7 +3,7 @@
 Now we need to enable key authentication on the SSH configuration of the node. Therefore we adjust the config file like we did in the systems setup.
 
 ```sh
-sudo vim /etc/ssh/sshd_config
+sudo nano /etc/ssh/sshd_config
 ```
 
 Within the file scroll down to the following lines:
@@ -88,7 +88,7 @@ If you can still log in using your user's password, redo the previous step and m
 On your personal machine, add the RSA key as identity to your SSH connection properties by opening the configuration file.
 
 ```sh
-vim ~/.ssh/config
+nano ~/.ssh/config
 ```
 
 Below the port of your node host, add the following line starting with two spaces. Make sure to update `<my-chosen-keyname>` with the actual name of the key.
