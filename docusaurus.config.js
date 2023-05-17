@@ -60,7 +60,7 @@ const config = {
         items: [
           {
             type: 'doc',
-            docId: 'mainnet/mainnet-info',
+            docId: 'mainnet/complete-node-guide/hardware-build/start-here',
             position: 'left',
             label: 'Mainnet',
           },
@@ -103,8 +103,8 @@ const config = {
             title: 'Docs',
             items: [
               {
-                label: 'Set up your node',
-                to: '/docs/node-guide/start-here',
+                label: 'Start Your Mainnet Node',
+                to: 'mainnet/complete-node-guide/hardware-build/start-here',
               },
               {
                 label: 'Mainnet info',
