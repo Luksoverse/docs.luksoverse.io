@@ -62,10 +62,10 @@ Whenever you update your ubuntu packages using APT, it will automatically fetch 
 
 After installation, we want to define how the Prometheus service should be run itself. Within Ubuntu, the `/etc/systemd/system/` directory is where system service unit files are stored and used to configure services to start automatically at boot.
 
-Here, we can create a file called `grafana-server.service`. A service file is generally used to define how a deamon processes should be started. In our case, we create the file with the exact name of the Prometheus service that also stored within the system directory, in order to modify Prometheus' startup process. We can use Vim, as we did before on various other files.
+Here, we can create a file called `grafana-server.service`. A service file is generally used to define how a deamon processes should be started. In our case, we create the file with the exact name of the Prometheus service that also stored within the system directory, in order to modify Prometheus' startup process. We can use nano, as we did before on various other files.
 
 ```sh
-sudo vim /lib/systemd/system/grafana-server.service
+sudo nano /lib/systemd/system/grafana-server.service
 ```
 
 The configuration file is split between multiple sections: `[Unit]`, `[Service]`, and `[Install]`. The unit contains generic options that are not dependent on the type of service and provide documentation. The service and install section is where we will house our configuration properties:

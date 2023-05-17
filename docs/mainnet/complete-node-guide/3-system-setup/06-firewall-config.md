@@ -1,4 +1,4 @@
-## 3.6 Configure Firewall
+# Configure Firewall
 
 Now we need to enable ssh in firewall by allowing incoming connections to the previous configured port.
 

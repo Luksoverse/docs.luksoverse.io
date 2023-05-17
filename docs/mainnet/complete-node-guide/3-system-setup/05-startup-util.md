@@ -1,4 +1,4 @@
-## 3.5 Set Remote Access on Startup
+# Set Remote Access on Startup
 
 Next, we want to check if OpenSSH server starts automatically when the system boots up. Here we can also use the system control to check if it is enabled already.
 

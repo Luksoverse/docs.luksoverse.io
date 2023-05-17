@@ -1,4 +1,4 @@
-## 3.7 Set Bruteforce Protection
+# Set Bruteforce Protection
 
 Brute force protection is a critical aspect of securing blockchain nodes and servers. As these systems often manage valuable assets and sensitive information, they are prime targets for attackers seeking unauthorized access. Brute force attacks involve systematically attempting various combinations of ports, usernames, and passwords to gain access to a target system. To mitigate such attacks, it is essential to implement robust security measures on blockchain nodes and servers.
 
@@ -42,7 +42,7 @@ For the blockchain node, its recommended to set properties for the SSH deamon pr
 Open the configuration file:
 
 ```sh
-sudo vim /etc/fail2ban/jail.local
+sudo nano /etc/fail2ban/jail.local
 ```
 
 Input the properties into the configuration snippet:

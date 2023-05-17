@@ -1,4 +1,4 @@
-## 3.2 Manage Storage Volumes
+# Manage Storage Volumes
 
 As described in the previous guide of the system installation, the LVM is a flexible and powerful storage management system. It delivers great functionality, however initially only allocates `100GB` of storage for the logical volume by default.
 

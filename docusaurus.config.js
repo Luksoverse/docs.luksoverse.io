@@ -111,7 +111,7 @@ const config = {
                 to: '/docs/mainnet/mainnet-info',
               },
               {
-                label: "Community archive",
+                label: 'Community archive',
                 to: '/docs/community-guides/johnny-ebd-node-guide',
               },
               {

@@ -134,7 +134,7 @@ sudo chown blackbox-exporter-worker:blackbox-exporter-worker /etc/blackbox_expor
 Now we can create a new config file within this folder:
 
 ```sh
-sudo vim /etc/blackbox_exporter/blackbox.yaml
+sudo nano /etc/blackbox_exporter/blackbox.yaml
 ```
 
 #### Probing Configuration
@@ -177,10 +177,10 @@ We can now continue the service configuration and link our external metrics ther
 
 After installation, we want to define how the Blackbox Exporter service should be run. Within Ubuntu, the `/etc/systemd/system/` directory is where system service unit files are stored and used to configure services to start automatically at boot.
 
-Here, we can create a file called `blackbox_exporter.service`. A service file is generally used to define how a deamon processes should be started. In our case, we create the file with the exact name of the Blackbox Exporter service that also stored within the system directory, in order to modify the Blackbox Exporter's startup process. We can use Vim, as we did before on various other files.
+Here, we can create a file called `blackbox_exporter.service`. A service file is generally used to define how a deamon processes should be started. In our case, we create the file with the exact name of the Blackbox Exporter service that also stored within the system directory, in order to modify the Blackbox Exporter's startup process. We can use nano, as we did before on various other files.
 
 ```sh
-sudo vim /etc/systemd/system/blackbox_exporter.service
+sudo nano /etc/systemd/system/blackbox_exporter.service
 ```
 
 The configuration file is split between multiple sections: `[Unit]`, `[Service]`, and `[Install]`. The unit contains generic options that are not dependent on the type of service and provide documentation. The service and install section is where we will house our configuration properties:

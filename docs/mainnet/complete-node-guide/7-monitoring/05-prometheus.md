@@ -135,7 +135,7 @@ sudo mkdir -p /etc/prometheus/console_libraries /etc/prometheus/consoles /etc/pr
 Afterwards, we can create a new server configuration file for Prometheus to define how Prometheus will function and what services it will monitor.
 
 ```sh
-sudo vim /etc/prometheus/prometheus.yaml
+sudo nano /etc/prometheus/prometheus.yaml
 ```
 
 Here is a breakdown of the various parts we will add to the configuration:
@@ -276,10 +276,10 @@ sudo chmod 755 /var/lib/prometheus
 
 After installation and job configuration, we want to define how the Prometheus service should be run itself. Within Ubuntu, the `/etc/systemd/system/` directory is where system service unit files are stored and used to configure services to start automatically at boot.
 
-Here, we can create a file called `prometheus.service`. A service file is generally used to define how a deamon processes should be started. In our case, we create the file with the exact name of the Prometheus service that also stored within the system directory, in order to modify Prometheus' startup process. We can use Vim, as we did before on various other files.
+Here, we can create a file called `prometheus.service`. A service file is generally used to define how a deamon processes should be started. In our case, we create the file with the exact name of the Prometheus service that also stored within the system directory, in order to modify Prometheus' startup process. We can use nano, as we did before on various other files.
 
 ```sh
-sudo vim /etc/systemd/system/prometheus.service
+sudo nano /etc/systemd/system/prometheus.service
 ```
 
 The configuration file is split between multiple sections: `[Unit]`, `[Service]`, and `[Install]`. The unit contains generic options that are not dependent on the type of service and provide documentation. The service and install section is where we will house our configuration properties:

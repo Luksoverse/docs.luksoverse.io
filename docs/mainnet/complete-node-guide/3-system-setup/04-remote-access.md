@@ -1,4 +1,4 @@
-## 3.4 Configure Remote Access
+# Configure Remote Access
 
 Within the Ubuntu installation, we already installed openSSH server and I explained why it is an essential tool. If you did not configure it already, now is time to set it up so we can connect to our server from other devices in a secure manner.
 
@@ -12,9 +12,9 @@ It is recommended to choose a port number higher than `1024`, as ports below thi
 
 #### Text Editor
 
-To configure files on the node, we use Ubuntus default text editor called Vi Improved. Vim is an enhanced version of the classic Unix text editor, Vi, with additional features and improved usability. Vim operates in multiple modes, primarily normal mode, insert mode, and command mode, allowing users to efficiently navigate, edit, and manipulate text files.
+To configure files on the node, we use Ubuntus default text editor called Vi Improved. nano is an enhanced version of the classic Unix text editor, Vi, with additional features and improved usability. nano operates in multiple modes, primarily normal mode, insert mode, and command mode, allowing users to efficiently navigate, edit, and manipulate text files.
 
-Once the file is open in Vim, you'll start in normal mode. You navigate through files by using the arrow keys.
+Once the file is open in nano, you'll start in normal mode. You navigate through files by using the arrow keys.
 
 To enter insert mode to edit the text, press `i`. You'll see `-- INSERT --`showing up at the bottom of the screen. To exit insert mode and return to normal mode, press `Esc`.
 
@@ -25,10 +25,10 @@ To enter command mode to manage save and exit, press `:` while in normal mode. A
 
 ### 3.4.1 Edit SSH Configuration
 
-Lets open the configuration file using Vim.
+Lets open the configuration file using nano.
 
 ```sh
-sudo vim /etc/ssh/sshd_config
+sudo nano /etc/ssh/sshd_config
 ```
 
 Locate the line that starts with `#Port 22` and uncomment it by removing the `#` at the beginning, if it is present. This will activate the static port number you want to use for connecting to the node.

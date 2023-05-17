@@ -57,7 +57,7 @@ Normal uses ~197,000 KB of RAM
 That is a difference of 17,000 KB of RAM, reduction of 9%.
 
 User Interaction on Minimized:
-- No text editor (vi, vim, nano)
+- No text editor (vi, nano, nano)
 - No ufw nor iptables command
 - No man pages (documentation)
 ```

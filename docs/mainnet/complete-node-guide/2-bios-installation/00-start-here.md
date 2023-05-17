@@ -6,4 +6,4 @@ This section about the guide is about configuring your blockchain node's BIOS an
 2. [BIOS Setup and Node Boot](/docs/mainnet/complete-node-guide/bios-installation/bios-setup)
 3. [Ubuntu Configuration Walkthrough](/docs/mainnet/complete-node-guide/bios-installation/ubuntu-config)
 
-**Continue with Section 3: [System Setup](/docs/mainnet/complete-node-guide/3-system-setup/)**
+**Continue with Section 3: [System Setup](/docs/mainnet/complete-node-guide/system-setup/start-here)**

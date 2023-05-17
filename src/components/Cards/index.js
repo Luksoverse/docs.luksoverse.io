@@ -5,7 +5,8 @@ const Cards = () => {
   const cardData = [
     {
       title: 'Complete Node Guide',
-      description: 'A complete guide to prepare your system, install your node and setup monitoring by LUKSO dev Felix Hildebrandt.',
+      description:
+        'A complete guide to prepare your system, install your node and setup monitoring by LUKSO dev Felix Hildebrandt.',
       path: '/docs/mainnet/complete-node-guide/hardware-build/start-here',
     },
     {
@@ -20,11 +21,12 @@ const Cards = () => {
     },
     {
       title: 'Advanced Setup',
-      description: 'Community Guides how to use an advanced setup to acces your node externally.',
+      description:
+        'Community Guides how to use an advanced setup to acces your node externally.',
       path: '/docs/community-guides/',
     },
     {
-      title: "Community Archive",
+      title: 'Community Archive',
       description: 'Setting up your system and start the LUKSO network.',
       path: '/docs/community-guides/community-archive',
     },
