@@ -4,8 +4,8 @@ import Card from '../Card';
 const Cards = () => {
   const cardData = [
     {
-      title: 'Run a Node',
-      description: 'Prepare your system, install your node and setup monitoring.',
+      title: 'Complete Node Guide',
+      description: 'A complete guide to prepare your system, install your node and setup monitoring by LUKSO dev Felix Hildebrandt.',
       path: '/docs/node-guide/start-here',
     },
     {

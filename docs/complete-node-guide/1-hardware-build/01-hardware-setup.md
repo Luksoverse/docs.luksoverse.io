@@ -25,7 +25,7 @@ The storage may not be sufficient for future-proof use of the node over several 
 
 > **NOTE:** Have a look into the [Blockchain Clients](/6-blockchain-clients/) section of the guide to determine how much storage you will need without doing maintenance to your node.
 
-![Hardware Switch](./img/hardware-switch.png)
+![Hardware Switch](/img/hardware-switch.png)
 
 I set up my machine on a small home rack and connected my node to an 8-port switch connected to my router. Not being directly connected to the router not only allows more slots but also allows me to place and connect servers and PCs in separate rooms.
 
