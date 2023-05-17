@@ -4,10 +4,10 @@ This section of the guide is about building your blockchain node from scratch. B
 
 In this guide, I will walk you through my entire process, from selecting the components including router and network properties, to assembling and configuring the node for optimal performance.
 
-1. [Hardware Setup](./01-hardware-setup.md)
-2. [Router Requirements](./02-router-requirement.md)
-3. [Network Stats](./03-network-stats.md)
-4. [Mainboard Swap](./04-mainboard-swap.md)
-5. [Component Installation](./05-component-install.md)
+1. [Hardware Setup](/docs/mainnet/complete-node-guide/hardware-build/start-here)
+2. [Router Requirements](/docs/mainnet/complete-node-guide/hardware-build/router-requirement)
+3. [Network Stats](/docs/mainnet/complete-node-guide/hardware-build/network-stats)
+4. [Mainboard Swap](/docs/mainnet/complete-node-guide/hardware-build/mainboard-swap)
+5. [Component Installation](/docs/mainnet/complete-node-guide/hardware-build/component-install)
 
 **Continue with Chapter 2: [BIOS Installation](/docs/mainnet/complete-node-guide/2-bios-installation/)**
