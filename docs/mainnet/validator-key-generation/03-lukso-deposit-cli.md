@@ -6,7 +6,7 @@ This section will cover the setup of the Validator keys using the [LUKSO Key Gen
 
 Key Gen is a command-line interface tool that helps generate the necessary keys for becoming a validator on Ethereum-based blockchains.
 
-On the other hand, you could also choose to generate deposit keys using the [LUKSO Deposit CLI](./03-lukso-deposit-cli.md) tool.
+On the other hand, you could also choose to generate deposit keys using the [LUKSO Deposit CLI](/docs/mainnet/complete-node-guide/blockchain-clients/cli-setup) tool.
 
 ### Download the Software
 
@@ -37,7 +37,7 @@ cd
 
 ### Setup the Executable
 
-After downloading, we need to unpack the file. A description of the tape archive tool can be found within the [Node Exporter](/7-monitoring/02-node-exporter.md) section for monitoring. Please note that the filenames might change due to the versioning.
+After downloading, we need to unpack the file. A description of the tape archive tool can be found within the [Node Exporter](/docs/mainnet/complete-node-guide/monitoring/node-exporter) section for monitoring. Please note that the filenames might change due to the versioning.
 
 ```sh
 tar xzfv lukso-key-gen-cli-v2.5.3-linux.tar.gz
@@ -51,7 +51,7 @@ cd lukso-key-gen-cli-v2.5.3-linux
 
 ### Generate Initial the Keys
 
-Now we can start up the application to generate our initial keys using the `new-mnemonic` option. Setting an withdrawal address is highly recommended as you will get the change to withdraw your deposits later on, as described in the [Earnings & Withdrawals](/6-blockchain-clients/02-network-theory) section of the guide.
+Now we can start up the application to generate our initial keys using the `new-mnemonic` option. Setting an withdrawal address is highly recommended as you will get the change to withdraw your deposits later on, as described in the [Earnings & Withdrawals](/docs/mainnet/complete-node-guide/blockchain-clients/network-theory) section of the guide.
 
 ```sh
 ./lukso-key-gen new-mnemonic --eth1_withdrawal_address 0x42000421dd80D1e90E56E87e6eE18D7770b9F8cC
@@ -76,7 +76,7 @@ Next, select how many validators you want to run:
 In case you have multiple wallets to make deposits from, you could either:
 
 - **Generate batches** with the same seed. Therefore just create the keys for the first wallet now and redo the process by importing an existing seed afterwards. This way, you will have multiple `deposit_data.json` files for each wallet. For instance: if you have 30 validators and 3 different wallets with 320 LYXe/LYX each, create 10 validators each during the process using the same seed, or even the same withdrawal address. In the first run, specify you want to generate 10 keys from a fresh seed. In the second run, specify you already have 10 keys. In the 3rd run, specify you already have 20 keys, and generate the last 10. You will end up with 3 different folders.
-- **Modify the deposit file** after you generated your total amount of keys in one folder. Here, create duplicates of the `deposit_data.json` file. Open it up using a JSON Editor and remove as many `pubkey` elements as you want. For instance: if you have 30 validators and 3 different wallets with 320 LYXe/LYX each, generate 30 validators in one go. Afterwards make three copies of the deposit file. In the 1st copy, delete everything after your 10th `pubkey` (validators 1-10). In the 2nd copy, delete the first and last ten `pubkey` elements (validators 11-20). In the 3rd copy, delete the first 20 `pubkey` elements (validators 21-30.) You will end up with one folder but 3 deposit files. There is an in-detail description in the [Validator Staking](/validator-key-stake/) section.
+- **Modify the deposit file** after you generated your total amount of keys in one folder. Here, create duplicates of the `deposit_data.json` file. Open it up using a JSON Editor and remove as many `pubkey` elements as you want. For instance: if you have 30 validators and 3 different wallets with 320 LYXe/LYX each, generate 30 validators in one go. Afterwards make three copies of the deposit file. In the 1st copy, delete everything after your 10th `pubkey` (validators 1-10). In the 2nd copy, delete the first and last ten `pubkey` elements (validators 11-20). In the 3rd copy, delete the first 20 `pubkey` elements (validators 21-30.) You will end up with one folder but 3 deposit files. There is an in-detail description in the [Validator Staking](/docs/mainnet/validator-key-stake/) section.
 
 > If your wallets have different amounts of LYXt, LYXe, or LYX, adjust the pubkeys and validator amounts accordingly so it matches the coins your hold.
 
@@ -148,8 +148,8 @@ The deposit files will be saved within the same folder at `./validator_keys`. Pr
 
 Check out the files in your folder. You should have two types of files:
 
-- `deposit_data.json` The file you will use to make deposit transactions in order to activate the keys. You will have to use this file during the [Deposit Launchpad](/validator-key-stake/) process.
-- `keystore.json`: One keystore file for every validator key you generated. Those files will have to be impoorted into your node as described in the [Validator Setup](/6-blockchain-clients/09-validator-setup.md) section.
+- `deposit_data.json` The file you will use to make deposit transactions in order to activate the keys. You will have to use this file during the [Deposit Launchpad](/docs/mainnet/validator-key-stake/) process.
+- `keystore.json`: One keystore file for every validator key you generated. Those files will have to be impoorted into your node as described in the [Validator Setup](/docs/mainnet/complete-node-guide/blockchain-clients/validator-setup) section.
 
 ### Generate Additional Keys
 
@@ -165,7 +165,7 @@ If you want to add additional keys to your validator, first make sure you rename
 mv validator_keys <new-folder-name>
 ```
 
-Start up the tool with an existing mnemonic. Again, setting an withdrawal address is highly recommended as you will get the change to withdraw your deposits later on, as described in the [Earnings & Withdrawals](/6-blockchain-clients/02-network-theory.md) section of the guide.
+Start up the tool with an existing mnemonic. Again, setting an withdrawal address is highly recommended as you will get the change to withdraw your deposits later on, as described in the [Earnings & Withdrawals](/docs/mainnet/complete-node-guide/blockchain-clients/network-theory) section of the guide.
 
 > If you use it as a backup, make sure you use the same withdrawal address as before.
 

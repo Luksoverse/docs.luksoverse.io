@@ -4,7 +4,7 @@ To allow external incoming communication into your home network, so they can be 
 
 ### 6.7.1 Resolve the Node's IP Address
 
-Resolve the nodes IP address again as we already did and explained in detail on the [router config](/4-router-config/) section of the guide:
+Resolve the nodes IP address again as we already did and explained in detail on the [router config](/docs/mainnet/complete-node-guide/router-config/start-here) section of the guide:
 
 ```sh
 ip route show default

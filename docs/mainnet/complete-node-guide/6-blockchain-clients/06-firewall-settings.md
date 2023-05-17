@@ -1,6 +1,6 @@
 # Firewall Settings
 
-After you have spot out which ports you need to open, we can go back to editing the firewall settings. We can do this the same way as we did before in the [system setup](/3-system-setup/) section of this guide.
+After you have spot out which ports you need to open, we can go back to editing the firewall settings. We can do this the same way as we did before in the [system setup](/docs/mainnet/complete-node-guide/system-setup/start-here) section of this guide.
 
 Log in to your node if you are not already connected:
 
@@ -35,7 +35,7 @@ Rule added (v6)
 
 ### 6.6.2 Checking the configured ports
 
-Now we can verify our firewall configuration as we did previously. If something is missing or configured wrong, have a look into the system setup's [firewall section](/3-system-setup/) on how to remove them.
+Now we can verify our firewall configuration as we did previously. If something is missing or configured wrong, have a look into the system setup's [firewall section](/docs/mainnet/complete-node-guide/system-setup/start-here) on how to remove them.
 
 ```sh
 sudo ufw status

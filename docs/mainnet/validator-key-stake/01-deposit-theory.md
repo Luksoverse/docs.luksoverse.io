@@ -6,7 +6,7 @@ There are a few theoratical things that you might have to understand in order to
 
 LUKSO is started as PoS Blockchain with an initial genesis validator set. These validators deposited on the Ethereum blockchain and locked their LYXe in order to start off with the equal funds within the LUKSO blockchain itself.
 
-> More about the Network, Tokenomics, Withdrawals, and Earnings can be found in the [Network Theory](/6-blockchain-clients/02-network-theory.md) section of this guide.
+> More about the Network, Tokenomics, Withdrawals, and Earnings can be found in the [Network Theory](/docs/mainnet/complete-node-guide/blockchain-clients/network-theory) section of this guide.
 
 ### Initial Deposits
 
