@@ -51,7 +51,7 @@ cd lukso-key-gen-cli-v2.5.3-linux
 
 ### Generate Initial the Keys
 
-Now we can start up the application to generate our initial keys using the `new-mnemonic` option. Setting an withdrawal address is highly recommended as you will get the change to withdraw your deposits later on, as described in the [Earnings & Withdrawals](/6-blockchain-clients/02-network-theory.md) section of the guide.
+Now we can start up the application to generate our initial keys using the `new-mnemonic` option. Setting an withdrawal address is highly recommended as you will get the change to withdraw your deposits later on, as described in the [Earnings & Withdrawals](/6-blockchain-clients/02-network-theory) section of the guide.
 
 ```sh
 ./lukso-key-gen new-mnemonic --eth1_withdrawal_address 0x42000421dd80D1e90E56E87e6eE18D7770b9F8cC
