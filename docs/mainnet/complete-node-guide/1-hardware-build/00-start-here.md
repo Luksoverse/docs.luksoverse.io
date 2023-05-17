@@ -1,4 +1,4 @@
-# 1. Hardware and Build Process
+# Hardware and Build Process
 
 This section of the guide is about building your blockchain node from scratch. Building a custom node can be an exciting and rewarding experience, as it allows you to take an active part in the world of decentralized networks while tailoring the hardware to your specific needs.
 

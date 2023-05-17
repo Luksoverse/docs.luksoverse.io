@@ -1,4 +1,4 @@
-# 6. Blockchain Client Setup
+# Blockchain Client Setup
 
 This section of the node guide covers a range of topics that provide the foundational knowledge and practical skills you'll need to successfully establish and maintain your node in the blockchain network. It features the port, router, and firewall configurations, as well as the setups for the CLI and Docker containers in order to run the LUKSO blockchain.
 

@@ -1,4 +1,4 @@
-# Luksoverse mainnet guide
+# Luksoverse KeyGen guide
 
 Core contributors: **[JordyDutch](https://github.com/JordyDutch)** & **[Selby](https://twitter.com/SelbyFox)**
 
