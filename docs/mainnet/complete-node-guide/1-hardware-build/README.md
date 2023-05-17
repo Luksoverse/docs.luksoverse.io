@@ -10,4 +10,4 @@ In this guide, I will walk you through my entire process, from selecting the com
 4. [Mainboard Swap](./04-mainboard-swap.md)
 5. [Component Installation](./05-component-install.md)
 
-**Continue with Chapter 2: [BIOS Installation](/docs/complete-node-guide/2-bios-installation/)**
+**Continue with Chapter 2: [BIOS Installation](/docs/mainnet/complete-node-guide/2-bios-installation/)**

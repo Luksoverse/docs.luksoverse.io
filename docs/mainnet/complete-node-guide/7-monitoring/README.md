@@ -9,4 +9,4 @@ This section of the blockchain node guide provides a comprehensive overview of t
 5. [Prometheus and Promtool Monitoring](./05-prometheus.md)
 6. [Using Grafana Dashboards](./06-grafana.md)
 
-**Continue with Section 8: [Grafana Notifications](/docs/complete-node-guide/8-notifications/)**
+**Continue with Section 8: [Grafana Notifications](/docs/mainnet/complete-node-guide/8-notifications/)**

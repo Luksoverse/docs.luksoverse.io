@@ -8,4 +8,4 @@ Before we can verify basic access to a node machine by using SSH on our personal
 4. [Configuring a Login Key](./04-key-login.md)
 5. [Enable Secure Authentictionon](./05-secure-auth.md)
 
-**Continue with Section 6: [Blockchain Client Setup](/docs/complete-node-guide/6-blockchain-client/)**
+**Continue with Section 6: [Blockchain Client Setup](/docs/mainnet/complete-node-guide/6-blockchain-client/)**
