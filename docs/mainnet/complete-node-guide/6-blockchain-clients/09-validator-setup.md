@@ -22,8 +22,8 @@ Only validators that deposited LYXe to the [Genesis Deposit Contract](https://et
 
 Visit the official [Deposit Launchpad](https://deposit.mainnet.lukso.network/) and cautiously go through the process of generating keys and depositing stake to them, in case you have not already.
 
-1. Guide: [Generate Deposit Keys](/docs/mainnet/validator-key-generation/lukso-wagyu).
-2. Guide: [Deposit Stake in LYXe](/docs/mainnet/validator-key-stake/).
+1. Guide: [Generate Deposit Keys](/docs/community-guides/validator-key-generation/lukso-wagyu.
+2. Guide: [Deposit Stake in LYXe](/docs/community-guides/validator-key-stake/).
 
 Copy your folder(s) of your deposit keys from your personal computer into the working directory of your node.
 
@@ -88,8 +88,8 @@ If you want to become a whitelisted validator on our testnet, prepare your valid
 
 Visit the official [Testnet Deposit Launchpad](https://deposit.testnet.lukso.network/) and cautiously go through the process of generating keys and depositing stake to them, in case you have not already.
 
-1. Guide: [Generate Deposit Keys](/docs/mainnet/validator-key-generation/lukso-wagyu).
-2. Guide: [Deposit Stake in LYXt](/docs/mainnet/validator-key-stake/).
+1. Guide: [Generate Deposit Keys](/docs/community-guides/validator-key-generation/lukso-wagyu.
+2. Guide: [Deposit Stake in LYXt](/docs/community-guides/validator-key-stake/).
 
 Copy your folder(s) of your deposit keys from your personal computer into the working directory of your node.
 
