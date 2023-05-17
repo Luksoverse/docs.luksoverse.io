@@ -126,7 +126,7 @@ Here is a quick description of the needed folders:
 - `/etc/prometheus/rules.d`: This directory is used to organize rules files for individual services, keeping them separate from general rules in the rules directory. This is useful in large setups where you have many rules related to different services or components, and you want to keep them in separate files for better management.
 - `/var/lib/prometheus`: This directory is typically used for storing the Prometheus time-series database files. These files are created and managed by Prometheus while it's running to hold all the samples it collects from the targets it scrapes.
 
-For this configuration, we will check that all needed Prometheus folders are there, so no error will appear while running it. If they should already exist, we leave them as they are, if not, we will create empty folders. This can be easily done using the parent `-p` flag as already described before within the [SSH Config](/docs/complete-node-guide/5-access-connection/02-ssh-config.md) section of the guide.
+For this configuration, we will check that all needed Prometheus folders are there, so no error will appear while running it. If they should already exist, we leave them as they are, if not, we will create empty folders. This can be easily done using the parent `-p` flag as already described before within the [SSH Config](/docs/mainnet/complete-node-guide/5-access-connection/02-ssh-config.md) section of the guide.
 
 ```sh
 sudo mkdir -p /etc/prometheus/console_libraries /etc/prometheus/consoles /etc/prometheus/files_sd /etc/prometheus/rules /etc/prometheus/rules.d /var/lib/prometheus
