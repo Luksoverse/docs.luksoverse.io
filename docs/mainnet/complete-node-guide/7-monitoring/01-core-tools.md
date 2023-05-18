@@ -1,4 +1,4 @@
-# Core Tools for Monitoring
+## 7.1 Core Tools for Monitoring
 
 Local node monitoring is the process of observing and tracking the performance, health, and status of a blockchain or validator node within a network. This monitoring ensures that the validator node is functioning correctly, efficiently, and securely. By regularly gathering and analyzing key performance metrics, such as CPU usage, memory consumption, disk space, network latency, and the number of connected peers, local node monitoring helps to identify potential issues and bottlenecks, enabling prompt corrective actions.
 
@@ -49,9 +49,15 @@ Our Blockchain Clients have various default ports over which certain monitoring 
 
 #### Prometheus
 
-Opening the Prometheus port allows access to the service's metrics in the web browser of you personal computer. You can do this by adding the port to your firewall as previously done in the [Firewall Config](/docs/mainnet/complete-node-guide/3-system-setup/06-firewall-config.md):
+Opening the Prometheus port allows access to the service's metrics in the web browser of you personal computer. You can do this by adding the port to your firewall as previously done in the [Firewall Config](/docs/mainnet/complete-node-guide/system-setup/firewall-config):
 
 > Opening these ports allows access to them if you personal is connected to the local network. For external access, you would need advanced configurations on your router.
+
+Log into your node machine, if you are not signed in already.
+
+```sh
+ssh <ssh-device-alias>
+```
 
 Opening Prometheus Port:
 
@@ -74,22 +80,22 @@ The output for Geth and Prysm should look similar to the one underneath. Please 
 ```text
 Status: active
 
-To                               Action      From
---                               ------      ----
-<prefered-ssh-port>/tcp          ALLOW       Anywhere
-3000/tcp                         ALLOW       Anywhere
-9090/tcp                         ALLOW       Anywhere
-30303/tcp                        ALLOW       Anywhere
-30303/udp                        ALLOW       Anywhere
-13000/tcp                        ALLOW       Anywhere
-12000/udp                        ALLOW       Anywhere
-<prefered-ssh-port>/tcp (v6)     ALLOW       Anywhere (v6)
-3000/tcp                         ALLOW       Anywhere (v6)
-9090/tcp                         ALLOW       Anywhere (v6)
-30303/tcp (v6)                   ALLOW       Anywhere (v6)
-30303/udp (v6)                   ALLOW       Anywhere (v6)
-13000/tcp (v6)                   ALLOW       Anywhere (v6)
-12000/udp (v6)                   ALLOW       Anywhere (v6)
+To                         Action      From
+--                         ------      ----
+62222/tcp                  ALLOW       Anywhere
+30303/tcp                  ALLOW       Anywhere
+30303/udp                  ALLOW       Anywhere
+13000/tcp                  ALLOW       Anywhere
+12000/udp                  ALLOW       Anywhere
+9090/tcp                   ALLOW       Anywhere
+3000/tcp                   ALLOW       Anywhere
+62222/tcp (v6)             ALLOW       Anywhere (v6)
+30303/tcp (v6)             ALLOW       Anywhere (v6)
+30303/udp (v6)             ALLOW       Anywhere (v6)
+13000/tcp (v6)             ALLOW       Anywhere (v6)
+12000/udp (v6)             ALLOW       Anywhere (v6)
+9090/tcp  (v6)             ALLOW       Anywhere (v6)
+3000/tcp  (v6)             ALLOW       Anywhere (v6)
 ```
 
 ### 7.1.4 Installing Core Tools
@@ -101,15 +107,10 @@ Effective node monitoring is essential for maintaining a reliable and secure nod
 - **git**: Distributed version control system for tracking changes in source code during software development, allowing developers to collaborate, clone and manage software projects effectively. It will help us downloading code repositories.
 - **apt-transport-https**: Service that allows the package management utility apt to retrieve files over the https protocol. Once it's installed, it allows APT to retrieve packages from HTTPS URLs using the `deb` keyword.
 - **software-properties-common**: Software package that provides some useful tools for adding and managing software repositories. The most common tool it offers is the `add-apt-repository` command to add package archivesto the node.
+- **gnupg2**: OpenPGP standard for encrypting and signing data and communication. It is used to receive and install signed software packages.
 
-Log into your node machine, if you are not signed in already.
-
-```sh
-ssh <ssh-device-alias>
-```
-
-Then continue with installing the following six tools that we will need to set up Prometheus, Grafana, and all the Exporters:
+Install the following six tools that we will need to set up Prometheus, Grafana, and all the Exporters:
 
 ```sh
-sudo apt install wget make git apt-transport-https software-properties-common
+sudo apt install wget make git apt-transport-https software-properties-common gnupg2
 ```
