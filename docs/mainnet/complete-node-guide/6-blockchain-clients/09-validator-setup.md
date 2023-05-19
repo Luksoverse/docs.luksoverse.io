@@ -1,4 +1,4 @@
-# LUKSO CLI Validator Setup
+## 6.9 LUKSO CLI Validator Setup
 
 If the the network started correctly and was syncing, we are able to continue setting up your validator if you would like to participate in the consensus of the blockchain.
 
@@ -16,13 +16,11 @@ When becoming a validator, you will have to manage some passwords, addresses and
 
 ### 6.9.2 Import Mainnet Keys
 
-> If you want to import testnet validator keys, have a look at the [Importing Testnet Keys](#692-import-testnet-keys) guide.
-
 Only validators that deposited LYXe to the [Genesis Deposit Contract](https://etherscan.io/address/0x42000421dd80D1e90E56E87e6eE18D7770b9F8cC#code) before it was frozen on May 9th 2023 can run the back structure of the network until the LYXe Migration is live on the LUKSO blockchain. The migration is [expected](https://medium.com/lukso/its-happening-the-genesis-validators-are-coming-ce5e07935df6) around one month after the initial network start.
 
 Visit the official [Deposit Launchpad](https://deposit.mainnet.lukso.network/) and cautiously go through the process of generating keys and depositing stake to them, in case you have not already.
 
-1. Guide: [Generate Deposit Keys](/docs/community-guides/validator-key-generation/lukso-wagyu.
+1. Guide: [Generate Deposit Keys](/docs/community-guides/validator-key-generation/lukso-wagyu).
 2. Guide: [Deposit Stake in LYXe](/docs/community-guides/validator-key-stake/).
 
 Copy your folder(s) of your deposit keys from your personal computer into the working directory of your node.
@@ -33,8 +31,18 @@ SCP is a network protocol that enables secure file transfers between hosts on a 
 
 For secure data transfer over the internet or within unsecured networks, SCP is a reliable and secure choice due to its underlying SSH protocol which encrypts the data in transit.
 
+> For this command huge command, its recommended to open up a text editor and copy the contents in. If you're using Unix (Linux or Mac) you can follow these steps to get the data quickly:
+
+- `<ssh-key>`: On your personal machine check your SSH keys within the SSH folder by using `ls ~/.ssh/` from the terminal. Search for your generated keyfile and write down the name.
+- `<local-path-to-key-folder>`: On your personal machine, open your file explorer and localize the keystore folder with all your validator keys in it. Right click and `Copy Path`. Then copy it to your editor.
+- `<your-ssh-port>`, `<user-name>` and `<node-ip-address>`: Open your SSH configuration file on your personal computer using `vim ~/.ssh/config`. Write down the Port, IP, and the User of your node.
+- `<node-path-to-node-folder>`: Open your node folder on your node machine any type `pwd`. Then copy the full path.
+- `<keyfolder-name>`: Define a new name for the validator folder folder. It can be the same as on your personal machine.
+
+> Build the full command and copy it to your personal computer's terminal. You will be promted to log in again.
+
 ```sh
-scp -P -i ~/.ssh/<ssh-key> -r <local-path-to-key-folder> <user-name>@<node-ip-address>:~/<node-folder>/<keyfolder-name>
+scp -P <your-ssh-port> -i ~/.ssh/<ssh-key> -r <local-path-to-key-folder> <user-name>@<node-ip-address>:<node-path-to-node-folder>/<keyfolder-name>
 ```
 
 Afterwards, import your keys within the LUKSO CLI. You will be asked for your folder with your validator keys and a new password for your validator node, needed to secure the wallet and restart the validator later on.
@@ -74,13 +82,11 @@ After importing one or multiple folders, you can check your imported keys. Adjus
 # LUKSO CLI v. 0.6.0+
 lukso validator list --mainnet
 
-# Lukso CLI <0.6.0
+# Lukso CLI v. <0.6.0
 validator accounts list --wallet-dir "mainnet-keystore"
 ```
 
 ### 6.9.3 Import Testnet Keys
-
-> If you want to import testnet validator keys, have a look at the [Importing Mainnet Keys](#691-import-mainnet-keys) guide.
 
 Testnet validators need to be whitelisted as they are seen as core members and organizations wanting to run and maintain their LUKSO Testnet node in a stable environment over a long period to ensure healthy uptimes, stability, and quick response times from clients as demand from developers rises.
 
@@ -88,7 +94,7 @@ If you want to become a whitelisted validator on our testnet, prepare your valid
 
 Visit the official [Testnet Deposit Launchpad](https://deposit.testnet.lukso.network/) and cautiously go through the process of generating keys and depositing stake to them, in case you have not already.
 
-1. Guide: [Generate Deposit Keys](/docs/community-guides/validator-key-generation/lukso-wagyu.
+1. Guide: [Generate Deposit Keys](/docs/community-guides/validator-key-generation/lukso-wagyu).
 2. Guide: [Deposit Stake in LYXt](/docs/community-guides/validator-key-stake/).
 
 Copy your folder(s) of your deposit keys from your personal computer into the working directory of your node.
@@ -99,8 +105,18 @@ SCP is a network protocol that enables secure file transfers between hosts on a 
 
 For secure data transfer over the internet or within unsecured networks, SCP is a reliable and secure choice due to its underlying SSH protocol which encrypts the data in transit.
 
+> For this command huge command, its recommended to open up a text editor and copy the contents in. If you're using Unix (Linux or Mac) you can follow these steps to get the data quickly:
+
+- `<ssh-key>`: On your personal machine check your SSH keys within the SSH folder by using `ls ~/.ssh/` from the terminal. Search for your generated keyfile and write down the name.
+- `<local-path-to-key-folder>`: On your personal machine, open your file explorer and localize the keystore folder with all your validator keys in it. Right click and `Copy Path`. Then copy it to your editor.
+- `<your-ssh-port>`, `<user-name>` and `<node-ip-address>`: Open your SSH configuration file on your personal computer using `vim ~/.ssh/config`. Write down the Port, IP, and the User of your node.
+- `<node-path-to-node-folder>`: Open your node folder on your node machine any type `pwd`. Then copy the full path.
+- `<keyfolder-name>`: Define a new name for the validator folder folder. It can be the same as on your personal machine.
+
+> Build the full command and copy it to your personal computer's terminal. You will be promted to log in again.
+
 ```sh
-scp -i ~/.ssh/<ssh-key> -r <local-path-to-key-folder> <user-name>@<node-ip-address>:~/<node-folder>/<keyfolder-name>
+scp -P -i ~/.ssh/<ssh-key> -r <local-path-to-key-folder> <user-name>@<node-ip-address>:~/<node-folder>/<keyfolder-name>
 ```
 
 Afterwards, import your keys within the LUKSO CLI. You will be asked for your folder with your validator keys and a new password for your validator node, needed to secure the wallet and restart the validator later on.
@@ -140,7 +156,7 @@ After importing one or multiple folders, you can check your imported keys:
 # LUKSO CLI v. 0.6.0+
 lukso validator list --testnet
 
-# Lukso CLI <0.6.0
+# Lukso CLI v. <0.6.0
 validator accounts list --wallet-dir "testnet-keystore"
 ```
 
