@@ -33,4 +33,4 @@ You can close the logs by pressing `ctrl+c`
 
 ## Monitoring
 
-You can find a community guide about how to setup your Grafana dashboard on Linux [here](../node-guide/5-monitoring.md).
+You can find a community guide about how to setup your Grafana dashboard on Linux [here](docs/Community-Archive/node-guide/5-monitoring.md).
