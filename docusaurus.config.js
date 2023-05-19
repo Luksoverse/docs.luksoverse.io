@@ -78,18 +78,6 @@ const config = {
           },
           {
             type: 'doc',
-            docId: 'node-guide/start-here',
-            position: 'left',
-            label: 'Node Guide',
-          },
-          {
-            type: 'doc',
-            docId: 'community-guides/johnny-ebd-node-guide',
-            position: 'left',
-            label: 'Community Guides',
-          },
-          {
-            type: 'doc',
             docId: 'l16-archive-docs/parameters',
             position: 'left',
             label: 'L16 Archive',
@@ -112,7 +100,7 @@ const config = {
               },
               {
                 label: 'Community archive',
-                to: '/docs/community-guides/johnny-ebd-node-guide',
+                to: '/docs/Community-Archive/community-archive',
               },
               {
                 label: 'Advanced Community Setup',

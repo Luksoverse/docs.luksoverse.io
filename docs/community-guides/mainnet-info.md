@@ -19,7 +19,7 @@ After install is complete, in Settings,
 
 Go to Luksoverse Docs website (using your normal computer, NOT your validator machine) and follow steps 1, 2, 3 and 5 (skip part 4 until mainnet is actually launching) to prepare your systems security and set up your Grafana/Prometheus Dashboard.
 
-**[https://docs.luksoverse.io/docs/node-guide/start-here/](https://docs.luksoverse.io/docs/node-guide/start-here/)**
+**[https://docs.luksoverse.io/docs/Community-Archive/node-guide/start-here/](https://docs.luksoverse.io/docs/Community-Archive/node-guide/start-here/)**
 
 ## Setup Your Wagyu Key Generator
 
