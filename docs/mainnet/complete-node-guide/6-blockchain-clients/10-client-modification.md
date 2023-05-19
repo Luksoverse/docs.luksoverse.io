@@ -47,21 +47,23 @@ cd <your-node-folder>/configs/<network>/<your-execution-client>
 Then open up the file
 
 ```
-vim <your-execution-client>.toml
+nano <your-execution-client>.toml
 ```
 
 When using Geth, seach for the `[Node]` section and then add the Identity property right under it.
 
 ```text
 [Node]
-UserIdent = "<your-node-name>"
+UserIdent = "<Luksoverse-your-node-name>"
 ```
 
 If you are running on Erigon, enter the following line at the end of the config:
 
 ```text
-"identity" = "<your-node-name>"
+"identity" = "<Stakingverse-your-node-name>"
 ```
+
+Suggestion: Add Luksoverse or Stakingverse to your graffiti tag if you have used this guide!
 
 Make sure to adjust `<your-node-name>` to your actual name. Also be careful when editing your config files. Make sure you are not deleting anything and that there are spaces in front and behind the `=` symbol.
 
@@ -86,6 +88,8 @@ lukso start --validator-graffiti "<your-graffiti>"
 lukso start --testnet --validator-graffiti "<your-graffiti>"
 ```
 
+Suggestion: Add Luksoverse or Stakingverse to your graffiti tag if you have used this guide!
+
 In order to make it a permanent graffiti, you can edit the configuration file of the Validator. Make sure to be in the node folder:
 
 ```sh
@@ -101,7 +105,7 @@ cd <your-node-folder>/configs/<network>/<your-consensus-client>
 Then open up the file
 
 ```
-vim validator.yaml
+nano validator.yaml
 ```
 
 Add the following line at the end of the file:
@@ -109,6 +113,8 @@ Add the following line at the end of the file:
 ```text
 graffiti: '<your-graffiti>'
 ```
+
+Suggestion: Add Luksoverse or Stakingverse to your graffiti tag if you have used this guide!
 
 Make sure to adjust `<your-graffiti>` to your actual graffiti. Also be careful when editing your config files. Make sure you are not deleting anything.
 
