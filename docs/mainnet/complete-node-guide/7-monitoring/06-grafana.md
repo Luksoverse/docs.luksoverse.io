@@ -148,12 +148,12 @@ sudo chmod 755 /var/lib/grafana
 
 ### 7.6.4 Configuring the Service
 
-Within Ubuntu, the `/etc/systemd/system/` directory is where system service unit files are stored and used to configure services to start automatically at boot. A service file is generally used to define how a deamon processes should be started. In our case, we create the file with the exact name of the Prometheus service that also stored within the system directory, in order to modify Prometheus' startup process. We can use Vim, as we did before on various other files.
+Within Ubuntu, the `/etc/systemd/system/` directory is where system service unit files are stored and used to configure services to start automatically at boot. A service file is generally used to define how a deamon processes should be started. In our case, we create the file with the exact name of the Prometheus service that also stored within the system directory, in order to modify Prometheus' startup process. We can use nano, as we did before on various other files.
 
 **After installation, Grafana's configuration data is already set within `grafana-server.service`. However, we will add and edit some properties.**
 
 ```sh
-sudo vim /lib/systemd/system/grafana-server.service
+sudo nano /lib/systemd/system/grafana-server.service
 ```
 
 The configuration file is split between multiple sections: `[Unit]`, `[Service]`, and `[Install]`. The unit contains generic options that are not dependent on the type of service and provide documentation. The service and install section is where we will house our configuration properties:
