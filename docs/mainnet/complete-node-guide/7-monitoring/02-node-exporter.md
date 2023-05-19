@@ -135,10 +135,10 @@ rm node_exporter-1.5.0.linux-amd64.tar.gz
 
 After installation, we want to define how the Node Exporter service should be run. Within Ubuntu, the `/etc/systemd/system/` directory is where system service unit files are stored and used to configure services to start automatically at boot.
 
-Here, we can create a file called `node_exporter.service`. A service file is generally used to define how a deamon processes should be started. In our case, we create the file with the exact name of the Node Exporter service that also stored within the system directory, in order to modify the node Exporters startup process. We can use Vim, as we did before on various other files.
+Here, we can create a file called `node_exporter.service`. A service file is generally used to define how a deamon processes should be started. In our case, we create the file with the exact name of the Node Exporter service that also stored within the system directory, in order to modify the node Exporters startup process. We can use nano, as we did before on various other files.
 
 ```sh
-sudo vim /etc/systemd/system/node_exporter.service
+sudo nano /etc/systemd/system/node_exporter.service
 ```
 
 The configuration file is split between multiple sections: `[Unit]`, `[Service]`, and `[Install]`. The unit contains generic options that are not dependent on the type of service and provide documentation. The service and install section is where we will house our configuration properties:
