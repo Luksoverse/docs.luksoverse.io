@@ -107,10 +107,10 @@ Open your Prysm configuration file:
 
 ```sh
 ### Prysm Mainnet Configuration
-vim /configs/mainnet/prysm/prysm.yaml
+nano /configs/mainnet/prysm/prysm.yaml
 
 ### Prsym Testnet Configuration
-vim /configs/testnet/prysm/prysm.yaml
+nano /configs/testnet/prysm/prysm.yaml
 ```
 
 Now change the following line:
@@ -251,7 +251,7 @@ sudo pkill noip2
 For the program to be started at boot, we will create a system service file for it:
 
 ```sh
-sudo vim /etc/systemd/system/noip2.service
+sudo nano /etc/systemd/system/noip2.service
 ```
 
 We will set the following properties:
@@ -368,10 +368,10 @@ Open your Prysm configuration file:
 
 ```sh
 ### Prysm Mainnet Configuration
-vim /configs/mainnet/prysm/prysm.yaml
+nano /configs/mainnet/prysm/prysm.yaml
 
 ### Prsym Testnet Configuration
-vim /configs/testnet/prysm/prysm.yaml
+nano /configs/testnet/prysm/prysm.yaml
 ```
 
 Now add the the following line including your hostname of the Dynamic DNS:
