@@ -16,7 +16,7 @@ Each supported client has different ports for various purposes that have to be o
 | PRYSM      | Beacon Gossip, Requests, and Responses    | 13000 | X   |     |
 | PRYSM      | Beacon Discovery, Requests, Data Exchange | 12000 |     | X   |
 
-> Within the [monitoring section](/docs/mainnet/complete-node-guide/monitoring/start-here) of this guide you can find further internal communication channels.
+> Within the [monitoring section](/docs/mainnet/complete-node-guide/monitoring/core-tools) of this guide you can find further internal communication channels.
 
 References:
 
