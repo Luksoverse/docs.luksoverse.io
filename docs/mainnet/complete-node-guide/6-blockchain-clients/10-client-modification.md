@@ -54,16 +54,14 @@ When using Geth, seach for the `[Node]` section and then add the Identity proper
 
 ```text
 [Node]
-UserIdent = "<Luksoverse-your-node-name>"
+UserIdent = "<your-node-name>"
 ```
 
 If you are running on Erigon, enter the following line at the end of the config:
 
 ```text
-"identity" = "<Stakingverse-your-node-name>"
+"identity" = "<your-node-name>"
 ```
-
-Suggestion: Add Luksoverse or Stakingverse to your graffiti tag if you have used this guide!
 
 Make sure to adjust `<your-node-name>` to your actual name. Also be careful when editing your config files. Make sure you are not deleting anything and that there are spaces in front and behind the `=` symbol.
 
@@ -87,8 +85,6 @@ lukso start --validator-graffiti "<your-graffiti>"
 # Starting testnet with graffiti
 lukso start --testnet --validator-graffiti "<your-graffiti>"
 ```
-
-Suggestion: Add Luksoverse or Stakingverse to your graffiti tag if you have used this guide!
 
 In order to make it a permanent graffiti, you can edit the configuration file of the Validator. Make sure to be in the node folder:
 
@@ -114,16 +110,4 @@ Add the following line at the end of the file:
 graffiti: '<your-graffiti>'
 ```
 
-Suggestion: Add Luksoverse or Stakingverse to your graffiti tag if you have used this guide!
-
 Make sure to adjust `<your-graffiti>` to your actual graffiti. Also be careful when editing your config files. Make sure you are not deleting anything.
-
-### 6.10.3 IP Settings
-
-Usually, there seem to be issues with finding peers. Check if you have issues on your side:
-
-TODO:
-
-If you can not find enough inbound and outbound peers, continue with modifying your config files:
-
-TODO:
