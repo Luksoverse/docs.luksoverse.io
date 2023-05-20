@@ -14,7 +14,7 @@ You will receive a printed out link that you will have to copy and paste into th
 
 Now continue with the second device. The Guide on the Tailscale screen will give you a selection of possible installations. Install the software on your main device and go through the minimal setup to log in. Now, everything should already be set up in place. In the guide section, you can try it out by pinging each device over the VPN.
 
-### 9.2.2 Configure Auto Startup
+### 9.2.2 Configure Auto Startup a
 
 Tailscale comes with its own CLI tool called `tailscaled`. By default, it will automatically list itself as an system service. We can check the status of Tailscale with the following command:
 
@@ -55,7 +55,7 @@ You should be set and can turn off the VPN service until you need to connect wit
 As Tailscale uses internal static IP addresses on both ends of the tunnel, we also need to update our SSH configuration file that we use to connect to the IP. On your personal computer, open up the file:
 
 ```sh
-nano ~/.ssh/config
+vim ~/.ssh/config
 ```
 
 Then Copy your node Host entry of your node device. Only change the `HostName` address and the `Host`. If you want to connect to your node via Tailscale, you will need to use the new name.
@@ -73,9 +73,19 @@ Host <ssh-device-alias-for-home-environment>
 
 Host <ssh-device-alias-for-tailscale-environment>
   User <node-username>
-  HostName <node-ip>
+  HostName <tailscale-node-ip>
   Port <ssh-port>
   IdentityFile ~/.ssh/<my-chosen-keyname>
 ```
 
 Save and exit. You will have successfully configured your external remote access. Try to connect to your node.
+
+## 9.2.4 Update Grafana Dashboard
+
+In case you want to visit your Grafana Dashboard outside your home network using Tailscale, you will also need to adjust the IP. As you did with SSH, its recommended to have two different browser bookmarks- one for your home network and one for the Tailscale address.
+
+Within your browser, you can find Grafana at the following address, in case your VPN is activated:
+
+```text
+http://<tailscale-node-ip>:3000/login
+```
