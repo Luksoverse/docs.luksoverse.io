@@ -5,7 +5,7 @@ sidebar_position: 3
 
 # WireGuard tunnel via PiVPN
 
-Guide by: [Johnny EBD](https://github.com/JohnnyEBD-LYX)
+Guide by: [Johnny Ξ₿D.LYX](https://github.com/JohnnyEBD-LYX)
 
 ![](https://i.imgur.com/w4MEqOr.png)
 
@@ -28,17 +28,21 @@ First things first, let’s get everything updated. Run this command:
 
 **`sudo apt update && sudo apt upgrade -y`**
 
-This will take a few minutes to complete.
+After that you need to create a new user. It’s ok to use any name for your user. In this example, we will use **vpn**:
+
+**`sudo adduser --system vpn --group --no-create-home`**
+
+Try to keep the settings to the default during the installation. Then, it will automatically find your new user and add it as the default storage for the VPN profiles.
 
 ### **Part 2 – Install PiVPN**
 
 Run the following command:
 
-**`curl -L https://install.pivpn.io | bash`**
+**`sudo curl -L https://install.pivpn.io | bash`**
 
 ![](https://i.imgur.com/htMUznt.png)
 
-This will start the PiVPN installation wizard (you will get an **_OS not tested yet_** prompt, just ignore it).
+This will start the PiVPN installation wizard. **You can get an `OS not tested yet` prompt, just acknowledge it if you can, as it might cause the installer to exit or not function properly in later versions. More updated versions will let you set a dynamic DNS if you're on a dynamic IP, as most connections are, so you won't get locked out during an ISP IP change. You can get these domains for free from services like [noip.com](https://noip.com).**
 
 First step is to set a static IP on your PiVPN server. Click **OK**.
 
