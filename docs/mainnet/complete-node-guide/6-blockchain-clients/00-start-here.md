@@ -13,6 +13,6 @@ This section of the node guide covers a range of topics that provide the foundat
 9. [LUKSO CLI Validator Setup](/docs/mainnet/complete-node-guide/blockchain-clients/validator-setup)
 10. [Client Modification](/docs/mainnet/complete-node-guide/blockchain-clients/client-modification)
 11. [Peet Discovery](/docs/mainnet/complete-node-guide/blockchain-clients/peer-discovery)
-11. [LUKSO Docker Setup](/docs/mainnet/complete-node-guide/blockchain-clients/docker-setup)
+12. [LUKSO Docker Setup](/docs/mainnet/complete-node-guide/blockchain-clients/docker-setup)
 
 **Continue with Section 7: [Node Monitoring](/docs/mainnet/complete-node-guide/monitoring/start-here)**
