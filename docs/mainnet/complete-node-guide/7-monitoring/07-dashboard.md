@@ -1,6 +1,6 @@
 ## 7.7 Dashboard Setup
 
-The next section will configure the Grafana Dashboard after all exporter services and grafana server are up and running on the node itself.
+The following section will configure the Grafana Dashboard after all exporter services and the Grafana Server are up and running on the node.
 
 ### 7.7.1 Get Node IP Address
 
@@ -18,13 +18,13 @@ The output will look like this:
 default via <GATEWAY_IP_ADDRESS> dev eno1 proto dhcp src <NODE_IP_ADDRESS> metric <ROUTING_WEIGHT>
 ```
 
-Alternatively you can also send an request to a commonly used and stable server IP, for instance Google. You will get back an response with your source IP address that you can filter using the text-processing tool `awk`, used for pattern scanning and processing.
+Alternatively, you can request a commonly used and stable server IP, for instance, Google. You will receive a response with your source IP address that you can filter using the text-processing tool `awk`, used for pattern scanning and processing.
 
 ```sh
 ip route get 8.8.8.8 | awk '{print $7}'
 ```
 
-Log out of your node and continue using your personal machine's webbrowser.
+Log out of your node and continue using your personal computer's browser.
 
 ```sh
 exit
@@ -47,11 +47,11 @@ username: admin
 password: admin
 ```
 
-Set a new secure and long password when prompted by Grafana. This is important as this page might be accessed through the external internet in later steps so you can access it from everywhere.
+Set a new secure and long password when prompted by Grafana. Security is vital as this page might be accessed through the external internet later so that you can access it from everywhere.
 
 ### 7.7.3 Add Prometheus Data Source
 
-Now we have to add the running Prometheus service to the Grafana Dashboard so we can utilize all the great metrics we collected over from all the Prometheus jobs we've set up.
+Now we have to add the running Prometheus service to the Grafana Dashboard to utilize all the significant metrics we collected from all the Prometheus jobs we've set up.
 
 1. Open the burger menu icon on the left side
 2. Click `Connections`
@@ -61,14 +61,25 @@ Now we have to add the running Prometheus service to the Grafana Dashboard so we
 6. Enter `http://127.0.0.1:9090/` as URL
 7. Click `Save & Test` before continuing with the setup
 
-> You should see a green checkmark "Data source is working"
+> You should see a green checkmark "Data source is working" and can continue to import the dashboard.
 
 ### 7.7.4 Import Dashboard
 
-Chose a dashboard preset you want to load for the LUKSO mainnet and testnet. Within this guide there are two main templates:
+Choose a dashboard preset you want to load for the LUKSO mainnet and testnet. Within this guide, there are two main templates:
 
-- [LUKSO Dashboard EUR](https://github.com/fhildeb/lukso-node-guide/blob/main/grafana/lukso-dashboard-eur.json)
-- [LUKSO Dashboard USD](https://github.com/fhildeb/lukso-node-guide/blob/main/grafana/lukso-dashboard-usd.json)
+#### Grafana 8 Boards
+
+These are the default but depricated Grafana boards that are still working in later versions, however, there might be hickups with alerts and notifications.
+
+- [LUKSO Dashboard EUR V8](https://github.com/fhildeb/lukso-node-guide/blob/main/grafana/lukso-dashboard-eur.json)
+- [LUKSO Dashboard USD V8](https://github.com/fhildeb/lukso-node-guide/blob/main/grafana/lukso-dashboard-usd.json)
+
+#### Grafana 9 (current)
+
+These are the current Grafana board that have all alerts set up the right way by default. They only work for Grafana Version 9 onwards, as there are new types and structures regarding notifications and alerts. Dont worry, the frontend still looks the same.
+
+- [LUKSO Dashboard EUR V9](https://github.com/fhildeb/lukso-node-guide/blob/main/grafana/lukso-grafana-9-eur.json)
+- [LUKSO Dashboard USD V9](https://github.com/fhildeb/lukso-node-guide/blob/main/grafana/lukso-grafana-9-usd.json)
 
 > Make sure the file matches with the [JSON Exporter](/docs/mainnet/complete-node-guide/monitoring/json-exporter) External Data Configuration file. You could also specify your own dashboard by adjusting the contents and jobs.
 
@@ -76,8 +87,8 @@ Chose a dashboard preset you want to load for the LUKSO mainnet and testnet. Wit
 2. Return to the Grafana starting page
 3. Click the plus icon on the top right
 4. Click on `Import dashboard`
-5. Paste in the raw contents to the `Import via panel json` text box
+5. Paste the raw contents to the `Import via panel json` text box
 6. Click the `Load` button
 7. Click the `Import` button
 
-You should now have your Dashboard set up and running.
+You now have your dashboard up and running.
