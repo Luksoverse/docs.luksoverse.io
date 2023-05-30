@@ -12,9 +12,9 @@ Choosing a port number higher than `1024` is recommended, as ports below this ra
 
 #### Text Editors
 
-We can use various terminal text editors to configure files on the node. Ubuntus's default text editor is called Vi Improved. I will use the default editor `vim` in this guide. However, you can also choose a more user-friendly one like `nano`. Here is a description of the two:
+We can use various terminal text editors to configure files on the node. Ubuntus's default text editor is called Vi Improved. I will use the default editor `nano` in this guide. However, you can also choose a more user-friendly one like `nano`. Here is a description of the two:
 
-#### Vim
+#### nano
 
 Vim is an enhanced version of the classic Unix text editor Vi, with additional features and improved usability. Vim operates in multiple modes: normal mode, insert mode, and command mode, allowing users to navigate, edit, and manipulate text files efficiently.
 
@@ -42,10 +42,10 @@ At the bottom of the Nano screen, you'll see a row of commands, each represented
 
 ### 3.4.1 Edit SSH Configuration
 
-Let's open the configuration file using Vim.
+Let's open the configuration file using nano.
 
 ```sh
-sudo vim /etc/ssh/sshd_config
+sudo nano /etc/ssh/sshd_config
 ```
 
 Locate the line that starts with `#Port 22` and uncomment it by removing the `#` at the beginning if it is present. Removing the hash will activate the static port number you want to use for connecting to the node.

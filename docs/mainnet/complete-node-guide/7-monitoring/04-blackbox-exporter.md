@@ -145,7 +145,7 @@ sudo mkdir /etc/blackbox_exporter/
 Now we can create a new config file within this folder:
 
 ```sh
-sudo vim /etc/blackbox_exporter/blackbox.yaml
+sudo nano /etc/blackbox_exporter/blackbox.yaml
 ```
 
 #### Probing Configuration
@@ -191,7 +191,7 @@ After installation, we want to define how the Blackbox Exporter service should b
 Here, we can create a file called `blackbox_exporter.service`. A service file is generally used to define how daemon processes should be started. In our case, we create the file with the exact name of the Blackbox Exporter service stored within the system directory to modify the Blackbox Exporter's startup process.
 
 ```sh
-sudo vim /etc/systemd/system/blackbox_exporter.service
+sudo nano /etc/systemd/system/blackbox_exporter.service
 ```
 
 The configuration file is split between multiple sections: `[Unit]`, `[Service]`, and `[Install]`. The unit contains generic options that are not dependent on the type of service and provide documentation. The service and install section is where we will house our configuration properties:

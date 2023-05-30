@@ -38,7 +38,7 @@ Setting properties for the SSH daemon process for the blockchain node is recomme
 Open the configuration file:
 
 ```sh
-sudo vim /etc/fail2ban/jail.local
+sudo nano /etc/fail2ban/jail.local
 ```
 
 Input the properties into the configuration snippet:

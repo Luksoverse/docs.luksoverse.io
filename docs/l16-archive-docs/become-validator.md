@@ -164,7 +164,7 @@ NOT_DEPOSITED. (NOTE: If the keystore was recreated the state my differ for some
 ## How Validator Keys are created
 
 A **Validator Key** is always part of a **Validator Keystore** - as a single key or a combination of many. The keys
-are being derived by a [Mnemonic](https://wolovim.medium.com/ethereum-201-mnemonics-bb01a9108c38).
+are being derived by a [Mnemonic](https://wolonano.medium.com/ethereum-201-mnemonics-bb01a9108c38).
 A Mnemonic can potentially create an infinite amount of keys. It is important to understand that
 these keys are indexed. There is a possibility to (theoretically) create a certain range.
 

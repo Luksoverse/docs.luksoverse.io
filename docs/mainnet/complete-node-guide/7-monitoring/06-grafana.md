@@ -151,7 +151,7 @@ Within Ubuntu, the `/etc/systemd/system/` directory is where system service unit
 **Grafana's configuration data is already set within** `grafana-server.service` **after installation. However, we will add and edit some properties.**
 
 ```sh
-sudo vim /lib/systemd/system/grafana-server.service
+sudo nano /lib/systemd/system/grafana-server.service
 ```
 
 The configuration file is split between multiple sections: `[Unit]`, `[Service]`, and `[Install]`. The unit section contains generic options that are not dependent on the type of service and provide documentation. The service and install section is where we will house our configuration properties:

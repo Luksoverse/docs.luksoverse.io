@@ -18,10 +18,10 @@ The configuration file requires at least the following:
 - the IP address
 - the previously opened SSH port
 
-Open the file using Vim as before. If you're more comfortable using your preferred text editor with a graphical user interface, go ahead now that you can.
+Open the file using nano as before. If you're more comfortable using your preferred text editor with a graphical user interface, go ahead now that you can.
 
 ```sh
-vim ~/.ssh/config
+nano ~/.ssh/config
 ```
 
 The system setup and the router configuration guide have determined all the needed properties. Within the file, type in the following snippet. Replace:

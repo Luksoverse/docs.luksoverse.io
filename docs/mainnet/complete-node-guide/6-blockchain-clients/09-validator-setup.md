@@ -35,7 +35,7 @@ SCP is a reliable and secure choice for data transfer over the internet or withi
 
 - `<ssh-key>`: Check your SSH keys within the SSH folder using `ls ~/.ssh/` from the terminal of your personal computer. Search for your generated key file and write down the name.
 - `<local-path-to-key-folder>`: Open your file explorer and localize the keystore folder with all your validator keys on your personal computer. Right-click and `Copy Path`. Then copy it to your editor.
-- `<your-ssh-port>`, `<user-name>` and `<node-ip-address>`: Open your SSH configuration file on your personal computer using `vim ~/.ssh/config`. Write down the Port, IP, and User of your node.
+- `<your-ssh-port>`, `<user-name>` and `<node-ip-address>`: Open your SSH configuration file on your personal computer using `nano ~/.ssh/config`. Write down the Port, IP, and User of your node.
 - `<node-path-to-node-folder>`: Open your node's working directory on your node and run the `pwd` command. Then copy the full path.
 - `<keyfolder-name>`: Define a new name for the validator folder. It can be the same as on your personal computer and is used for importing the keys. We will remove it after.
 
@@ -109,7 +109,7 @@ SCP is a reliable and secure choice for data transfer over the internet or withi
 
 - `<ssh-key>`: Check your SSH keys within the SSH folder using `ls ~/.ssh/` from the terminal of your personal computer. Search for your generated key file and write down the name.
 - `<local-path-to-key-folder>`: Open your file explorer and localize the keystore folder with all your validator keys on your personal computer. Right-click and `Copy Path`. Then copy it to your editor.
-- `<your-ssh-port>`, `<user-name>` and `<node-ip-address>`: Open your SSH configuration file on your personal computer using `vim ~/.ssh/config`. Write down the Port, IP, and User of your node.
+- `<your-ssh-port>`, `<user-name>` and `<node-ip-address>`: Open your SSH configuration file on your personal computer using `nano ~/.ssh/config`. Write down the Port, IP, and User of your node.
 - `<node-path-to-node-folder>`: Open your node's working directory on your node and run the `pwd` command. Then copy the full path.
 - `<keyfolder-name>`: Define a new name for the validator folder. It can be the same as on your personal computer and is used for importing the keys. We will remove it after.
 

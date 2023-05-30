@@ -47,7 +47,7 @@ cd <your-node-folder>/configs/<network>/<your-execution-client>
 Then open up the configuration file:
 
 ```
-vim <your-execution-client>.toml
+nano <your-execution-client>.toml
 ```
 
 When using Geth, search for the `[Node]` section and add the UserIdent property under it.
@@ -101,7 +101,7 @@ cd <your-node-folder>/configs/<network>/<your-consensus-client>
 Then open up the configuration file:
 
 ```
-vim validator.yaml
+nano validator.yaml
 ```
 
 Add the following line at the end of the file:

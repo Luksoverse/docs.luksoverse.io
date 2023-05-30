@@ -179,7 +179,7 @@ sudo mkdir /etc/json_exporter/
 Now we can create a new config file within this folder:
 
 ```sh
-sudo vim /etc/json_exporter/json_exporter.yaml
+sudo nano /etc/json_exporter/json_exporter.yaml
 ```
 
 Write the following properties into the configuration file:
@@ -225,7 +225,7 @@ After installation, we want to define how the JSON Exporter service should be ru
 Here, we can create a file called `json_exporter.service`. A service file is generally used to define how daemon processes should be started. In our case, we create the file with the exact name of the JSON Exporter service stored within the system directory to modify the JSON Exporter's startup process.
 
 ```sh
-sudo vim /etc/systemd/system/json_exporter.service
+sudo nano /etc/systemd/system/json_exporter.service
 ```
 
 The configuration file is split between multiple sections: `[Unit]`, `[Service]`, and `[Install]`. The unit contains generic options that are not dependent on the type of service and provide documentation. The service and install section is where we will house our configuration properties:

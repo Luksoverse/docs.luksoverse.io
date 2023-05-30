@@ -78,16 +78,16 @@ Open your execution client's configuration file:
 
 ```sh
 ### Geth Mainnet Configuration
-vim /configs/mainnet/geth/geth.toml
+nano /configs/mainnet/geth/geth.toml
 
 ### Geth Testnet Configuration
-vim /configs/testnet/geth/geth.toml
+nano /configs/testnet/geth/geth.toml
 
 ### Erigon Mainnet Configuration
-vim /configs/mainnet/erigon/erigon.toml
+nano /configs/mainnet/erigon/erigon.toml
 
 ### Erigon Testnet Configuration
-vim /configs/testnet/erigon/erigon.toml
+nano /configs/testnet/erigon/erigon.toml
 ```
 
 For Geth, raise the value of the maximum peer connection count like this:
@@ -193,10 +193,10 @@ Open your Prysm configuration file:
 
 ```sh
 ### Prysm Mainnet Configuration
-vim /configs/mainnet/prysm/prysm.yaml
+nano /configs/mainnet/prysm/prysm.yaml
 
 ### Prsym Testnet Configuration
-vim /configs/testnet/prysm/prysm.yaml
+nano /configs/testnet/prysm/prysm.yaml
 ```
 
 Now change the following line:
@@ -337,7 +337,7 @@ sudo pkill noip2
 For the program to be started at boot, we will create a system service file for it:
 
 ```sh
-sudo vim /etc/systemd/system/noip2.service
+sudo nano /etc/systemd/system/noip2.service
 ```
 
 We will set the following properties:
@@ -453,10 +453,10 @@ Open your Prysm configuration file:
 
 ```sh
 ### Prysm Mainnet Configuration
-vim /configs/mainnet/prysm/prysm.yaml
+nano /configs/mainnet/prysm/prysm.yaml
 
 ### Prsym Testnet Configuration
-vim /configs/testnet/prysm/prysm.yaml
+nano /configs/testnet/prysm/prysm.yaml
 ```
 
 Now add the following line, including your hostname of the Dynamic DNS:
