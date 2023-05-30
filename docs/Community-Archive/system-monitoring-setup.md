@@ -89,7 +89,7 @@ In order to remotelly access a machine running a node, it needs to be configured
 ```shell=
 sudo apt update
 sudo apt upgrade -y
-sudo apt install -y vim wget make git
+sudo apt install -y nano wget make git
 ```
 
 ### Remote Access
@@ -107,7 +107,7 @@ sudo apt install --assume-yes openssh-server
 Choose a port number larger than `50000`. This will be used later.
 
 ```shell=
-sudo vim /etc/ssh/sshd_config
+sudo nano /etc/ssh/sshd_config
 ```
 
 Change and enable a port by uncommenting (removing `#`) and changing `22` to new chosen port number:
@@ -155,7 +155,7 @@ Close ssh session by executing `exit`.
 Verify basic access to a node machine by using ssh. SSH requires user name of a node machine, its hostname and previously chosen ssh port.
 
 ```shell=
-vim ~/.ssh/config
+nano ~/.ssh/config
 ```
 
 Type in the following and replace _replace-user_, _replace-ip_, and _replace-port_:
@@ -200,7 +200,7 @@ ssh lukso
 Configure SSH by opening a configuration file and modifying several options:
 
 ```shell=
-sudo vim /etc/ssh/sshd_config
+sudo nano /etc/ssh/sshd_config
 ```
 
 Options:
@@ -266,7 +266,7 @@ sudo apt-get install fail2ban -y
 Edit a config to monitor ssh logins
 
 ```shell=
-sudo vim /etc/fail2ban/jail.local
+sudo nano /etc/fail2ban/jail.local
 ```
 
 Replace _replace-port_ to match the ssh port number.
@@ -343,7 +343,7 @@ ssh-port/tcp (v6)          ALLOW       Anywhere (v6)
 While setting up a system, ssh terminal may seem to be slow due wifi power management settings on a node machine. To disable it, modify a config.
 
 ```shell=
-sudo vim /etc/NetworkManager/conf.d/default-wifi-powersave-on.conf
+sudo nano /etc/NetworkManager/conf.d/default-wifi-powersave-on.conf
 ```
 
 Config:
@@ -415,7 +415,7 @@ sudo mkdir -p /etc/prometheus/console_libraries /etc/prometheus/consoles /etc/pr
 Edit configuration file:
 
 ```shell=
-sudo vim /etc/prometheus/prometheus.yml
+sudo nano /etc/prometheus/prometheus.yml
 ```
 
 The content of configuration file:
@@ -506,7 +506,7 @@ sudo ufw allow 9090/tcp
 #### Configure Service
 
 ```shell=
-sudo vim /etc/systemd/system/prometheus.service
+sudo nano /etc/systemd/system/prometheus.service
 ```
 
 The content of service configuration file:
@@ -560,7 +560,7 @@ sudo apt-get install grafana-enterprise
 #### Configure Service
 
 ```shell=
-sudo vim /lib/systemd/system/grafana-server.service
+sudo nano /lib/systemd/system/grafana-server.service
 ```
 
 The content of service configuration file:
@@ -694,7 +694,7 @@ rm -rf node_exporter-1.0.1.linux-amd64
 #### Configure Service
 
 ```shell=
-sudo vim /etc/systemd/system/node_exporter.service
+sudo nano /etc/systemd/system/node_exporter.service
 ```
 
 The content of service configuration file:
@@ -774,7 +774,7 @@ sudo chown json_exporter:json_exporter /etc/json_exporter
 Setup `LYX` token price:
 
 ```shell=
-sudo vim /etc/json_exporter/json_exporter.yml
+sudo nano /etc/json_exporter/json_exporter.yml
 ```
 
 The content of configuration file:
@@ -795,7 +795,7 @@ sudo chown json_exporter:json_exporter /etc/json_exporter/json_exporter.yml
 #### Configure Service
 
 ```shell=
-sudo vim /etc/systemd/system/json_exporter.service
+sudo nano /etc/systemd/system/json_exporter.service
 ```
 
 The content of service configuration file:
@@ -858,7 +858,7 @@ sudo chown blackbox_exporter:blackbox_exporter /etc/blackbox_exporter
 ```
 
 ```shell=
-sudo vim /etc/blackbox_exporter/blackbox.yml
+sudo nano /etc/blackbox_exporter/blackbox.yml
 ```
 
 The content of configuration file:
@@ -881,7 +881,7 @@ sudo chown blackbox_exporter:blackbox_exporter /etc/blackbox_exporter/blackbox.y
 #### Configure Service
 
 ```shell=
-sudo vim /etc/systemd/system/blackbox_exporter.service
+sudo nano /etc/systemd/system/blackbox_exporter.service
 ```
 
 The content of service configuration file:

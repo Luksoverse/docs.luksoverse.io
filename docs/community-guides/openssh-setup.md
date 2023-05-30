@@ -204,7 +204,7 @@ ssh remote_username@server_ip_address
 :bulb: One can also create shortcuts for SSH client login by creating a config file as follows:
 
 ```
-vim ~/.ssh/config
+nano ~/.ssh/config
 ```
 
 Type in the following and replace host, user, ip & port:
@@ -259,7 +259,7 @@ ssh sudo_user@server_ip_address
 Open the SSH configuration file with:
 
 ```
-sudo vim /etc/ssh/sshd_config
+sudo nano /etc/ssh/sshd_config
 ```
 
 Search for the following directives and modify them if needed as follows:

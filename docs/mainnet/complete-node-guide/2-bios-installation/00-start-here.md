@@ -1,6 +1,6 @@
 # Start here
 
-This section about the guide is about configuring your blockchain node's BIOS and installing the operating system. After successfully assembling your custom node, fine-tuning the BIOS settings and installing a suitable OS are crucial steps for achieving optimal performance, efficiency, and reliability
+This guide section concerns configuring your blockchain node's BIOS and installing the operating system. After successfully assembling your custom node, fine-tuning the BIOS settings and installing a suitable OS are crucial steps for achieving optimal performance, efficiency, and reliability.
 
 1. [Operating System Preparation](/docs/mainnet/complete-node-guide/bios-installation/operating-system)
 2. [BIOS Setup and Node Boot](/docs/mainnet/complete-node-guide/bios-installation/bios-setup)
