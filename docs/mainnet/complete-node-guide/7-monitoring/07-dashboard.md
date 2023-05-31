@@ -74,13 +74,6 @@ These are the default but depricated Grafana boards that are still working in la
 - [LUKSO Dashboard EUR V8](https://github.com/fhildeb/lukso-node-guide/blob/main/grafana/lukso-dashboard-eur.json)
 - [LUKSO Dashboard USD V8](https://github.com/fhildeb/lukso-node-guide/blob/main/grafana/lukso-dashboard-usd.json)
 
-#### Grafana 9 (current)
-
-These are the current Grafana board that have all alerts set up the right way by default. They only work for Grafana Version 9 onwards, as there are new types and structures regarding notifications and alerts. Dont worry, the frontend still looks the same.
-
-- [LUKSO Dashboard EUR V9](https://github.com/fhildeb/lukso-node-guide/blob/main/grafana/lukso-grafana-9-eur.json)
-- [LUKSO Dashboard USD V9](https://github.com/fhildeb/lukso-node-guide/blob/main/grafana/lukso-grafana-9-usd.json)
-
 > Make sure the file matches with the [JSON Exporter](/docs/mainnet/complete-node-guide/monitoring/json-exporter) External Data Configuration file. You could also specify your own dashboard by adjusting the contents and jobs.
 
 1. Copy the raw contents of the file you want
