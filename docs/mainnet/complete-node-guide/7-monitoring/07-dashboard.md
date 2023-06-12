@@ -1,4 +1,4 @@
-## 7.7 Dashboard Setup
+# Dashboard Setup
 
 The following section will configure the Grafana Dashboard after all exporter services and the Grafana Server are up and running on the node.
 
@@ -66,10 +66,6 @@ Now we have to add the running Prometheus service to the Grafana Dashboard to ut
 ### 7.7.4 Import Dashboard
 
 Choose a dashboard preset you want to load for the LUKSO mainnet and testnet. Within this guide, there are two main templates:
-
-#### Grafana 8 Boards
-
-These are the default but depricated Grafana boards that are still working in later versions, however, there might be hickups with alerts and notifications.
 
 - [LUKSO Dashboard EUR V8](https://github.com/fhildeb/lukso-node-guide/blob/main/grafana/lukso-dashboard-eur.json)
 - [LUKSO Dashboard USD V8](https://github.com/fhildeb/lukso-node-guide/blob/main/grafana/lukso-dashboard-usd.json)

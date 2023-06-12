@@ -8,5 +8,6 @@ This section of the blockchain node guide provides a comprehensive overview of t
 4. [Network Checks: Blackbox Exporter](/docs/mainnet/complete-node-guide/monitoring/blackbox-exporter)
 5. [Prometheus and Promtool Monitoring](/docs/mainnet/complete-node-guide/monitoring/prometheus)
 6. [Using Grafana Dashboards](/docs/mainnet/complete-node-guide/monitoring/grafana)
+7. [Explorer Pages](/docs/mainnet/complete-node-guide/monitoring/explorers)
 
 **Continue with Section 8: [Grafana Notifications](/docs/mainnet/complete-node-guide/8-notifications/)**

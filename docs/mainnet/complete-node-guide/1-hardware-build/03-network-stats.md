@@ -1,4 +1,4 @@
-## 1.3 Network Stats
+# Network Stats
 
 Running an EVM Proof of Stake validator node at home requires a stable and reliable internet connection with sufficient network speeds and low latency. A stable internet connection is crucial to ensure optimal performance and maintain the validator's active status within the EVM 2.0 network. Here's why network speeds and latency are essential:
 

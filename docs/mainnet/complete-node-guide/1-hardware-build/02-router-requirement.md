@@ -1,4 +1,4 @@
-## 1.2 Router Requirements
+# Router Requirements
 
 When setting up a blockchain node, the choice of the router can play a crucial role in ensuring optimal performance and reliability.
 

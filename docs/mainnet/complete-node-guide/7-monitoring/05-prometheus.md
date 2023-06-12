@@ -1,4 +1,4 @@
-## 7.5 Prometheus Setup
+# Prometheus Setup
 
 Now that all exporters are installed and running, we can set up the main application.
 

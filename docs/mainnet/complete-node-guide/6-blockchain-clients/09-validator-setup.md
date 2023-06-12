@@ -11,7 +11,7 @@ When becoming a validator, you must manage passwords, addresses, and keys. Let's
 - **Validator Deposit Key**: A keystore file encrypts your private key using the _Validator Key Password_. It is generated for each potential deposit you want to make. It can be used to import your validator key into a validator client. It's important to store your keystore files securely, as anyone with access to your keystore file and its password would have access to your validator key. If you lose your keystore file, you can regenerate it using your _Validator Mnemonic Seed_, assuming you have also stored it securely. With it, the client can verify if you deposited the required 32 LYX/LYXe to become an active validator.
 - **Deposit Data**: This is a JSON file generated when you set up your validator using your _Validator Mnemonic Seed_. The JSON file includes various essential pieces of information, such as your public key and a signature. This file is used as part of the process to register your validator on the blockchain using transactions.
 - **Validator Wallet Password**: This password is used to secure the wallet holding your _Validator Deposit Keys_. The wallet password should be strong, unique, and known only to you. This password will be needed every time you start your validator client.
-- **Validator Withdrawal Address**: This is the Ethereum address where your funds will be sent when you stop validating and withdrawing your staked LYX. For more information, you can check the [Withdrawals and Earnings](/docs/mainnet/complete-node-guide/blockchain-clients/network-theory) section of the guide.
+- **Validator Withdrawal Address**: This is the Ethereum address where your funds will be sent when you stop validating and withdrawing your staked LYX. It's important that you always have control over it as it can not be updated. For more information, you can check the [Withdrawals and Earnings](/docs/mainnet/complete-node-guide/blockchain-clients/network-theory) section of the guide.
 - **Validator Recipient Fee Address**: This is the Ethereum address where the transaction fees you earn as a validator will be sent. Depending on your setup, this might be the same as your withdrawal address. For more information, you can check the [Withdrawals and Earnings](/docs/mainnet/complete-node-guide/blockchain-clients/network-theory) section of the guide.
 
 ### 6.9.2 Import Mainnet Keys
@@ -19,6 +19,8 @@ When becoming a validator, you must manage passwords, addresses, and keys. Let's
 > If you want to import testnet validator keys, have a look at the [Importing Testnet Keys](#692-import-testnet-keys) guide.
 
 Only validators that deposited LYXe to the [Genesis Deposit Contract](https://etherscan.io/address/0x42000421dd80D1e90E56E87e6eE18D7770b9F8cC#code) before it was frozen on May 9th, 2023 can run the back structure of the network until the LYXe Migration is live on the LUKSO blockchain. The migration is [expected](https://medium.com/lukso/its-happening-the-genesis-validators-are-coming-ce5e07935df6) around one month after the initial network start.
+
+Visit the official [Deposit Launchpad](https://deposit.mainnet.lukso.network/) and cautiously go through the process of generating keys and depositing stakes to them, in case you have not already.
 
 1. Guide: [Generate Deposit Keys](/docs/community-guides/validator-key-generation/lukso-wagyu).
 2. Guide: [Deposit Stake in LYXe](/docs/community-guides/validator-key-stake/).
@@ -35,7 +37,7 @@ SCP is a reliable and secure choice for data transfer over the internet or withi
 
 - `<ssh-key>`: Check your SSH keys within the SSH folder using `ls ~/.ssh/` from the terminal of your personal computer. Search for your generated key file and write down the name.
 - `<local-path-to-key-folder>`: Open your file explorer and localize the keystore folder with all your validator keys on your personal computer. Right-click and `Copy Path`. Then copy it to your editor.
-- `<your-ssh-port>`, `<user-name>` and `<node-ip-address>`: Open your SSH configuration file on your personal computer using `nano ~/.ssh/config`. Write down the Port, IP, and User of your node.
+- `<your-ssh-port>`, `<user-name>` and `<node-ip-address>`: Open your SSH configuration file on your personal computer using `vim ~/.ssh/config`. Write down the Port, IP, and User of your node.
 - `<node-path-to-node-folder>`: Open your node's working directory on your node and run the `pwd` command. Then copy the full path.
 - `<keyfolder-name>`: Define a new name for the validator folder. It can be the same as on your personal computer and is used for importing the keys. We will remove it after.
 
@@ -109,7 +111,7 @@ SCP is a reliable and secure choice for data transfer over the internet or withi
 
 - `<ssh-key>`: Check your SSH keys within the SSH folder using `ls ~/.ssh/` from the terminal of your personal computer. Search for your generated key file and write down the name.
 - `<local-path-to-key-folder>`: Open your file explorer and localize the keystore folder with all your validator keys on your personal computer. Right-click and `Copy Path`. Then copy it to your editor.
-- `<your-ssh-port>`, `<user-name>` and `<node-ip-address>`: Open your SSH configuration file on your personal computer using `nano ~/.ssh/config`. Write down the Port, IP, and User of your node.
+- `<your-ssh-port>`, `<user-name>` and `<node-ip-address>`: Open your SSH configuration file on your personal computer using `vim ~/.ssh/config`. Write down the Port, IP, and User of your node.
 - `<node-path-to-node-folder>`: Open your node's working directory on your node and run the `pwd` command. Then copy the full path.
 - `<keyfolder-name>`: Define a new name for the validator folder. It can be the same as on your personal computer and is used for importing the keys. We will remove it after.
 
@@ -183,7 +185,7 @@ lukso start --validator --transaction-fee-recipient "<transaction-fee-recipient-
 lukso start --validator --transaction-fee-recipient "<transaction-fee-recipient-address>" --testnet
 ```
 
-### 6.9.7 Slasher Config
+### 6.9.7 Optional Slasher Config
 
 Implementing and running the slasher service is included in the consensus client by default. It actively watches for slashable offenses on the network and can be resource-intensive. It's generally beneficial for network security if most nodes independently check for slashing conditions. However, if you have a low-performance node, it could lead to the following problems:
 

@@ -1,4 +1,4 @@
-### 6.11 Peer Discovery
+# Peer Discovery
 
 In a blockchain network, peers are individual nodes participating and playing a crucial role in its functioning. These nodes can have different roles depending on the type of blockchain, but they all work collectively to maintain and validate the shared ledger.
 
@@ -312,7 +312,13 @@ Choose your default Ethernet connection, usually `eno1`. Also, choose an update 
 New configuration file '/tmp/no-ip2.conf' created.
 ```
 
-To configure the client globally, we must run the built executable with the `-C` flag again. The application will create a default config file within the user directory. The final output will look like this:
+To configure the client globally, we must run the built executable with the `-C` flag again. It is needed for our service to find the right config file after automatic startups.
+
+```sh
+sudo make install -C
+```
+
+The application will create a default config file within the user directory. The final output will look like this:
 
 ```text
 New configuration file '/usr/local/etc/no-ip2.conf' created.
