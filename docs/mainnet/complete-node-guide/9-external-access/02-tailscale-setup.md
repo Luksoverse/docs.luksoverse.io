@@ -1,4 +1,4 @@
-## 9.2 Tailscale Setup
+# Tailscale Setup
 
 Now that we have spoken about VPN services and the benefits of Tailscale, we can continue with the installation. If you want to use a different software service to set up a tunnel connection to your node, feel free to do so.
 

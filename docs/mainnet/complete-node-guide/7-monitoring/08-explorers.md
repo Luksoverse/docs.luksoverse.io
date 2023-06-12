@@ -1,4 +1,4 @@
-## 7.8 Explorer Page Monitoring
+# Explorer Page Monitoring
 
 You can also use LUKSO's official explorer webpages to monitor your nodes or validator status without relying directly on your local metrics. It's one of the most efficient methods and does not require any login to work. Their links can be verified at the [Mainnet Parameter](https://docs.lukso.tech/networks/mainnet/parameters) and [Testnet Parameter](https://docs.lukso.tech/networks/testnet/parameters) sections of the official [LUKSO Tech Docs](https://docs.lukso.tech/) page.
 
