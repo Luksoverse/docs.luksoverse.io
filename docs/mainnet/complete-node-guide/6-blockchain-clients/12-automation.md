@@ -86,10 +86,10 @@ cd static
 It is definitely recommended to define a generic name, so not everyone immedientelly can tell there is a password behind, even if they somehow got access.
 
 ```sh
-vim ./<your-generic-filename>
+nano ./<your-generic-filename>
 
 # Example
-vim ./client_dependencies
+nano ./client_dependencies
 ```
 
 Write your password into this file and save it. Afterward we will have to give permissions to this file, so the specified user can access it during startup.
@@ -159,7 +159,7 @@ Now we're good to go to configure the actual service.
 Afterwards, we need to configure the system's service file for the validator application itself.
 
 ```sh
-sudo vim /etc/systemd/system/lukso-validator.service
+sudo nano /etc/systemd/system/lukso-validator.service
 ```
 
 - **Description**: Provides a concise but meaningful explanation of the service used in the configuration
