@@ -300,7 +300,8 @@ You can still check the status of the node, however, you always have to use the 
 :::warning
 Permission Disclaimer
 
-As we are having a separate user to run the service, we now need to execute all `lukso` commands using super user permission. If you are not using super user permission, `lukso status` will show all processes as stopped even if they are running! The same goes for `lukso logs`, as it will show that there are no logs found, even if the process is generating them in the background. :::
+As we are having a separate user to run the service, we now need to execute all `lukso` commands using super user permission. If you are not using super user permission, `lukso status` will show all processes as stopped even if they are running! The same goes for `lukso logs`, as it will show that there are no logs found, even if the process is generating them in the background. 
+:::
 
 Navigate into your home directory
 
