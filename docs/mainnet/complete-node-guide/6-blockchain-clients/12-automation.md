@@ -77,7 +77,7 @@ Create a new directory to store the file in. This is just so it does not directl
 
 ```sh
 # Create the folder
-sudo mkdir static
+mkdir static
 
 # Move into it
 cd static
@@ -94,7 +94,72 @@ nano ./client_dependencies
 
 Write your password into this file and save it. Afterward we will have to give permissions to this file, so the specified user can access it during startup.
 
-### 6.12.5 Change User Access Rights
+### 6.12.5 Adding Startup Script
+
+The system service file we will create later can execute a program and check if the network is online before starting it up. However, it's essential to understand that these **system checks do not necessarily imply that you have a working internet connection**! It's mainly designed to indicate that the network is set up, which doesn't always guarantee a full-fledged active internet connection.
+
+For the LUKSO CLI to start correctly without stalling, an internet connection must be established before starting the clients. If you face a power outage at home, and your node resumes work before the router can reconnect, you would still have to restart the system service manually.
+
+To solve this issue, we can call an external script instead of starting the CLI directly. This script then tries to ping Google first, before continuing the node start. If the internet connection is up and could ping Google successful, it will start up the LUKSO CLI. If not, it will wait for 1 second and retry to ping Google again until it is successful.
+
+> The external script will guarantee a healthy startup for the clients.
+
+First, we will create a new file within the same folder as the password file.
+
+```sh
+vim ./lukso_startup.sh
+```
+
+To ping Google, we can define the following options:
+
+- `c1`: Specifies the number of packets to send before stopping. In our case, it tells ping only to send one package. The parameter is often used in scripts or when testing connectivity because it prevents other pings after one successful or unsuccessful try rather than continuing indefinitely.
+- `&>/dev/null`: Redirects errors and outputs to `/dev/null`, effectively discarding them. The discard is helpful because we don't care about the output and just want to use the ping utility for our script.
+
+The working directory will be our regular node folder so that we can use dynamic file paths. However, make sure that you exchange the placeholders with your own input:
+
+- `<your-generic-password-file>`: The name of your password file
+- `<your-fee-recipient-address>`: Your EOA address to receive recipient fees.
+
+This is how the script looks for mainnet startup:
+
+```sh
+#!/bin/bash
+# Try to ping Google server
+while ! ping -c1 google.com &>/dev/null
+do
+    echo "Internet down. Google could not be pinged, retrying in 1 second."
+    sleep 1
+done
+echo "Internet up. Starting the LUKSO Validator."
+# If internet is up, continue with next command
+exec /usr/local/bin/lukso start \
+        --validator \
+        --genesis-json ./configs/mainnet/shared/genesis_42.json \
+        --genesis-ssz ./configs/mainnet/shared/genesis_42.ssz \
+        --validator-wallet-password ./static/<your-generic-password-file> \
+        --transaction-fee-recipient "<your-fee-recipient-address>"
+```
+
+This is how the script looks for testnet startup:
+
+```sh
+#!/bin/bash
+# Try to ping Google server
+while ! ping -c1 google.com &>/dev/null
+do
+    echo "Internet down. Google could not be pinged, retrying in 1 second."
+    sleep 1
+done
+echo "Internet up. Starting the LUKSO Validator."
+# If internet is up, continue with next command
+exec /usr/local/bin/lukso start \
+        --testnet \
+        --validator \
+        --validator-wallet-password ./static/<your-generic-password-file> \
+        --transaction-fee-recipient "<your-fee-recipient-address>"
+```
+
+### 6.12.6 Change User Access Rights
 
 Afterward, we can give access to the whole working directory of the node, so the processes can read all the config files. Make sure to adjust the `<user-name>`, `lukso-working-directory`, and `<your-generic-password-file>` properties to your actual names. The user name is the regular one you log in with.
 
@@ -118,6 +183,12 @@ The same goes for the read access of the password file, so only the owner of the
 
 ```sh
 sudo chmod 400 /home/<user-name>/<your-node-folder>/static/<your-generic-password-file>
+```
+
+For the startup script, only the user will need full read and execution rights:
+
+```sh
+sudo chmod 500 /home/<user-name>/<your-node-folder>/static/lukso_startup.sh
 ```
 
 Now we only have to check that the service can access the node directorie's path. If the process can not access parent directories, it wont be able to even see the folders he became owner of.
@@ -160,7 +231,7 @@ drwxr-xr-x lukso-validator-worker  lukso-validator-worker  <your-node-folder>
 
 Now we're good to go to configure the actual service.
 
-### 6.12.6 Configuring the Service
+### 6.12.7 Configuring the Service
 
 Afterwards, we need to configure the system's service file for the validator application itself.
 
@@ -195,8 +266,6 @@ Make sure you change the `User` and `Group` properties if you've previously chan
 
 - `<user-name>`: Your systems user name that you use to log into your node.
 - `<lukso-working-directory>`: This will be your working directory of your node where you did `lukso init` in. Its needed for all config files, the wallet, and the chaindata.
-- `<your-generic-password-file>`: The name of your password file
-- `<your-fee-recipient-address>`: Your EOA address to receive recipient fees.
 
 > Be cautious: When creating new rules or modifying existing ones, following the correct syntax and structure are essential to ensure that the JSON Exporter functions appropriately and provides the desired level of security. Please verify that you do not use spaces between properties and their values.
 
@@ -215,12 +284,7 @@ Group=lukso-validator-worker
 Type=oneshot
 RemainAfterExit=yes
 WorkingDirectory=/home/<user-name>/<lukso-working-directory>
-ExecStart=/usr/local/bin/lukso start                                          \
-        --validator                                                           \
-        --genesis-json ./configs/mainnet/shared/genesis_42.json               \
-        --genesis-ssz ./configs/mainnet/shared/genesis_42.ssz                 \
-        --validator-wallet-password ./static/<your-generic-password-file>     \
-        --transaction-fee-recipient "<your-fee-recipient-address>"
+ExecStart=/home/<user-name>/<lukso-working-directory>/static/lukso_startup.sh
 ExecStop=/usr/local/bin/lukso stop
 SyslogIdentifier=lukso-validator
 StandardOutput=journal
@@ -230,17 +294,7 @@ StandardError=journal
 WantedBy=multi-user.target
 ```
 
-If you want to configure this script for testnet, you have to use a different `ExecStart` configuration:
-
-```text
-ExecStart=/usr/local/bin/lukso start                                       \
-        --validator                                                        \
-        --validator-wallet-password ./static/<your-generic-password-file>  \
-        --transaction-fee-recipient "<your-fee-recipient-address>"         \
-        --testnet
-```
-
-### 6.12.7 Restarting the Service
+### 6.12.8 Restarting the Service
 
 First, we need to reload the system manager configuration. It is used when making changes to service configuration files or creating new service files, ensuring that systemd is aware of the changes like before.
 
@@ -266,7 +320,7 @@ The output should look similar to this:
 Created symlink /etc/systemd/system/multi-user.target.wants/validator-validator.service → /etc/systemd/system/lukso-validator.service.
 ```
 
-### 6.12.8 Checking the Service Status
+### 6.12.9 Checking the Service Status
 
 We can fetch the current status from the system control to check if the Node Exporter service is running and configured correctly. It will display whether it is active, enabled, or disabled and show any recent log entries.
 
@@ -297,11 +351,9 @@ The output should look similar to this:
 
 You can still check the status of the node, however, you always have to use the superuser permission to do so.
 
-:::warning
-Permission Disclaimer
+#### Permission Disclaimer
 
-As we are having a separate user to run the service, we now need to execute all `lukso` commands using super user permission. If you are not using super user permission, `lukso status` will show all processes as stopped even if they are running! The same goes for `lukso logs`, as it will show that there are no logs found, even if the process is generating them in the background. 
-:::
+As we are having a separate user to run the service, we now need to execute all `lukso` commands using super user permission. If you are not using super user permission, `lukso status` will show all processes as stopped even if they are running! The same goes for `lukso logs`, as it will show that there are no logs found, even if the process is generating them in the background.
 
 Navigate into your home directory
 
@@ -327,7 +379,7 @@ INFO[0000] PID 9419 - Consensus (prysm): Running 🟢
 INFO[0000] PID 9426 - Validator (validator): Running 🟢
 ```
 
-### 6.12.9 Maintenance
+### 6.12.10 Maintenance
 
 Proper maintenance ensures that all the components are working as intended, can be updated on the fly, and that software can be kept up-to-date and secure. It's also essential to identify and fix errors quickly. There are some things to clarify first about how the node clients should be maintained and why:
 
@@ -374,7 +426,7 @@ You can stop the service using the system control. Make sure to always use the
 sudo systemctl stop lukso-validator
 ```
 
-### 6.12.10 Optional User Removal
+### 6.12.11 Optional User Removal
 
 If you ever want to remove the user or something went wrong, do the following steps:
 
@@ -406,7 +458,7 @@ sudo deluser --remove-all-files lukso-validator-worker
 sudo delgroup lukso-validator-worker
 ```
 
-### 6.12.11 Optional Service Removal
+### 6.12.12 Optional Service Removal
 
 If you want to remove the automation tool, stop the service:
 
