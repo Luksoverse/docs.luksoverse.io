@@ -107,7 +107,7 @@ To solve this issue, we can call an external script instead of starting the CLI 
 First, we will create a new file within the same folder as the password file.
 
 ```sh
-vim ./lukso_startup.sh
+nano ./lukso_startup.sh
 ```
 
 To ping Google, we can define the following options:
