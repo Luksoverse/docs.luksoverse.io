@@ -189,6 +189,8 @@ The output should be the following:
 # INFO[0000] PID ----- - Validator (validator): Stopped 🔘
 ```
 
+##### Prysm Consensus File
+
 Open your Prysm configuration file:
 
 ```sh
@@ -209,6 +211,31 @@ To your public IP address:
 
 ```text
 p2p-host-ip: '<your-public-ip-address>'
+```
+
+##### Lighthouse Consensus File
+
+Open your Lighthouse configuration file:
+
+```sh
+# Mainnet Configuration File
+nano /configs/mainnet/lighthouse/lighthouse.toml
+# Testnet Configuration File
+nano /configs/testnet/lighthouse/lighthouse.toml
+```
+
+Now, exchange the following sample addresses:
+
+```text
+listen-address = "0.0.0.0"
+enr-address = "0.0.0.0"
+```
+
+With your own public IP addresses:
+
+```text
+listen-address = "<your-public-ip-address>"
+enr-address = "<your-public-ip-address>"
 ```
 
 Restart the client again:
@@ -420,10 +447,10 @@ The output should look similar to this:
      CGroup: /system.slice/noip2.service
              └─4387 /usr/local/bin/noip2
 
-[DATE] [DATE] [USER] systemd[1]:  Starting No-ip.com Dynamic DNS
-[DATE] [DATE] [USER] noip2[4387]: v2.1.9 daemon started with NAT enabled
-[DATE] [DATE] [USER] systemd[1]:  Started No-ip.com Dynamic DNS.
-[DATE] [DATE] [USER] noip2[4387]: [DYN_DNS_NAME] was already set to [PUBLIC_IP].
+[DATE] [TIME] [USER] systemd[1]:  Starting No-ip.com Dynamic DNS
+[DATE] [TIME] [USER] noip2[4387]: v2.1.9 daemon started with NAT enabled
+[DATE] [TIME] [USER] systemd[1]:  Started No-ip.com Dynamic DNS.
+[DATE] [TIME] [USER] noip2[4387]: [DYN_DNS_NAME] was already set to [PUBLIC_IP].
 ...
 ```
 
