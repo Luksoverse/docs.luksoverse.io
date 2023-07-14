@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import WarningModal from '../components/WarningModal';
 import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
+import { Analytics } from '@vercel/analytics/react';
 
 export default function Root({ children }) {
   const [hasReadWarning, setHasReadWarning] = useState(true);
@@ -24,7 +25,7 @@ export default function Root({ children }) {
           hideWarning={hideWarning}
         />
       )}
-
+ <Analytics />
       {children}
     </>
   );
