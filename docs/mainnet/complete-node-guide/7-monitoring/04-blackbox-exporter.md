@@ -1,4 +1,156 @@
-# Blackbox Exporter Setup
+#  Blackbox Exporter Setup
+
+After installing the Node and JSON Exporters, we will move on with the last exporter service for Prometheus: the Blackbox Exporter, as it's common practice to install the exporters before the main Prometheus service, as [explained before](/docs/mainnet/complete-node-guide/monitoring/node-exporter).
+
+> The Blackbox Exporter probes endpoints over protocols such as HTTP, HTTPS, DNS, TCP, and ICMP and provides detailed metrics on the results. In our case, it monitors the ping time between the node machine and two DNS servers. This information can be crucial in diagnosing network-related issues. If the ping time is too long or the connection fails, it could indicate network problems affecting your node's performance or ability to stay in sync with the rest of the blockchain network.
+
+### 7.4.1 Creating a New User
+
+As explained and done [previously](/docs/mainnet/complete-node-guide/monitoring/node-exporter), we will create a new user to run the Blackbox Exporter service specifically. Running services as a system user with minimal privileges is a typical security best practice.
+
+- `--system`: This flag indicates that a system user should be created. System users are used to run services and daemons rather than for people to log in with.
+- `--group`: This flag instructs the user tool to create a new group with the same name as the user.
+- `--no-create-home`: By default, the user tool will create a home directory for each new user. This flag prevents that from happening, as we do not need different user directories if ye do not set the user up with a login. The option is typically used for users that are only meant to run a specific service and don't need a home directory. In this case, I'm naming the user `node-exporter-worker` to differentiate the service, often using the exact name of the program written in underscores and the user account related to it. Feel free to come up with your name, but remember that you must change future commands.
+
+```sh
+sudo adduser --system blackbox-exporter-worker --group --no-create-home
+```
+
+Once we configure the exporter, the node will run the service as this user by specifying the user in our system daemon service file.
+
+If you want to confirm that the user has been created, you can search for it within the password file `/etc/passwd`, that houses all essential information for each user account. Using `grep`, a powerful command-line tool for global expression search within files or text, we can check if the user exists within the file.
+
+```sh
+grep "blackbox-exporter-worker" /etc/passwd
+```
+
+The output should look similar to this:
+
+```text
+blackbox-exporter-worker:x:116:122::/home blackbox-exporter-worker:/usr/sbin/nologin
+```
+
+### 7.4.2 Installing the Blackbox Exporter
+
+When installing the Blackbox Exporter, we first have to get the latest version from the official [Prometheus Webpage](https://prometheus.io/download/#blackbox_exporter). As of `May 2023`, the only listed version is `0.23.0`.
+
+#### Download Github Package
+
+Before downloading anything, make sure you are in the home directory so everything is in one place:
+
+```sh
+cd
+```
+
+We can then continue downloading this version using the previously installed `wget` tool. In this case, we're downloading the service directly from GitHub. Make sure to update your understanding if there is a newer release.
+
+```sh
+wget https://github.com/prometheus/blackbox_exporter/releases/download/v0.23.0/blackbox_exporter-0.23.0.linux-amd64.tar.gz
+```
+
+The output should look similar to this:
+
+```text
+[DATE] [TIME] (12.5 MB/s) - ‘blackbox_exporter-0.23.0.linux-amd64.tar.gz’ saved [10831812/10831812]
+
+FINISHED --[DATE] [TIME]--
+Total wall clock time: 1.4s
+Downloaded: 1 files, 10M in 0.8s (12.5 MB/s)
+```
+
+#### Extract the Archive
+
+After downloading it, we can extract the tape archive using the Ubuntu tool. We're going to extract (`x`) and compress (`z`) the tape archive into its previous packaged files (`f`) using verbose mode (`v`) to list all files being processed during the extraction and compression.
+
+```sh
+tar xzfv blackbox_exporter-0.23.0.linux-amd64.tar.gz
+```
+
+The output should look similar to this:
+
+```text
+blackbox_exporter-0.23.0.linux-amd64/
+blackbox_exporter-0.23.0.linux-amd64/blackbox.yml
+blackbox_exporter-0.23.0.linux-amd64/LICENSE
+blackbox_exporter-0.23.0.linux-amd64/NOTICE
+blackbox_exporter-0.23.0.linux-amd64/blackbox_exporter
+```
+
+#### Copy the Service Binaries into the System's Path
+
+After extraction, we can copy the exporter binaries to the system's path so they appear as installed dependencies and can be used appropriately and linked within services.
+
+```sh
+sudo cp blackbox_exporter-0.23.0.linux-amd64/blackbox_exporter /usr/local/bin/
+```
+
+#### Set Blackbox Exporter Permissions
+
+Now we can change the owner of the Blackbox Exporter service to the one that we created especially for this purpose:
+
+As previously explained in the [Node Exporter](/docs/mainnet/complete-node-guide/monitoring/node-exporter) section of the guide, we can set both the user and group to the specified service user.
+
+```sh
+sudo chown blackbox-exporter-worker:blackbox-exporter-worker /usr/local/bin/blackbox_exporter
+```
+
+Let's also make sure the user can execute the file by changing the permissions as described in the [Node Exporter](./docs/mainnet/complete-node-guide/monitoring/node-exporter) section:
+
+```sh
+sudo chmod 755 /usr/local/bin/blackbox_exporter
+```
+
+#### Cleaning up Install Files
+
+After we have copied the executable file into the system's program path and give it the appropriate user rights, we can remove the extracted folders.
+
+```sh
+rm -rf blackbox_exporter-0.23.0.linux-amd64
+```
+
+The same applies to the tape archive, which we have previously downloaded:
+
+```sh
+rm blackbox_exporter-0.23.0.linux-amd64.tar.gz
+```
+
+### 7.4.3 Extend Network Capabilities
+
+Because the Blackbox Exporter will monitor the ping time between the node machine and DNS servers. This information can be crucial in diagnosing network-related issues. However, it will ping those many times, and service has strict capabilities set by default.
+
+We need to allow Blackbox Exporter to create raw network sockets, which are required to probe the network and provide metrics for its behavior and connectivity.
+
+There is the capability settings tool `setcap` on Ubuntu, which helps us do this. It will take the following operators:
+
+- **cap_new_raw**: The first operator specifies the capability you're setting. In our case, `cap_net_raw` is the network capability that allows the program to use network sockets in a way that could bypass the system's normal security checks.
+- **+ep**: We can extend the capability of an operator using a plus sign. In our case, we're adding `e` and `p`. Setting it to effective using `e` means that the capability is turned on immediately. The operation `p` will permit the new ability.
+- **path**: Afterward, we need to specify the path to the service's executable.
+
+In our case, the final command looks like this:
+
+```sh
+sudo setcap cap_net_raw+ep /usr/local/bin/blackbox_exporter
+```
+
+### 7.4.4 Configuring External Datasets
+
+After installation, we want to create a separate configuration file to define a module that performs network probes. This configuration can monitor network connectivity by sending ping requests and waiting for replies.
+
+We will create our folder for the applciation's configuration files within `/etc/blackbox_exporter/`.
+
+```sh
+sudo mkdir /etc/blackbox_exporter/
+```
+
+Now we can create a new config file within this folder:
+
+```sh
+sudo vim /etc/blackbox_exporter/blackbox.yaml
+```
+
+#### Probing Configuration
+
+Within the file, we can set our network configuration with the following properties:
 
 - **modules**: The main configuration section for defining different types of probes. Each module represents a specific type of probe that the Blackbox Exporter can perform.
 - **icmp**: The name of the module being defined. In this case, it's set up to perform an `ICMP` probe. ICMP stands for Internet Control Message Protocol, and it's used primarily for network diagnostic and control purposes. The most common use of ICMP is the `ping` command, which sends an ICMP echo request to a specified network host and waits for a response.
@@ -39,7 +191,7 @@ After installation, we want to define how the Blackbox Exporter service should b
 Here, we can create a file called `blackbox_exporter.service`. A service file is generally used to define how daemon processes should be started. In our case, we create the file with the exact name of the Blackbox Exporter service stored within the system directory to modify the Blackbox Exporter's startup process.
 
 ```sh
-sudo nano /etc/systemd/system/blackbox_exporter.service
+sudo vim /etc/systemd/system/blackbox_exporter.service
 ```
 
 The configuration file is split between multiple sections: `[Unit]`, `[Service]`, and `[Install]`. The unit contains generic options that are not dependent on the type of service and provide documentation. The service and install section is where we will house our configuration properties:
