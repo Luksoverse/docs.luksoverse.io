@@ -1,4 +1,4 @@
-# 9 External Access
+# External Access
 
 The following chapter of the guide is about connecting to your node from everywhere in the world, not only your home environment. We will use Secure VPN Tunneling.
 
