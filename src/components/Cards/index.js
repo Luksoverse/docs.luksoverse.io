@@ -10,8 +10,8 @@ const Cards = () => {
       path: '/docs/mainnet/complete-node-guide/hardware-build/start-here',
     },
     {
-      title: 'Troubleshooting',
-      description: 'Troubleshoot your node with easy tooltips.',
+      title: 'Staking Services',
+      description: 'Still to complicated, we have some great options for you.',
       path: '/docs/community-guides/node-troubleshoot',
     },
     {
