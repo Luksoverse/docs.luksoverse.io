@@ -1,4 +1,4 @@
-# 8 Grafana Notifications
+# Grafana Notifications
 
 This guide section concerns setting up Grafana notifications for your node metrics via Telegram Images.
 
