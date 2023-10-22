@@ -14,7 +14,7 @@ const Cards = () => {
       title: 'Staking Services',
       description:
         'Still too complicated? Luksoverse has some great no-coding options for you.',
-      path: '/docs/staking-services/staking-services',
+      path: '/docs/staking/staking-services',
       color: '#FF5733',
     },
     {
