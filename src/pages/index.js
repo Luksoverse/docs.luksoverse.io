@@ -17,10 +17,17 @@ function HomepageHeader() {
         <p className="hero__subtitle">{siteConfig.tagline}</p>
         <div className={styles.buttons}>
           <Link
-            className="button button--secondary button--lg"
+            className={clsx('button', 'button--lg', styles.buttonCustom1)}
             to="/docs/mainnet/complete-node-guide/hardware-build/start-here"
           >
             Start Your Mainnet Node
+          </Link>
+
+          <Link
+            className={clsx('button', 'button--lg', styles.buttonCustom2)}
+            to="/path-to-your-new-link"
+          >
+            👨🏻‍💻 Hire node support
           </Link>
         </div>
       </div>
