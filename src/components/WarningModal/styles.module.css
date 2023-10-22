@@ -27,7 +27,8 @@
 .warningButton {
   background-color: #000;
   color: #ffff;
-  border: 3px solid #e100ff;
+  border: 1px solid #e100ff;
+
   border-radius: 21px;
   padding: 5px 10px;
   font-size: 1em;
@@ -36,6 +37,7 @@
 .warningButton:hover {
   background-color: transparent;
   box-shadow: 0 0 10px #fee6e7;
+  border: 1px solid #e100ff;
 }
 
 @media (min-width: 600px) {
