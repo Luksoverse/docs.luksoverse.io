@@ -28,20 +28,20 @@ const Cards = () => {
       description:
         'Community Guides how to use an advanced setup to acces your node externally.',
       path: '/docs/community-guides/',
-      color: '#D1D4D8',
+      color: '#B3B6BA',
     },
     {
       title: 'Community Archive',
       description: 'Setting up your system and start the LUKSO network.',
       path: '/docs/community-guides/community-archive',
-      color: '#D1D4D8',
+      color: '#B3B6BA',
     },
     {
       title: 'LUKSO Archive',
       description:
         'Guides and Specs for L16 and depricated LUKSO CLI versions.',
       path: '/docs/l16-archive-docs/parameters',
-      color: '#D1D4D8',
+      color: '#B3B6BA',
     },
   ];
 
