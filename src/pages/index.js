@@ -25,7 +25,7 @@ function HomepageHeader() {
 
           <Link
             className={clsx('button', 'button--lg', styles.buttonCustom2)}
-            to="/path-to-your-new-link"
+            to="https://stakingverse.io/services#consultation-service"
           >
             👨🏻‍💻 Hire node support
           </Link>
