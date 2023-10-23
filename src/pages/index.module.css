@@ -23,6 +23,16 @@
   justify-content: center;
 }
 
+.buttonCustom1 {
+  background-color: #aedff7;
+  color: #000;
+}
+
+.buttonCustom2 {
+  background-color: #89c3eb;
+  color: #000;
+}
+
 .container {
   display: flex;
   flex-direction: column;
