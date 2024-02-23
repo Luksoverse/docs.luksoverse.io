@@ -72,12 +72,6 @@ const config = {
           },
           {
             type: 'doc',
-            docId: 'devnet/devnet-info',
-            position: 'left',
-            label: 'Devnet',
-          },
-          {
-            type: 'doc',
             docId: 'l16-archive-docs/parameters',
             position: 'left',
             label: 'L16 Archive',
