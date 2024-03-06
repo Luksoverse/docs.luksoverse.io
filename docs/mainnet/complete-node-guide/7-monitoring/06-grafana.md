@@ -1,10 +1,10 @@
-# Grafana Dashboard
+## 7.6 Grafana Dashboard
 
 As the final step within the monitoring, we will set up a Grafana Dashboard to gather all metrics in one place.
 
 ### 7.6.1 Creating a New User
 
-As explained and done [previously](/docs/mainnet/complete-node-guide/monitoring/node-exporter), we will create a new user to run the Grafana service specifically. Running services as a system user with minimal privileges is a common security best practice.
+As explained and done [previously](./02-node-exporter.md), we will create a new user to run the Grafana service specifically. Running services as a system user with minimal privileges is a common security best practice.
 
 - `--system`: This flag indicates that a system user should be created. System users are used to run services and daemons rather than for people to log in with.
 - `--group`: This flag instructs the user tool to create a new group with the same name as the user.
@@ -23,7 +23,7 @@ grep "grafana-server-worker" /etc/passwd
 The output should look similar to this:
 
 ```text
-prometheus-worker:x:117:123::/home/prometheus-worker:/usr/sbin/nologin
+grafana-server-worker:x:117:123::/home/grafana-server-worker:/usr/sbin/nologin
 ```
 
 ### 7.6.2 Installation
@@ -82,10 +82,20 @@ Press `Enter` to continue fetching the packages. Afterward, we can update the pa
 sudo apt update
 ```
 
-Now we can download the latest Grafana build:
+Now we can download the latest supported Grafana build:
 
 ```sh
-sudo apt install grafana
+# Check for all available versions
+apt list -a grafana
+
+# Install Version 9.5.2
+sudo apt install grafana=9.5.2
+
+# If you have a own Grafana board, you can also install the latest version
+# sudo apt install grafana
+
+# Put Grafana Updates on hold so its not updated automatically
+sudo apt-mark hold grafana
 ```
 
 Whenever you update your Ubuntu packages using APT, it will automatically fetch the latest Grafana updates.
@@ -94,7 +104,7 @@ Whenever you update your Ubuntu packages using APT, it will automatically fetch 
 
 Now we can change the owner of the software applications. Ownership changes are commonly done for security reasons. Giving root ownership to these binary files prevents non-root users or exporter workers from modifying or replacing these important executables, which could lead to unauthorized or unexpected behavior.
 
-Like previously explained in the [Node Exporter](/docs/mainnet/complete-node-guide/monitoring/node-exporter) section of the guide, we can set both, the user and group to the specified user of the service.
+As previously explained in the [Node Exporter](./02-node-exporter.md) section of the guide, we can set both the user and group to the specified service user.
 
 ```sh
 sudo chown -R grafana-server-worker:grafana-server-worker /usr/sbin/grafana
@@ -126,7 +136,7 @@ sudo chown -R grafana-server-worker:grafana-server-worker /var/log/grafana
 
 Not only do we need to change the owner this time, but we also need to change the access mode of the executable. We must allow the owner to read, write, and execute the file while the group and all other services can only read from it.
 
-We can use the change mode tool `chmod` as we already did within the [Node Exporter](/docs/mainnet/complete-node-guide/monitoring/node-exporter) section of the guide.
+We can use the change mode tool `chmod` as we already did within the [Node Exporter](./02-node-exporter.md) section of the guide.
 
 ```sh
 sudo chmod 755 /usr/sbin/grafana
@@ -151,7 +161,7 @@ Within Ubuntu, the `/etc/systemd/system/` directory is where system service unit
 **Grafana's configuration data is already set within** `grafana-server.service` **after installation. However, we will add and edit some properties.**
 
 ```sh
-sudo nano /lib/systemd/system/grafana-server.service
+sudo vim /lib/systemd/system/grafana-server.service
 ```
 
 The configuration file is split between multiple sections: `[Unit]`, `[Service]`, and `[Install]`. The unit section contains generic options that are not dependent on the type of service and provide documentation. The service and install section is where we will house our configuration properties:
@@ -364,7 +374,24 @@ You can stop the service using the system control:
 sudo systemctl stop grafana-server
 ```
 
-### 7.6.7 Optional User Removal
+### 7.6.7 Adjusting the Time Zone
+
+In some cases, there are issues when having different timezones set on your system and your personal computer when accessing Grafana. On the other hand, metrics might also show the wrong timestamps. You can check if the wanted timezone is correct by typing:
+
+```sh
+timedatectl
+```
+
+In case there is an offset, you can set a new timezone. This will automatically take effect for all applications and log files created on your node machine. Make sure you check online which timezone you are in and whats the correct naming.
+
+```sh
+sudo timedatectl set-timezone <your-time-zone>
+
+# Example for Berlin Time
+sudo timedatectl set-timezone Europe/Berlin
+```
+
+### 7.6.8 Optional User Removal
 
 If you ever want to remove the user or something went wrong, do the following steps:
 
@@ -410,7 +437,7 @@ sudo delgroup grafana-server-worker
 
 Afterward, you can redo the Grafana guide and either set up a new user or remove the `User` and `Group` properties from the configuration in `7.6.4`. By default, the process will run as `root`. Also, go through every step in `7.6.5` once again.
 
-### 7.6.8 Optional Software Removal
+### 7.6.9 Optional Software Removal
 
 If you want to remove the Grafana software, stop the running service:
 
